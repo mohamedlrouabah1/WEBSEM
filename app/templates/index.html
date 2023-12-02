@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Food Delivery Service</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Welcome to the Food Delivery Service</h1>
+    <div id="rdfData"></div>
+
+    <script>
+        const rdfDataElement = document.getElementById('rdfData');
+        const rdfData = '{{ data | tojson | safe }}';
+        
+        // Check if data is not empty
+        if (rdfData) {
+            rdfDataElement.innerHTML = `<pre>${rdfData}</pre>`;
+        } else {
+            rdfDataElement.innerHTML = 'No RDF data available.';
+        }
+    </script>
+</body>
+</html>
