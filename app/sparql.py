@@ -22,5 +22,23 @@ def find_nearby_businesses(geolocation):
     """
     return execute_sparql_query(query)
 
+def update_customer_preferences(customer_name, new_preferences):
+    # SPARQL Update query logic
+    # Ensure new_preferences is in the correct format
+    update_query = """
+    PREFIX schema: <http://schema.org/>
+    DELETE WHERE {
+        ?customer schema:preferences ?oldPreferences.
+    };
+    INSERT {
+        ?customer schema:preferences """ + new_preferences + """.
+    }
+    WHERE {
+        ?customer a schema:Person;
+                 schema:name '""" + customer_name + """'.
+    }
+    """
+    g.update(update_query)
 # Consider owl:sameAs in SPARQL queries
 g.namespace_manager.bind("owl", OWL)
+

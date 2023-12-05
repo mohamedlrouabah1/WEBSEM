@@ -1,3 +1,5 @@
 Flask
 rdflib
 pyshacl
+
+#-m venv venv

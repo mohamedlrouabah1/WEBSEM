@@ -1,7 +1,9 @@
 from app import app
-from flask import render_template, jsonify
+from flask import render_template, jsonify, request
 from rdflib import Graph, Literal, URIRef, RDF
 from rdflib.namespace import XSD, FOAF, DCTERMS
+from .models import FoodItem, Restaurant, Customer
+from .sparql import execute_sparql_query, update_customer_preferences
 
 # Import other necessary modules
 
@@ -34,3 +36,22 @@ def get_data():
     data = {'message': 'Data fetched successfully'}
     return jsonify(data)
 
+@app.route('/updatePreferences', methods=['POST'])
+def update_preferences():
+    customer_name = request.form['name']
+    new_preferences = request.form['preferences']  # This should be formatted correctly
+    update_customer_preferences(customer_name, new_preferences)
+    return jsonify({"message": "Preferences updated successfully."})
+
+@app.route('/listBusinesses', methods=['GET'])
+def list_businesses():
+    # Example SPARQL query
+    query = """ 
+    PREFIX schema: <http://schema.org/>
+    SELECT ?business WHERE {
+        ?business a schema:Restaurant.
+    }
+    """
+    results = execute_sparql_query(query)
+    businesses = [str(result['business']) for result in results]
+    return jsonify({"businesses": businesses})
