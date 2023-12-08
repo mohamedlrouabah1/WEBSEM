@@ -1,6 +1,6 @@
 from pyshacl import validate
 import pyshacl
-from rdflib import XSD, Graph, Namespace, RDF, Literal, URIRef, SHACL
+from rdflib import XSD, Graph, Namespace, RDF, Literal, URIRef
 
 # Namespaces
 SCHEMA = Namespace("http://schema.org/")

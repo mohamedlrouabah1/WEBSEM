@@ -8,6 +8,7 @@ from .sparql import execute_sparql_query, update_customer_preferences
 # Import other necessary modules
 
 @app.route('/')
+
 def index():
     rdf_graph = Graph()
 
@@ -26,6 +27,7 @@ def index():
 
     # Serialize the graph to JSON-LD format
     data = rdf_graph.serialize(format="json-ld")
+    
     return render_template('index.html', data=data)
 
 
