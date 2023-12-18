@@ -1,0 +1,29 @@
+@prefix schema: <http://schema.org/> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+
+<#me>
+    a schema:Person ;
+    schema:name "Victor Charpenay" ;
+    schema:address [
+        a schema:PostalAddress ;
+        schema:postalCode "38250" ;
+        schema:addressLocality "CorrenÃ§on-en-Vercors"
+    ] ;
+    schema:seeks [
+        schema:seller <https://coursiers-stephanois.coopcycle.org/api/restaurants/24> ;
+        schema:priceSpecification [
+            schema:maxPrice 18.5 ;
+            schema:priceCurrency "EUR"
+        ] ;
+        schema:availableAtOrFrom [
+            schema:geoWithin [
+                a schema:GeoCircle ;
+                schema:geoMidpoint [
+                    schema:longitude 45.42788 ;
+                    schema:latitude 4.40391
+                ] ;
+                schema:geoRadius 2000
+            ]
+        ] ;
+        schema:itemOfferred wd:Q177
+    ] .
