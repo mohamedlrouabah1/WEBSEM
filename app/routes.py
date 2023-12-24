@@ -2,8 +2,7 @@ from app import app
 from flask import render_template, jsonify, request
 from rdflib import Graph, Literal, URIRef, RDF
 from rdflib.namespace import XSD, FOAF, DCTERMS
-from .models import FoodItem, Restaurant, Customer
-from .sparql import execute_sparql_query, update_customer_preferences
+from .query import execute_sparql_query, update_customer_preferences
 
 # Import other necessary modules
 

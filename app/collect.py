@@ -4,6 +4,8 @@ import json
 from concurrent.futures import ThreadPoolExecutor
 from concurrent.futures import as_completed
 from tqdm import tqdm
+from rdflib import Graph
+from pyshacl import validate
 
 def fetch_and_parse(url, session):
     '''
@@ -65,7 +67,7 @@ def process_domain(domain, session):
                     # }
     return domain_data
 
-def launch_scrap(url):
+def collect(url):
     '''
     Launches the scraping process for the given URL
     
@@ -85,7 +87,58 @@ def launch_scrap(url):
         for future in tqdm(as_completed(futures), total=len(futures), desc='Scraping CoopCycle'):
             all_data.update(future.result())
 
-    with open('coopcycle.json', 'w') as file:
+    with open('collect.json', 'w') as file:
         json.dump(all_data, file)
     
-    return all_data
+    return json.dump(all_data)
+
+def send_data_to_fuseki(fuseki_url, dataset_name, json_ld_data):
+    """
+    Send JSON-LD data to a Jena Fuseki dataset.
+
+    :param fuseki_url: URL of the Jena Fuseki server
+    :param dataset_name: Name of the dataset in Fuseki to which data is to be sent
+    :param json_ld_data: JSON-LD data to be sent
+    """
+    data_insertion_endpoint = f"{fuseki_url}/{dataset_name}/data"
+    headers = {"Content-Type": "application/ld+json"}
+    for restaurant_url,restaurant_json_data in tqdm(json_ld_data.items(), desc='Sending data to Fuseki'):
+        graph_uri = f"{data_insertion_endpoint}?graph={restaurant_url}"
+        try:
+            response = requests.post(graph_uri, data=json.dumps(restaurant_json_data), headers=headers)
+            if response.status_code != 200 or response.status_code != 201:
+            #     print(f"Data for {restaurant_url} successfully sent to Jena Fuseki.")
+            # else:
+                print(f"Failed to send data for {restaurant_url}. Status code: {response.status_code}, Response: {response.text}")
+        except requests.RequestException as e:
+            print(f"Error occurred while sending data for {restaurant_url} to Fuseki: {e}")
+
+def shacl_validation(uri_shacl, jsonld_data):
+    """
+    Validate JSON-LD data against a SHACL shape.
+
+    :param uri_shacl: URI of the SHACL shape file
+    :param jsonld_data: JSON-LD data to be validated
+    :return: RDF graph if data is valid, None otherwise
+    """
+    # Convert JSON-LD to RDF graph
+    rdf_g = Graph()
+    rdf_g.parse(data=jsonld_data, format='json-ld')
+
+    # Load SHACL shapes
+    shacl_g = Graph()
+    try:
+        shacl_g.parse(uri_shacl, format='ttl')
+    except Exception as e:
+        print(f"Error while loading SHACL file: {e}")
+        return None
+
+    # Validate the RDF graph against SHACL shapes
+    conforms, results_graph, results_text = validate(rdf_g, shacl_graph=shacl_g)
+    if conforms:
+        print("Data is valid according to SHACL shape.")
+        return True
+    else:
+        print("Data is not valid according to SHACL shape.")
+        print(results_text)
+        return False

@@ -1,0 +1,70 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+schema:RestaurantShape
+  a sh:NodeShape ;
+  sh:targetClass schema:Restaurant ;
+  sh:property [
+    sh:path schema:name ;
+    sh:datatype xsd:string ;
+    # sh:maxCount 1 ;
+  ] ;
+  sh:property [
+    sh:path schema:address ;
+    sh:node schema:AddressShape ;
+  ] ;
+  sh:property [
+    sh:path schema:image ;
+    sh:nodeKind sh:IRI ;  # Expecting an IRI instead of a literal
+  ] ;
+  sh:property [
+    sh:path schema:description ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path schema:openingHoursSpecification ;
+    sh:node schema:OpeningHoursSpecificationShape ;
+  ] .
+
+schema:AddressShape
+  a sh:NodeShape ;
+  sh:property [
+    sh:path schema:streetAddress ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path schema:telephone ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path schema:geo ;
+    sh:node schema:GeoCoordinatesShape ;
+  ] .
+
+schema:OpeningHoursSpecificationShape
+  a sh:NodeShape ;
+  sh:property [
+    sh:path schema:opens ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path schema:closes ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path schema:dayOfWeek ;
+    sh:datatype xsd:string ;  
+    sh:maxCount 7 ;  # Assuming a restaurant can be open on all days of the week
+  ] .
+
+schema:GeoCoordinatesShape
+  a sh:NodeShape ;
+  sh:property [
+    sh:path schema:latitude ;
+    sh:datatype xsd:double ;
+  ] ;
+  sh:property [
+    sh:path schema:longitude ;
+    sh:datatype xsd:double ;
+  ] .
