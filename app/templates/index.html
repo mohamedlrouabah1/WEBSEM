@@ -1,23 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-    <title>Food Delivery Service</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <meta charset="UTF-8">
+    <title>Recherche de Restaurants</title>
+    <link rel="stylesheet" href="static/css/style.css">    
 </head>
 <body>
-    <h1>Welcome to the Food Delivery Service</h1>
-    <div id="rdfData"></div>
-
-    <script>
-        const rdfDataElement = document.getElementById('rdfData');
-        const rdfData = '{{ data | tojson | safe }}';
-        
-        // Check if data is not empty
-        if (rdfData) {
-            rdfDataElement.innerHTML = `<pre>${rdfData}</pre>`;
-        } else {
-            rdfDataElement.innerHTML = 'No RDF data available.';
-        }
-    </script>
+    <h1>Recherche d'adresse</h1>
+    <input id="address-input" type="text" placeholder="Entrez une adresse...">
+    <div id="autocomplete-results"></div>
+    <script src="static/js/script.js"></script>
 </body>
 </html>
