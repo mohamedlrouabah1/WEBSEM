@@ -113,32 +113,33 @@ def send_data_to_fuseki(fuseki_url, dataset_name, json_ld_data):
         except requests.RequestException as e:
             print(f"Error occurred while sending data for {restaurant_url} to Fuseki: {e}")
 
-def shacl_validation(uri_shacl, jsonld_data):
+def shacl_validation(jsonld_data):
     """
     Validate JSON-LD data against a SHACL shape.
 
-    :param uri_shacl: URI of the SHACL shape file
     :param jsonld_data: JSON-LD data to be validated
-    :return: RDF graph if data is valid, None otherwise
+    :return: Boolean indicating if data is valid
     """
     # Convert JSON-LD to RDF graph
-    rdf_g = Graph()
-    rdf_g.parse(data=jsonld_data, format='json-ld')
+    rdf_graph = Graph()
+    rdf_graph.parse(data=jsonld_data, format='json-ld')
 
     # Load SHACL shapes
-    shacl_g = Graph()
-    try:
-        shacl_g.parse(uri_shacl, format='ttl')
-    except Exception as e:
-        print(f"Error while loading SHACL file: {e}")
-        return None
+    shacl_shapes_uri = 'http://localhost:3030/preferencies/data?graph=http://foodies.org/validation/shacl'
+    response = requests.get(shacl_shapes_uri)
+    if response.status_code != 200:
+        print("Failed to load SHACL shapes from the URI")
+        return False
+
+    shacl_graph = Graph()
+    shacl_graph.parse(data=response.text, format='ttl')
 
     # Validate the RDF graph against SHACL shapes
-    conforms, results_graph, results_text = validate(rdf_g, shacl_graph=shacl_g)
+    conforms, results_graph, results_text = validate(rdf_graph, shacl_graph=shacl_graph, inference='rdfs', abort_on_error=False)
     if conforms:
         print("Data is valid according to SHACL shape.")
-        return True
     else:
         print("Data is not valid according to SHACL shape.")
         print(results_text)
-        return False
+
+    return conforms

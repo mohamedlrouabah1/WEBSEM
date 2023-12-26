@@ -5,9 +5,12 @@
     <title>Restaurants à Proximité</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="static/css/style.css"> 
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+
 </head>
 <body>
     <div class="container mt-4">
+        <h1 class="text-center">Restaurants à proximité</h1>
         <div class="row">
             {% for restaurant in restaurants %}
             <div class="col-md-4 mb-4">
@@ -21,7 +24,6 @@
                     </div>
                 </div>
             </div>
-
             <!-- Modal -->
             <div class="modal fade" id="restaurantModal{{ loop.index }}" tabindex="-1" role="dialog" aria-labelledby="restaurantModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
@@ -49,7 +51,9 @@
             {% endfor %}
         </div>
     </div>
+    <div id="map" class="mini-map"></div>
 
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>

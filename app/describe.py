@@ -37,7 +37,7 @@ def create_rdf_graph(user_prefs):
     g = Graph()
 
     # User URI
-    user_uri = URIRef(f"http://example.org/user/{user_prefs['name'].replace(' ', '_')}")
+    user_uri = URIRef(f"http://foodies.org/user/{user_prefs['name'].replace(' ', '_')}")
 
     # User details
     g.add((user_uri, RDF.type, SCHEMA.Person))
@@ -89,7 +89,7 @@ def send_data_to_fuseki(fuseki_url, dataset_name, rdf_graph, user_name):
     :param dataset_name: Name of the dataset in Fuseki to which data is to be sent
     :param rdf_graph: RDF graph to be sent
     """
-    data_insertion_endpoint = f"{fuseki_url}/{dataset_name}/data?graph=http://example.org/user/{user_name}"
+    data_insertion_endpoint = f"{fuseki_url}/{dataset_name}/data?graph=http://foodies.org/user/{user_name.replace(' ', '_')}"
     headers = {"Content-Type": "text/turtle"}
     try:
         response = requests.post(data_insertion_endpoint, data=rdf_graph.serialize(format="turtle"), headers=headers)
@@ -100,14 +100,17 @@ def send_data_to_fuseki(fuseki_url, dataset_name, rdf_graph, user_name):
     except requests.RequestException as e:
         print(f"Error occurred while sending data to Fuseki: {e}")        
 
-def fetch_user_preferences(uri):
-    g = rdflib.Graph()
-    try:
-        g.parse(uri, format='ttl')
-    except Exception as e:
-        print(f"Erreur lors du chargement du fichier: {e}")
-        return None
+def fetch_user_preferences(uri_name):
+    # Load user uri from jena 
+    uri = f"http://localhost:3030/preferencies/data?graph=http://foodies.org/user/{uri_name}"
+    response = requests.get(uri)
+    if response.status_code != 200:
+        print("Failed to load SHACL shapes from the URI")
+        return False
 
+    g = Graph()
+    g.parse(data=response.text, format='ttl')
+    
     user_prefs = {
         'lat': None,
         'lon': None,

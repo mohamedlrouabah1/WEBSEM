@@ -3,12 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <title>Recherche de Restaurants</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="static/css/style.css">    
 </head>
-<body>
-    <h1>Recherche d'adresse</h1>
-    <input id="address-input" type="text" placeholder="Entrez une adresse...">
-    <div id="autocomplete-results"></div>
+<body style="background-image: url('https://www.foodiestruck.fr/img/static/image-home-foodies.png'); background-size: cover;">
+    <!-- En-tête -->
+     <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">
+                <img src="https://www.foodiestruck.fr/img/static/Foodies-logo.png" alt="Logo de votre application" width="70" height="30" class="mr-2">
+                <span class="align-middle">La references des restaurants !</span>
+            </a>            
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#preferencesModal">
+                            Préférences
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button type="button" class="btn btn-info ml-2" data-toggle="modal" data-target="#loadPreferencesModal">
+                            Charger les Préférences
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- Contenu principal -->
+    <div class="container mt-4">
+        <h1 class="text-center title">Rechercher une adresse</h1>
+        
+        <!-- Barre de suggestion -->
+        <div class="row">
+            <div class="col-md-4">
+                <div class="input-group">
+                    <select class="custom-select" id="location-options">
+                        <option value="choisir">Choisir une option</option>
+                        <option value="autour_de_moi">Autour de moi</option>
+                    </select>
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" type="button" onclick="getCurrentLocation()">
+                            <i class="fas fa-search"></i> 
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <input id="address-input" type="text" placeholder="Entrez une adresse..." class="form-control">
+                <div id="autocomplete-results"></div>
+            </div>
+            
+        </div>
+    </div>
+    
+    
+
+    <!-- Modal pour les préférences utilisateur -->
+    <div class="modal fade" id="preferencesModal" tabindex="-1" role="dialog" aria-labelledby="preferencesModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="preferencesModalLabel">Préférences utilisateur</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="preferencesForm">
+                        <input type="text" id="name" class="form-control mb-2" placeholder="Nom">
+                        <input type="text" id="address" class="form-control mb-2" placeholder="Adresse">
+                        <input type="text" id="postal_code" class="form-control mb-2" placeholder="Ville">
+                        <input type="text" id="city" class="form-control mb-2" placeholder="Code postal">
+                        <input type="text" id="country" class="form-control mb-2" placeholder="Pays">
+                        <input type="floatformat" id="max_distance" class="form-control mb-2" placeholder="Rayon de livraison">
+                        <input type="floatformat" id="max_price" class="form-control mb-2" placeholder="prix maxi pour la livraison">
+                        <input type="url" id="seller_url" class="form-control mb-2" placeholder="restaurant favorie">
+                        <input type="text" id="item_offered" class="form-control mb-2" placeholder="wikidata">
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                    <button type="button" class="btn btn-primary" onclick="collectAndSendPreferences()">Enregistrer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for loading user preferences -->
+    <div class="modal fade" id="loadPreferencesModal" tabindex="-1" role="dialog" aria-labelledby="loadPreferencesModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loadPreferencesModalLabel">Charger les préférences</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <input type="text" id="usernameInput" class="form-control mb-2" placeholder="Entrez votre nom d'utilisateur">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                    <button type="button" class="btn btn-primary" onclick="loadUserPreferences()">Charger</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="static/js/script.js"></script>
 </body>
 </html>
