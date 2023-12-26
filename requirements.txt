@@ -1,5 +1,6 @@
 Flask
 rdflib
 pyshacl
-
+geopy
+flask-caching
 #-m venv venv

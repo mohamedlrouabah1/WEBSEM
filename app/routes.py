@@ -5,7 +5,10 @@ from flask import jsonify, redirect, render_template, request, session, url_for
 from app.collect import shacl_validation
 from app.describe import *
 from app.query import query_restaurants
+from flask_caching import Cache
 
+# Configure Flask-Caching (or another caching mechanism)
+cache = Cache(app, config={'CACHE_TYPE': 'simple'})
 
 @app.route('/')
 def index():
@@ -13,27 +16,28 @@ def index():
 
 @app.route('/query', methods=['POST'])
 def query():
-    session.pop('restaurants', None)  # Supprime les données des restaurants si elles existent
     fuseki_url = "http://localhost:3030"
     dataset_name = "shacl"
     now = datetime.now()
-   
     data = request.get_json()
     print(data)
 
     # if max_distance is None :
-    max_distance = 10  # defaut value
+    max_distance = 30  # defaut value
     # if price is None :
     price = 114.00 # defaut value
     # if rank_by is None :
     rank_by = 'distance'  # Default ranking
     results = query_restaurants(fuseki_url, dataset_name, now, data['lat'], data['lon'], max_distance, price, rank_by)
-    session['restaurants'] = results  # Stocker les résultats dans la session
-    return redirect(url_for('show_restaurants'))
+    # Generate a unique cache key and store results
+    cache_key = f"restaurants_{datetime.now().timestamp()}"
+    cache.set(cache_key, results, timeout=300)  # Store for 5 minutes
+    return redirect(url_for('show_restaurants', key=cache_key))
 
 @app.route('/restaurants', methods=['GET'])
 def show_restaurants():
-    restaurants_data = session.get('restaurants', [])
+    cache_key = request.args.get('key')
+    restaurants_data = cache.get(cache_key) if cache_key else []
     return render_template('restaurants.html', restaurants=restaurants_data)
 
 @app.route('/preferences', methods=['POST'])

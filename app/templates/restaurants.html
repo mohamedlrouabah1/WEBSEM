@@ -6,11 +6,20 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="static/css/style.css"> 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/MarkerCluster.Default.css" />
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 </head>
 <body>
     <div class="container mt-4">
-        <h1 class="text-center">Restaurants à proximité</h1>
+        <div>
+            <h1 class="text-center">Restaurants à proximité</h1>
+            <a href="/" class="btn btn-info"><i class="fas fa-home"></i> Retour à l'accueil</a>
+        </div>
+        <!-- Mini carte pour afficher les marqueurs de restaurant -->
+        <div id="mini-map" style="height: 300px;"></div>
+        {% if restaurants %}
         <div class="row">
             {% for restaurant in restaurants %}
             <div class="col-md-4 mb-4">
@@ -18,6 +27,7 @@
                     <img class="card-img-top" src="{{ restaurant.image }}" alt="{{ restaurant.name }}" onclick="window.location.href='{{ restaurant.url }}'">
                     <div class="card-body">
                         <h5 class="card-title">{{ restaurant.name }}</h5>
+                        <p class="card-text">Distance : {{ restaurant.distance }} km </p>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#restaurantModal{{ loop.index }}">
                             Détails
                         </button>
@@ -39,6 +49,7 @@
                             <p>{{ restaurant.description }}</p>
                             <p><strong>Adresse:</strong> {{ restaurant.address }}</p>
                             <p><strong>Téléphone:</strong> {{ restaurant.telephone }}</p>
+                            <p><strong>Limite de livraison:</strong> {{ restaurant.price }}</p>
                             <p><strong>Heures d'ouverture:</strong> {{ restaurant.openingHours }}</p>
                         </div>
                         <div class="modal-footer">
@@ -48,14 +59,42 @@
                     </div>
                 </div>
             </div>
+            
             {% endfor %}
         </div>
+        {% else %}
+            <p>Aucun restaurant trouvé.</p>
+        {% endif %}
     </div>
-    <div id="map" class="mini-map"></div>
 
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/leaflet.markercluster.js"></script>
+    <!-- Script pour afficher la mini carte avec des marqueurs de restaurant -->
+    <script>
+        // Créez une carte mini-map
+        var miniMap = L.map('mini-map').setView([{{ restaurants[0].latitude }}, {{ restaurants[0].longitude }}], 13);
+    
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 18,
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(miniMap);
+
+        // Créez un groupe de marqueurs pour les restaurants
+        var restaurantMarkers = L.markerClusterGroup();
+
+        // Ajoutez des marqueurs de restaurant avec des popups personnalisées
+        {% for restaurant in restaurants %}
+            var marker = L.marker([{{ restaurant.latitude }}, {{ restaurant.longitude }}]);
+            marker.bindPopup('<strong>{{ restaurant.name }}</strong><br>Adresse: {{ restaurant.address }}<br>Heures d\'ouverture: {{ restaurant.openingHours }}');
+            restaurantMarkers.addLayer(marker);
+        {% endfor %}
+
+        miniMap.addLayer(restaurantMarkers);
+    </script>
+    
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
 </body>
 </html>

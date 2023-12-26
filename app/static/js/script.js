@@ -30,13 +30,15 @@ function selectAddress(name, lat, lon, city, country, postcode) {
         },
         body: JSON.stringify({ lat, lon, name, city, country, postcode })
     })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            window.location.href = '/restaurants';
+    .then(response => {
+        if (response.redirected) {
+            window.location.href = response.url;
+        } else {
+            console.error('Expected a redirection response');
         }
     })
     .catch(error => console.error('Error:', error));
+
 }
 
 function collectAndSendPreferences() {
@@ -127,12 +129,15 @@ function searchNearbyRestaurants(lat, lon) {
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ lat, lon})
+        body: JSON.stringify({ lat, lon })
     })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            window.location.href = '/restaurants';
+    .then(response => {
+        if (response.redirected) {
+            window.location.href = response.url;
+        } else {
+            console.error('Expected a redirection response');
         }
     })
-    .catch(error => console.error('Error:', error));}
+    .catch(error => console.error('Error:', error));
+}
+
