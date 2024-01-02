@@ -1,19 +1,24 @@
+import json
 import requests
-from models import FoodItem
-from rdflib import Graph
 
-def collect_and_convert_data(url):
-    response = requests.get(url)
-    data = response.json()  # Supposons que la réponse est en JSON
+def send_data_to_fuseki(fuseki_url, dataset_name, json_ld_data):
+    """
+    Send JSON-LD data to a Jena Fuseki dataset.
 
-    graph = Graph()
-    for item in data:
-        food_item = FoodItem(item['name'], item['description'], item['price'], item['category'])
-        graph += food_item.to_rdf(graph)  # Ajouter à un graphe RDF
+    :param fuseki_url: URL of the Jena Fuseki server
+    :param dataset_name: Name of the dataset in Fuseki to which data is to be sent
+    :param json_ld_data: JSON-LD data to be sent
+    """
+    data_insertion_endpoint = f"{fuseki_url}/{dataset_name}/data"
+    headers = {"Content-Type": "application/ld+json"}
 
-    return graph.serialize(format='turtle')  # Retourner le graphe RDF en format Turtle
+    json_dump = json.dumps(json_ld_data)
 
-# Exemple d'utilisation
-url = "https://coopcycle.org/fr/federation/"
-rdf_data = collect_and_convert_data(url)
-# Envoyez ensuite ces données à Fuseki ici
+    try:
+        response = requests.post(data_insertion_endpoint, data=json_dump, headers=headers)
+        if response.status_code == 200:
+            print("Data successfully sent to Jena Fuseki.")
+        else:
+            print(f"Failed to send data. Status code: {response.status_code}, Response: {response.text}")
+    except requests.RequestException as e:
+        print(f"Error occurred while sending data to Fuseki: {e}")
