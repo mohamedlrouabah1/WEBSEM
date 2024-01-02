@@ -108,28 +108,78 @@ function loadUserPreferences(){
     })
     .catch(error => console.error('Error:', error));
 }  
-function getCurrentLocation() {
-    if (navigator.geolocation) {
+// function getCurrentLocation() {
+//     if (navigator.geolocation) {
+//         navigator.geolocation.getCurrentPosition(function(position) {
+//             const lat = position.coords.latitude;
+//             const lon = position.coords.longitude;
+//             // Une fois que vous avez obtenu les coordonnées, vous pouvez les utiliser pour lancer la recherche
+//             searchNearbyRestaurants(lat, lon);
+//         }, function(error) {
+//             console.error('Erreur de géolocalisation:', error);
+//             alert("Impossible de récupérer votre emplacement actuel.");
+//         });
+//     } else {
+//         alert("La géolocalisation n'est pas prise en charge par votre navigateur.");
+//     }
+// }
+// function searchNearbyRestaurants(lat, lon) {
+//     fetch('/query', {
+//         method: 'POST',
+//         headers: {
+//             'Content-Type': 'application/json',
+//         },
+//         body: JSON.stringify({ lat, lon })
+//     })
+//     .then(response => {
+//         if (response.redirected) {
+//             window.location.href = response.url;
+//         } else {
+//             console.error('Expected a redirection response');
+//         }
+//     })
+//     .catch(error => console.error('Error:', error));
+// }
+function selectOption(option) {
+    document.getElementById('dropdownMenuButton').textContent = option;
+}
+function stopPropagation(event) {
+    event.stopPropagation(); // Prevent the event from propagating to close the dropdown
+}
+
+
+function performSearch() {
+    var searchParams = {
+        maxDistance: document.getElementById('maxDistanceInput').value,
+        deliveryPrice: document.getElementById('deliveryPriceInput').value,
+        openingHours: document.getElementById('openingHoursInput').value,
+        openingDays: document.getElementById('openingDaysInput').value
+        // closingHours: document.getElementById('closingHoursInput').value
+    };
+    var selectedDay = document.getElementById("openingDaysInput").value;
+
+    var selectedOption = document.getElementById('dropdownMenuButton').textContent;
+    if (selectedOption === 'autour_de_moi') {
+        // Handle geolocation here if "Autour de moi" is selected
         navigator.geolocation.getCurrentPosition(function(position) {
-            const lat = position.coords.latitude;
-            const lon = position.coords.longitude;
-            // Une fois que vous avez obtenu les coordonnées, vous pouvez les utiliser pour lancer la recherche
-            searchNearbyRestaurants(lat, lon);
-        }, function(error) {
-            console.error('Erreur de géolocalisation:', error);
-            alert("Impossible de récupérer votre emplacement actuel.");
+            searchParams.lat = position.coords.latitude;
+            searchParams.lon = position.coords.longitude;
+            console.log(searchParams); // Display the search parameters in the console
+            sendSearchQuery(searchParams);
         });
     } else {
-        alert("La géolocalisation n'est pas prise en charge par votre navigateur.");
+        // Handle search without geolocation
+        sendSearchQuery(searchParams);
     }
 }
-function searchNearbyRestaurants(lat, lon) {
+
+function sendSearchQuery(params) {
     fetch('/query', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ lat, lon })
+        body: JSON.stringify(params)
     })
     .then(response => {
         if (response.redirected) {
@@ -140,4 +190,3 @@ function searchNearbyRestaurants(lat, lon) {
     })
     .catch(error => console.error('Error:', error));
 }
-

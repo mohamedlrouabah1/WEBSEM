@@ -3,4 +3,6 @@ rdflib
 pyshacl
 geopy
 flask-caching
+bs4
+SPARQLWrapper
 #-m venv venv

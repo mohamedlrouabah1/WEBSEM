@@ -67,6 +67,9 @@ def process_domain(domain, session):
                     # }
     return domain_data
 
+progress = 0  # Variable globale pour stocker la progression
+
+
 def collect(url):
     '''
     Launches the scraping process for the given URL
@@ -75,6 +78,7 @@ def collect(url):
     
     Saves the results to a JSON file
     '''
+    global progress
     session = requests.Session()
     response = session.get(url)
     soup = BeautifulSoup(response.content, 'html.parser')
@@ -82,17 +86,20 @@ def collect(url):
     coop_urls = [option['value'] + '/sitemap.xml' for option in select_menu.find_all('option') if option['value'] and 'coopcycle.org' in option['value']]
 
     all_data = {}
+    total_urls = len(coop_urls)
+    progress = 0
     with ThreadPoolExecutor(max_workers=10) as executor:
         futures = [executor.submit(process_domain, domain, session) for domain in coop_urls]
         for future in tqdm(as_completed(futures), total=len(futures), desc='Scraping CoopCycle'):
             all_data.update(future.result())
+            progress += 1 / total_urls * 100 
 
     with open('collect.json', 'w') as file:
         json.dump(all_data, file)
     
     return json.dump(all_data)
 
-def send_data_to_fuseki(fuseki_url, dataset_name, json_ld_data):
+def send_collect_to_fuseki(fuseki_url, dataset_name, json_ld_data):
     """
     Send JSON-LD data to a Jena Fuseki dataset.
 

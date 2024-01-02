@@ -71,25 +71,30 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/leaflet.markercluster.js"></script>
     <!-- Script pour afficher la mini carte avec des marqueurs de restaurant -->
     <script>
-        // Créez une carte mini-map
-        var miniMap = L.map('mini-map').setView([{{ restaurants[0].latitude }}, {{ restaurants[0].longitude }}], 13);
-    
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 18,
-            attribution: '© OpenStreetMap contributors'
-        }).addTo(miniMap);
+        {% if restaurants %}
 
-        // Créez un groupe de marqueurs pour les restaurants
-        var restaurantMarkers = L.markerClusterGroup();
+            // Créez une carte mini-map
+            var miniMap = L.map('mini-map').setView([{{ restaurants[0].latitude }}, {{ restaurants[0].longitude }}], 13);
+        
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 18,
+                attribution: '© OpenStreetMap contributors'
+            }).addTo(miniMap);
 
-        // Ajoutez des marqueurs de restaurant avec des popups personnalisées
-        {% for restaurant in restaurants %}
-            var marker = L.marker([{{ restaurant.latitude }}, {{ restaurant.longitude }}]);
-            marker.bindPopup('<strong>{{ restaurant.name }}</strong><br>Adresse: {{ restaurant.address }}<br>Heures d\'ouverture: {{ restaurant.openingHours }}');
-            restaurantMarkers.addLayer(marker);
-        {% endfor %}
+            // Créez un groupe de marqueurs pour les restaurants
+            var restaurantMarkers = L.markerClusterGroup();
 
-        miniMap.addLayer(restaurantMarkers);
+            // Ajoutez des marqueurs de restaurant avec des popups personnalisées
+            {% for restaurant in restaurants %}
+                var marker = L.marker([{{ restaurant.latitude }}, {{ restaurant.longitude }}]);
+                marker.bindPopup('<strong>{{ restaurant.name }}</strong><br>Adresse: {{ restaurant.address }}<br>Heures d\'ouverture: {{ restaurant.openingHours }}');
+                restaurantMarkers.addLayer(marker);
+            {% endfor %}
+
+            miniMap.addLayer(restaurantMarkers);
+            {% else %}
+            document.getElementById('mini-map').innerHTML = '<p>Aucun restaurant trouvé.</p>';
+        {% endif %}
     </script>
     
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>

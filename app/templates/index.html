@@ -42,17 +42,29 @@
         <!-- Barre de suggestion -->
         <div class="row">
             <div class="col-md-4">
-                <div class="input-group">
-                    <select class="custom-select" id="location-options">
-                        <option value="choisir">Choisir une option</option>
-                        <option value="autour_de_moi">Autour de moi</option>
-                    </select>
-                    <div class="input-group-append">
-                        <button class="btn btn-primary" type="button" onclick="getCurrentLocation()">
-                            <i class="fas fa-search"></i> 
-                        </button>
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Choisir une option
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#" onclick="selectOption('autour_de_moi')">Autour de moi</a>
+                        <input type="number" class="dropdown-item" id="maxDistanceInput" placeholder="Max distance...">
+                        <input type="number" class="dropdown-item" id="deliveryPriceInput" placeholder="Delivery price...">
+                        <input type="time" class="dropdown-item" id="openingHoursInput">
+                        <select class="dropdown-item" id="openingDaysInput" onclick="stopPropagation(event)">
+                            <option value="Monday">Monday</option>
+                            <option value="Tuesday">Tuesday</option>
+                            <option value="Wednesday">Wednesday</option>
+                            <option value="Thursday">Thursday</option>
+                            <option value="Friday">Friday</option>
+                            <option value="Saturday">Saturday</option>
+                            <option value="Sunday">Sunday</option>
+                        </select>
+                        
+                        <!-- <input type="time" class="dropdown-item" id="closingHoursInput"> -->
                     </div>
                 </div>
+                <button class="btn btn-primary" type="button" onclick="performSearch()"><i class="fas fa-search"></i></button>                              
             </div>
             <div class="col-md-8">
                 <input id="address-input" type="text" placeholder="Entrez une adresse..." class="form-control">

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dev Page</title>
+</head>
+<body>
+    <h1>Development Page</h1>
+    <button onclick="sendToFuseki()">Send to Fuseki</button>
+    <button onclick="collectData()">Collect Data</button>
+    <div id="progress-container" style="display:none;">
+        <progress id="progressBar" value="0" max="100"></progress>
+    </div>
+    <script>
+    function collectData() {
+        var urlToScrape = "https://coopcycle.org/fr/";
+        var progressBar = document.getElementById("progressBar");
+        document.getElementById("progress-container").style.display = "block";
+    
+        fetch('/collect-data', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ url: urlToScrape })
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            checkProgress(); // Appeler la fonction pour vérifier la progression
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+    
+        function checkProgress() {
+            fetch('/progress')
+            .then(response => response.json())
+            .then(data => {
+                console.log("Progress Data:", data); // Pour le débogage
+                var progressBar = document.getElementById("progressBar");
+                progressBar.value = data.progress;
+                if (data.progress < 100) {
+                    setTimeout(checkProgress, 1000); // Vérifier à nouveau après 1 seconde
+                }
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        }        
+        
+    }
+        
+        
+    function sendToFuseki() {
+        fetch('/send-to-fuseki', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ /* vos données ici */ })
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            // Autres traitements
+        })
+        .catch(error => console.error('Error:', error));
+    }
+    
+    </script>
+</body>
+</html>
