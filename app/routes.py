@@ -1,8 +1,10 @@
 from datetime import datetime
 import json
+import io
+import sys
 from app import app
 from flask import jsonify, redirect, render_template, request, session, url_for
-from app.collect import shacl_validation, progress, collect, send_collect_to_fuseki
+from app.collect import shacl_validation, collect, send_collect_to_fuseki
 from app.describe import *
 from app.query import query_restaurants
 from flask_caching import Cache
@@ -18,31 +20,28 @@ def index():
 def dev_page():
     return render_template('dev.html')
 
-@app.route('/progress')
-def get_progress():
-    return jsonify({"progress": progress})
 
 @app.route('/collect-data', methods=['POST'])
 def collect_data_route():
     url = request.json.get('url')
-    result = collect(url)
-    return jsonify(result)
+    collect(url)
+    result = jsonify({'message': 'Données collectées avec succès'})
+    return render_template('dev.html' , result=result)
 
 @app.route('/send-to-fuseki', methods=['POST'])
 def send_to_fuseki():
     fuseki_url = "http://localhost:3030"
     dataset_name = "foodies"
-    
     try:
         with open("collect.json", "r") as file:
             data = json.load(file)
     except Exception as e:
-        return jsonify({'message': f'Erreur lors de la lecture de collect.json : {e}'})
-
-    send_collect_to_fuseki(fuseki_url, dataset_name, data)
-    return jsonify({'message': 'Données envoyées avec succès'})
-
+        return render_template('dev.html' , result=jsonify({'message': f'Erreur lors de la lecture du fichier collect.json : {e}'}))
     
+    send_collect_to_fuseki(fuseki_url, dataset_name, data)
+    return render_template('dev.html' , result=jsonify({'message': 'Données envoyées avec succès'}))
+
+
 @app.route('/query', methods=['POST'])
 def query():
     fuseki_url = "http://localhost:3030"
@@ -53,7 +52,10 @@ def query():
 
     max_distance = data.get('maxDistance', 30)  # default value if not provided
     price = data.get('deliveryPrice', 114.00)  # default value if not provided
-    rank_by = 'distance'  # Default ranking
+    rank_by = data.get('rankby')
+    print(rank_by)
+    if rank_by is None:
+        rank_by = 'distance'  # Default ranking
     lat = data.get('lat')  # lat might be None
     lon = data.get('lon')  # lon might be None
     current_time = data.get('openingHours')
@@ -75,9 +77,8 @@ def query():
         results = []
 
     cache_key = f"restaurants_{datetime.now().timestamp()}"
-    cache.set(cache_key, results, timeout=300)
+    cache.set(cache_key, results, timeout=200)
     return redirect(url_for('show_restaurants', key=cache_key))
-
 
 @app.route('/restaurants', methods=['GET'])
 def show_restaurants():
@@ -108,8 +109,6 @@ def preferences():
 
 @app.route('/user-preferences', methods=['POST'])
 def user_preferences():
-    session.pop('restaurants', None)  # Clear existing restaurant data
-
     # Retrieve data from POST request
     data = json.loads(request.data)
     username = data.get('username')
@@ -134,6 +133,9 @@ def user_preferences():
     rank_by = user_prefs.get('rank_by', 'distance')  # Default to 'distance' if not provided
 
     now = datetime.now()
-    results = query_restaurants(fuseki_url, dataset_name, now, user_prefs.get('lat'), user_prefs.get('lon'), user_prefs['max_distance'], user_prefs['price'], rank_by)
-    session['restaurants'] = results  # Store results in session
-    return redirect(url_for('show_restaurants'))
+    day_of_week = now.strftime("%A")
+    current_time = now.strftime("%H:%M")
+    results = query_restaurants(fuseki_url, dataset_name, user_prefs.get('lat'), user_prefs.get('lon'), user_prefs['max_distance'],current_time, day_of_week, user_prefs['price'], rank_by)
+    cache_key = f"restaurants_{datetime.now().timestamp()}"
+    cache.set(cache_key, results, timeout=200)
+    return redirect(url_for('show_restaurants', key=cache_key))
