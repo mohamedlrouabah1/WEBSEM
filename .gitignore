@@ -1,4 +1,9 @@
 .vscode
+**/__pycache__/
 
 # subject of the project
 *.pdf
+
+# personnal folder to store some examples / output
+examples/
+scrapping/
