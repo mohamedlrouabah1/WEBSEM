@@ -54,7 +54,11 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                            {% if restaurant.url %}
                             <a href="{{ restaurant.url }}" class="btn btn-primary">Visiter le site</a>
+                            {% else %}
+                            <a href="{{ restaurant.graph }}" class="btn btn-primary">Visiter le site</a>
+                            {% endif %}
                         </div>
                     </div>
                 </div>

@@ -8,7 +8,7 @@ schema:RestaurantShape
   sh:property [
     sh:path schema:name ;
     sh:datatype xsd:string ;
-    # sh:maxCount 1 ;
+    sh:maxCount 1 ;
   ] ;
   sh:property [
     sh:path schema:address ;
@@ -55,7 +55,7 @@ schema:OpeningHoursSpecificationShape
   sh:property [
     sh:path schema:dayOfWeek ;
     sh:datatype xsd:string ;  
-    sh:maxCount 7 ;  # Assuming a restaurant can be open on all days of the week
+    sh:maxCount 7 ;  
   ] .
 
 schema:GeoCoordinatesShape

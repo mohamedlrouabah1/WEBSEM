@@ -99,11 +99,11 @@ function loadUserPreferences(){
         },
         body: JSON.stringify({ username })
     })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            window.location.href = '/restaurants';
-            redirect('/restaurants');
+    .then(response => {
+        if (response.redirected) {
+            window.location.href = response.url;
+        } else {
+            console.error('Expected a redirection response');
         }
     })
     .catch(error => console.error('Error:', error));
@@ -141,7 +141,10 @@ function loadUserPreferences(){
 //     .catch(error => console.error('Error:', error));
 // }
 function selectOption(option) {
-    document.getElementById('dropdownMenuButton').textContent = option;
+    document.getElementById('dropdownMenuButton1').textContent = option;
+}
+function selectOption2(option) {
+    document.getElementById('dropdownMenuButton2').textContent = option;
 }
 function stopPropagation(event) {
     event.stopPropagation(); // Prevent the event from propagating to close the dropdown
@@ -153,12 +156,13 @@ function performSearch() {
         maxDistance: document.getElementById('maxDistanceInput').value,
         deliveryPrice: document.getElementById('deliveryPriceInput').value,
         openingHours: document.getElementById('openingHoursInput').value,
-        openingDays: document.getElementById('openingDaysInput').value
+        openingDays: document.getElementById('openingDaysInput').value,
+        rankby: document.getElementById('dropdownMenuButton2').textContent,
         // closingHours: document.getElementById('closingHoursInput').value
     };
-    var selectedDay = document.getElementById("openingDaysInput").value;
+    // var selectedDay = document.getElementById("openingDaysInput").value;
 
-    var selectedOption = document.getElementById('dropdownMenuButton').textContent;
+    var selectedOption = document.getElementById('dropdownMenuButton1').textContent;
     if (selectedOption === 'autour_de_moi') {
         // Handle geolocation here if "Autour de moi" is selected
         navigator.geolocation.getCurrentPosition(function(position) {

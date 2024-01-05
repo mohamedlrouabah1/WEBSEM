@@ -102,7 +102,7 @@ def send_data_to_fuseki(fuseki_url, dataset_name, rdf_graph, user_name):
 
 def fetch_user_preferences(uri_name):
     # Load user uri from jena 
-    uri = f"http://localhost:3030/preferencies/data?graph=http://foodies.org/user/{uri_name}"
+    uri = f"http://localhost:3030/preferences/data?graph=http://foodies.org/user/{uri_name}"
     response = requests.get(uri)
     if response.status_code != 200:
         print("Failed to load SHACL shapes from the URI")

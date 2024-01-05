@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Dev Page</title>
-</head>
-<body>
-    <h1>Development Page</h1>
-    <button onclick="sendToFuseki()">Send to Fuseki</button>
-    <button onclick="collectData()">Collect Data</button>
-    <div id="progress-container" style="display:none;">
-        <progress id="progressBar" value="0" max="100"></progress>
+    <head>
+        <title>Dev Page</title>
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    </head>
+    <body>
+    <h1 class="text-center">Development Page</h1>
+    <div class="text-center">
+        <button class="btn btn-primary" onclick="sendToFuseki()">Send to Fuseki</button>
+        <button class="btn btn-primary" onclick="collectData()">Collect Data</button>
     </div>
+    <div class="alert alert-secondary" role="alert" style="margin-top: 0.5rem;">
+        {{result}}
+    </div>
+      
+
     <script>
     function collectData() {
-        var urlToScrape = "https://coopcycle.org/fr/";
-        var progressBar = document.getElementById("progressBar");
-        document.getElementById("progress-container").style.display = "block";
-    
+        var urlToScrape = "https://coopcycle.org/fr/";    
         fetch('/collect-data', {
             method: 'POST',
             headers: {
@@ -26,30 +29,9 @@
         .then(response => response.json())
         .then(data => {
             console.log(data);
-            checkProgress(); // Appeler la fonction pour vérifier la progression
         })
-        .catch((error) => {
-            console.error('Error:', error);
-        });
-    
-        function checkProgress() {
-            fetch('/progress')
-            .then(response => response.json())
-            .then(data => {
-                console.log("Progress Data:", data); // Pour le débogage
-                var progressBar = document.getElementById("progressBar");
-                progressBar.value = data.progress;
-                if (data.progress < 100) {
-                    setTimeout(checkProgress, 1000); // Vérifier à nouveau après 1 seconde
-                }
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-            });
-        }        
-        
+        .catch(error => console.error('Error:', error));
     }
-        
         
     function sendToFuseki() {
         fetch('/send-to-fuseki', {
@@ -62,7 +44,6 @@
         .then(response => response.json())
         .then(data => {
             console.log(data);
-            // Autres traitements
         })
         .catch(error => console.error('Error:', error));
     }
