@@ -1,7 +1,6 @@
 from datetime import datetime
 import json
-import io
-import sys
+import os
 from app import app
 from flask import jsonify, redirect, render_template, request, session, url_for
 from app.collect import shacl_validation, collect, send_collect_to_fuseki
@@ -37,7 +36,7 @@ def send_to_fuseki():
             data = json.load(file)
     except Exception as e:
         return render_template('dev.html' , result=jsonify({'message': f'Erreur lors de la lecture du fichier collect.json : {e}'}))
-    
+
     send_collect_to_fuseki(fuseki_url, dataset_name, data)
     return render_template('dev.html' , result=jsonify({'message': 'Données envoyées avec succès'}))
 
@@ -70,7 +69,11 @@ def query():
 
     # Check if lat and lon are provided
     if lat is not None and lon is not None:
-        results = query_restaurants(fuseki_url, dataset_name, lat, lon, max_distance,current_time, day_of_week, price, rank_by)
+        results = query_restaurants(
+            fuseki_url, dataset_name,
+            lat, lon, max_distance,
+            current_time, day_of_week,
+            price, rank_by)
     else:
         # Handle cases when lat and lon are not provided
         # Maybe return a default list of restaurants or a specific message
@@ -94,9 +97,9 @@ def preferences():
     try:
         data = request.get_json()
         print(data)
-        rdf_graph = create_rdf_graph(data)  
+        rdf_graph = create_rdf_graph(data)
 
-        if shacl_validation(data):  
+        if shacl_validation(data):
             send_data_to_fuseki(fuseki_url, dataset_name, rdf_graph, data['name'])
             return jsonify({'message': 'Préférences enregistrées avec succès'})
         else:
@@ -113,8 +116,8 @@ def user_preferences():
     data = json.loads(request.data)
     username = data.get('username')
 
-    fuseki_url = "http://localhost:3030"
-    dataset_name = "foodies"
+    fuseki_url = os.getenv("FUSEKI_URL","http://localhost:3030")
+    dataset_name = os.getenv("FUSEKI_DATASET_NAME", "foodies")
 
     # Fetch user preferences based on username
     user_prefs = fetch_user_preferences(username)
