@@ -10,6 +10,10 @@ from models.query import query_restaurants
 from flask_caching import Cache
 
 main_bp = Blueprint('main', __name__)
+main_bp.config = {}
+main_bp.config['CACHE_TYPE'] = 'simple'
+cache_main = Cache(config={'CACHE_TYPE': 'simple'})
+
 
 @main_bp.route('/')
 def index():
@@ -43,6 +47,9 @@ def send_to_fuseki():
 
 @main_bp.route('/query', methods=['POST'])
 def query():
+    """
+    Query a sparQL endpoint of JENA to retrieve restaurants that match the user's preferences.
+    """
     fuseki_url = "http://localhost:3030"
     dataset_name = "foodies"
     now = datetime.now()
@@ -80,13 +87,13 @@ def query():
         results = []
 
     cache_key = f"restaurants_{datetime.now().timestamp()}"
-    cache.set(cache_key, results, timeout=200)
+    cache_main.set(cache_key, results, timeout=200)
     return redirect(url_for('show_restaurants', key=cache_key))
 
 @main_bp.route('/restaurants', methods=['GET'])
 def show_restaurants():
     cache_key = request.args.get('key')
-    restaurants_data = cache.get(cache_key) if cache_key else []
+    restaurants_data = cache_main.get(cache_key) if cache_key else []
 
     return render_template('restaurants.html', restaurants=restaurants_data)
 
@@ -140,5 +147,5 @@ def user_preferences():
     current_time = now.strftime("%H:%M")
     results = query_restaurants(fuseki_url, dataset_name, user_prefs.get('lat'), user_prefs.get('lon'), user_prefs['max_distance'],current_time, day_of_week, user_prefs['price'], rank_by)
     cache_key = f"restaurants_{datetime.now().timestamp()}"
-    cache.set(cache_key, results, timeout=200)
+    cache_main.set(cache_key, results, timeout=200)
     return redirect(url_for('show_restaurants', key=cache_key))

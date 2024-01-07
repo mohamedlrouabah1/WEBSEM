@@ -7,3 +7,4 @@ pyshacl
 rdflib
 requests
 SPARQLWrapper
+tqdm

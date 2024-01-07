@@ -2,6 +2,7 @@ from __future__ import annotations
 import requests
 from rdflib import Namespace, URIRef, Literal, Graph, BNode
 from rdflib.namespace import RDF, XSD
+from config import TIMEOUT
 
 SCHEMA = Namespace('http://schema.org/')
 WD = Namespace('http://www.wikidata.org/entity/')
@@ -102,7 +103,7 @@ def fetch_user_preferences(uri_name:str) -> dict:
     """
     # Load user uri from jena
     uri = f"http://localhost:3030/preferences/data?graph=http://foodies.org/user/{uri_name}"
-    response = requests.get(uri)
+    response = requests.get(uri, timeout=TIMEOUT)
     if response.status_code != 200:
         print("Failed to load SHACL shapes from the URI")
         return False
@@ -110,12 +111,7 @@ def fetch_user_preferences(uri_name:str) -> dict:
     g = Graph()
     g.parse(data=response.text, format='ttl')
 
-    user_prefs = {
-        'lat': None,
-        'lon': None,
-        'max_price': None,
-        'max_distance': None
-    }
+    user_prefs = {}
 
     for person in g.subjects(RDF.type, SCHEMA.Person):
         # Itérer à travers les préférences de l'utilisateur
@@ -132,8 +128,9 @@ def fetch_user_preferences(uri_name:str) -> dict:
                     if geo_midpoint:
                         lat = g.value(geo_midpoint, SCHEMA.latitude)
                         lon = g.value(geo_midpoint, SCHEMA.longitude)
-                        user_prefs['lat'] = float(lat) if lat else None
-                        user_prefs['lon'] = float(lon) if lon else None
+
+                    user_prefs['lat'] = float(lat) if lat else None
+                    user_prefs['lon'] = float(lon) if lon else None
 
                     geo_radius = g.value(geo_within, SCHEMA.geoRadius)
                     user_prefs['max_distance'] = float(geo_radius) if geo_radius else None

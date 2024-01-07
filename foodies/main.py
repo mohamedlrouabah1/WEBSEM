@@ -1,12 +1,9 @@
-
 import datetime
-import json
 import sys
-import requests
 
-from collect import *
-from query import  query_restaurants
-from describe import *
+from models.query import  query_restaurants
+from models.describe import fetch_user_preferences
+
 def main():
     # url = "https://coopcycle.org/fr/"
     fuseki_url = "http://localhost:3030"
@@ -17,7 +14,7 @@ def main():
     # # validate json file
     # if shacl_validation('SHACL.ttl',data):
     #     send_data_to_fuseki(fuseki_url, dataset_name, data)
-    
+
     # collect user preferences
     # user_prefs = collect_user_preferences()
     # print(user_prefs)
@@ -26,7 +23,7 @@ def main():
     # # validate user preferences
     # if shacl_validation('SHACL.ttl',user_prefs):
     #     send_data_to_fuseki(fuseki_url, "pref", rdf_graph, user_prefs['name'])
-        
+
     now = datetime.datetime.now()
     rank_by = 'distance'  # Default ranking
     if len(sys.argv) < 2:
@@ -36,7 +33,7 @@ def main():
     preference_uri = sys.argv[1]
     user_prefs = fetch_user_preferences(preference_uri)
     print(user_prefs)
-    # preferences_uri = "pref-charpenay.ttl" 
+    # preferences_uri = "pref-charpenay.ttl"
     # preferences_uri = "pref-alex.ttl"
     # user_prefs = fetch_user_preferences(preferences_uri)
     query_restaurants(fuseki_url, dataset_name, now, user_prefs['lat'], user_prefs['lon'], user_prefs['max_distance'], user_prefs['max_price'], rank_by)
