@@ -1,39 +1,35 @@
-import rdflib
+from __future__ import annotations
+import requests
 from rdflib import Namespace, URIRef, Literal, Graph, BNode
 from rdflib.namespace import RDF, XSD
-import requests
 
 SCHEMA = Namespace('http://schema.org/')
 WD = Namespace('http://www.wikidata.org/entity/')
 
-def collect_user_preferences():
-    user_name = input("Enter your name: ")
-    user_address = input("Enter your address: ")
-    user_postal_code = input("Enter your postal code: ")
-    user_city = input("Enter your city: ")
-    user_country = input("Enter your country: ")
-    max_distance = float(input("Enter your maximum distance for a meal (in meters): "))
-    longitude = float(input("Enter your longitude: "))
-    latitude = float(input("Enter your latitude: "))
-    max_price = float(input("Enter your maximum price for a meal (in EUR): "))
-    seller_url = input("Enter the URL of the seller (restaurant): ")
-    item_offered = input("Enter the Wikidata ID of the item offered: ")
+def collect_user_preferences() -> dict:
+    """
+    CLI interface to collect user preferences.
+    """
+    preferences = {}
 
-    return {
-        'name': user_name,
-        'address': user_address,
-        'postal_code': user_postal_code,
-        'city': user_city,
-        'country': user_country,
-        'max_distance': max_distance,
-        'longitude': longitude,
-        'latitude': latitude,
-        'max_price': max_price,
-        'seller_url': seller_url,
-        'item_offered': item_offered
-    }
+    preferences['name'] = input("Enter your name: ")
+    preferences['address'] = input("Enter your address: ")
+    preferences['postal_code'] = input("Enter your postal code: ")
+    preferences['city'] = input("Enter your city: ")
+    preferences['country'] = input("Enter your country: ")
+    preferences['max_distance'] = float(input("Enter your maximum distance for a meal (in meters): "))
+    preferences['longitude'] = float(input("Enter your longitude: "))
+    preferences['latitude'] = float(input("Enter your latitude: "))
+    preferences['max_price'] = float(input("Enter your maximum price for a meal (in EUR): "))
+    preferences['seller_url'] = input("Enter the URL of the seller (restaurant): ")
+    preferences['item_offered'] = input("Enter the Wikidata ID of the item offered: ")
 
-def create_rdf_graph(user_prefs):
+    return preferences
+
+def create_rdf_graph(user_prefs:dict) -> Graph:
+    """
+    Createa an RDF graph from user preferences using rdfLib.
+    """
     g = Graph()
 
     # User URI
@@ -58,7 +54,7 @@ def create_rdf_graph(user_prefs):
     # Geolocation preferences
     availableAtOrFrom = BNode()
     g.add((seeks, SCHEMA.availableAtOrFrom, availableAtOrFrom))
-    
+
     geo_within = BNode()
     g.add((availableAtOrFrom, SCHEMA.geoWithin, geo_within))
     g.add((geo_within, RDF.type, SCHEMA.GeoCircle))
@@ -67,12 +63,12 @@ def create_rdf_graph(user_prefs):
     g.add((geo_within, SCHEMA.geoMidpoint, geo_midpoint))
     g.add((geo_midpoint, SCHEMA.latitude, Literal(user_prefs['latitude'], datatype=XSD.decimal)))
     g.add((geo_midpoint, SCHEMA.longitude, Literal(user_prefs['longitude'], datatype=XSD.decimal)))
-    g.add((geo_within, SCHEMA.geoRadius, Literal(user_prefs['max_distance'], datatype=XSD.decimal)))
-    
+    g.add((geo_within, SCHEMA.geo_radius, Literal(user_prefs['max_distance'], datatype=XSD.decimal)))
+
     # Price specification
     price_spec = BNode()
     g.add((seeks, SCHEMA.priceSpecification, price_spec))
-    g.add((price_spec, SCHEMA.maxPrice, Literal(user_prefs['max_price'], datatype=XSD.decimal)))
+    g.add((price_spec, SCHEMA.max_price, Literal(user_prefs['max_price'], datatype=XSD.decimal)))
     g.add((price_spec, SCHEMA.priceCurrency, Literal("EUR", datatype=XSD.string)))
 
     # Seller and item offered
@@ -81,7 +77,7 @@ def create_rdf_graph(user_prefs):
 
     return g
 
-def send_data_to_fuseki(fuseki_url, dataset_name, rdf_graph, user_name):
+def send_data_to_fuseki(fuseki_url:str, dataset_name:str, rdf_graph:Graph, user_name:str) -> None:
     """
     Send RDF graph to a Jena Fuseki dataset.
 
@@ -98,10 +94,13 @@ def send_data_to_fuseki(fuseki_url, dataset_name, rdf_graph, user_name):
         else:
             print(f"Failed to send data. Status code: {response.status_code}, Response: {response.text}")
     except requests.RequestException as e:
-        print(f"Error occurred while sending data to Fuseki: {e}")        
+        print(f"Error occurred while sending data to Fuseki: {e}")
 
-def fetch_user_preferences(uri_name):
-    # Load user uri from jena 
+def fetch_user_preferences(uri_name:str) -> dict:
+    """
+    Query the Jena LDP for a specific user preferences.
+    """
+    # Load user uri from jena
     uri = f"http://localhost:3030/preferences/data?graph=http://foodies.org/user/{uri_name}"
     response = requests.get(uri)
     if response.status_code != 200:
@@ -110,7 +109,7 @@ def fetch_user_preferences(uri_name):
 
     g = Graph()
     g.parse(data=response.text, format='ttl')
-    
+
     user_prefs = {
         'lat': None,
         'lon': None,
@@ -122,21 +121,21 @@ def fetch_user_preferences(uri_name):
         # Itérer à travers les préférences de l'utilisateur
         for seeks in g.objects(person, SCHEMA.seeks):
             # Récupérer les spécifications de prix
-            for priceSpec in g.objects(seeks, SCHEMA.priceSpecification):
-                maxPrice = g.value(priceSpec, SCHEMA.maxPrice)
-                user_prefs['max_price'] = float(maxPrice) if maxPrice else None
+            for price_spec in g.objects(seeks, SCHEMA.priceSpecification):
+                max_price = g.value(price_spec, SCHEMA.maxPrice)
+                user_prefs['max_price'] = float(max_price) if max_price else None
 
             # Récupérer les préférences géographiques
-            for availableAtOrFrom in g.objects(seeks, SCHEMA.availableAtOrFrom):
-                for geoWithin in g.objects(availableAtOrFrom, SCHEMA.geoWithin):
-                    geoMidpoint = g.value(geoWithin, SCHEMA.geoMidpoint)
-                    if geoMidpoint:
-                        lat = g.value(geoMidpoint, SCHEMA.latitude)
-                        lon = g.value(geoMidpoint, SCHEMA.longitude)
+            for available_at_or_from in g.objects(seeks, SCHEMA.availableAtOrFrom):
+                for geo_within in g.objects(available_at_or_from, SCHEMA.geoWithin):
+                    geo_midpoint = g.value(geo_within, SCHEMA.geoMidpoint)
+                    if geo_midpoint:
+                        lat = g.value(geo_midpoint, SCHEMA.latitude)
+                        lon = g.value(geo_midpoint, SCHEMA.longitude)
                         user_prefs['lat'] = float(lat) if lat else None
                         user_prefs['lon'] = float(lon) if lon else None
 
-                    geoRadius = g.value(geoWithin, SCHEMA.geoRadius)
-                    user_prefs['max_distance'] = float(geoRadius) if geoRadius else None
+                    geo_radius = g.value(geo_within, SCHEMA.geoRadius)
+                    user_prefs['max_distance'] = float(geo_radius) if geo_radius else None
 
     return user_prefs

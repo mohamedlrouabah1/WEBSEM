@@ -1,9 +1,6 @@
+import geopy.distance
 from SPARQLWrapper import SPARQLWrapper, JSON
-import math
 
-from flask import jsonify
-
-import geopy.distance 
 
 def calculate_distance(lat1, lon1, lat2, lon2):
     if None in [lat1, lon1, lat2, lon2]:
@@ -20,7 +17,7 @@ def calculate_distance(lat1, lon1, lat2, lon2):
 
 
 def query_restaurants(fuseki_url, dataset_name, user_lat, user_lon, georadius, current_time, day_of_week, max_price, rank_by):
-  
+
     # Filtre pour le prix maximum
     max_price_filter = f"FILTER (xsd:decimal(?deliveryPrice) <= {max_price})" if max_price is not None else ""
     # Filtre pour les horaires d'ouverture

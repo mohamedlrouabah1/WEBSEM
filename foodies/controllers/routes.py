@@ -1,33 +1,33 @@
-from datetime import datetime
 import json
 import os
-from app import app
+
+from datetime import datetime
+from flask import Blueprint
 from flask import jsonify, redirect, render_template, request, session, url_for
-from app.collect import shacl_validation, collect, send_collect_to_fuseki
-from app.describe import *
-from app.query import query_restaurants
+from models.collect import shacl_validation, collect, send_collect_to_fuseki
+from models.describe import *
+from models.query import query_restaurants
 from flask_caching import Cache
 
-# Configure Flask-Caching (or another caching mechanism)
-cache = Cache(app, config={'CACHE_TYPE': 'simple'})
+main_bp = Blueprint('main', __name__)
 
-@app.route('/')
+@main_bp.route('/')
 def index():
     return render_template('index.html')
 
-@app.route('/dev')
+@main_bp.route('/dev')
 def dev_page():
     return render_template('dev.html')
 
 
-@app.route('/collect-data', methods=['POST'])
+@main_bp.route('/collect-data', methods=['POST'])
 def collect_data_route():
     url = request.json.get('url')
     collect(url)
     result = jsonify({'message': 'Données collectées avec succès'})
     return render_template('dev.html' , result=result)
 
-@app.route('/send-to-fuseki', methods=['POST'])
+@main_bp.route('/send-to-fuseki', methods=['POST'])
 def send_to_fuseki():
     fuseki_url = "http://localhost:3030"
     dataset_name = "foodies"
@@ -41,7 +41,7 @@ def send_to_fuseki():
     return render_template('dev.html' , result=jsonify({'message': 'Données envoyées avec succès'}))
 
 
-@app.route('/query', methods=['POST'])
+@main_bp.route('/query', methods=['POST'])
 def query():
     fuseki_url = "http://localhost:3030"
     dataset_name = "foodies"
@@ -83,14 +83,14 @@ def query():
     cache.set(cache_key, results, timeout=200)
     return redirect(url_for('show_restaurants', key=cache_key))
 
-@app.route('/restaurants', methods=['GET'])
+@main_bp.route('/restaurants', methods=['GET'])
 def show_restaurants():
     cache_key = request.args.get('key')
     restaurants_data = cache.get(cache_key) if cache_key else []
 
     return render_template('restaurants.html', restaurants=restaurants_data)
 
-@app.route('/preferences', methods=['POST'])
+@main_bp.route('/preferences', methods=['POST'])
 def preferences():
     fuseki_url = "http://localhost:3030"
     dataset_name = "preferences"
@@ -110,7 +110,7 @@ def preferences():
     except Exception as e:
         return jsonify({'message': f'Erreur lors de la validation : {e}'})
 
-@app.route('/user-preferences', methods=['POST'])
+@main_bp.route('/user-preferences', methods=['POST'])
 def user_preferences():
     # Retrieve data from POST request
     data = json.loads(request.data)

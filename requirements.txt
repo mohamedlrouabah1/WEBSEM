@@ -1,8 +1,9 @@
+bs4
 Flask
 flask-caching
-rdflib
-pyshacl
 geopy
-bs4
+gunicorn
+pyshacl
+rdflib
+requests
 SPARQLWrapper
-#-m venv venv
