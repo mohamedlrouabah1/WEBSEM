@@ -103,6 +103,7 @@ def send_collect_to_fuseki(fuseki_url, dataset_name, json_ld_data):
     """
     data_insertion_endpoint = f"{fuseki_url}/{dataset_name}/data"
     headers = {"Content-Type": "application/ld+json"}
+
     for restaurant_url,restaurant_json_data in tqdm(json_ld_data.items(), desc='Sending data to Fuseki'):
         if shacl_validation(restaurant_json_data):
             graph_uri = f"{data_insertion_endpoint}?graph={restaurant_url}"
