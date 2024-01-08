@@ -6,7 +6,7 @@ from __future__ import annotations
 import json
 from concurrent.futures import ThreadPoolExecutor
 from concurrent.futures import as_completed
-from Bs4 import BeautifulSoup
+from bs4 import BeautifulSoup
 import requests
 from tqdm import tqdm
 

@@ -18,11 +18,12 @@ class LdpFuseki:
     def __init__(self):
         """"""
 
-    def upload_ldjson(self, data:dict[str,dict]):
+    def upload_ldjson(self, data:dict[str,dict]) -> bool:
         """
         Send JSON-LD data to a Jena Fuseki dataset.
         """
         headers = {"Content-Type": "application/ld+json"}
+        errors = 0
 
         for restaurant_url,restaurant_ldjson in tqdm(data.items(),desc='Sending data to Fuseki'):
             if self._validate_ldjson_against_shacl(restaurant_ldjson):
@@ -44,6 +45,9 @@ class LdpFuseki:
 
             else:
                 print(f"Data for {restaurant_url} is not valid. Skipping...", file=sys.stderr)
+                errors += 1
+
+        return errors == 0
 
 
     def _validate_ldjson_against_shacl(self, data:dict) -> bool:
@@ -67,7 +71,7 @@ class LdpFuseki:
         shacl_graph.parse(data=response.text, format='ttl')
 
         # Validate the RDF graph against SHACL shapes
-        conforms, results_graph, results_text = validate(
+        conforms, _, results_text = validate(
             rdf_graph, shacl_graph, inference='rdfs', abort_on_first=False
             )
 

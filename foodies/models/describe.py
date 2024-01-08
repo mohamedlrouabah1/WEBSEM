@@ -2,7 +2,7 @@ from __future__ import annotations
 import requests
 from rdflib import Namespace, URIRef, Literal, Graph, BNode
 from rdflib.namespace import RDF, XSD
-from config import LDP_URL, TIMEOUT
+from config import LDP_URL, TIMEOUT, LDP_HOST, LDP_PORT
 
 SCHEMA = Namespace('http://schema.org/')
 WD = Namespace('http://www.wikidata.org/entity/')
@@ -32,8 +32,6 @@ def create_rdf_graph(user_prefs:dict) -> Graph:
     Createa an RDF graph from user preferences using rdfLib.
     """
     g = Graph()
-
-    # User URI
     user_uri = URIRef(f"http://foodies.org/user/{user_prefs['name'].replace(' ', '_')}")
 
     # User details
@@ -86,24 +84,31 @@ def send_data_to_fuseki(rdf_graph:Graph, user_name:str) -> None:
     :param dataset_name: Name of the dataset in Fuseki to which data is to be sent
     :param rdf_graph: RDF graph to be sent
     """
-    data_insertion_endpoint = f"{LDP_URL}/data?graph=http://foodies.org/user/{user_name.replace(' ', '_')}"
-    headers = {"Content-Type": "text/turtle"}
     try:
-        response = requests.post(data_insertion_endpoint, data=rdf_graph.serialize(format="turtle"), headers=headers, timeout=TIMEOUT)
+        response = requests.post(
+            f"{LDP_URL}/data?graph=http://foodies.org/user/{user_name.replace(' ', '_')}",
+            data=rdf_graph.serialize(format="turtle"),
+            headers={"Content-Type": "text/turtle"},
+            timeout=TIMEOUT
+            )
+
         if response.status_code in (200, 201):
             print('Data successfully sent to Jena Fuseki.')
         else:
             print(f"Failed to send data. Status code: {response.status_code}, Response: {response.text}")
+
     except requests.RequestException as e:
         print(f"Error occurred while sending data to Fuseki: {e}")
+
 
 def fetch_user_preferences(uri_name:str) -> dict:
     """
     Query the Jena LDP for a specific user preferences.
     """
-    # Load user uri from jena
-    uri = f"http://localhost:3030/preferences/data?graph=http://foodies.org/user/{uri_name}"
-    response = requests.get(uri, timeout=TIMEOUT)
+    response = requests.get(
+        f"http://{LDP_HOST}:{LDP_PORT}/preferences/data?graph=http://foodies.org/user/{uri_name}",
+        timeout=TIMEOUT)
+
     if response.status_code != 200:
         print("Failed to load SHACL shapes from the URI")
         return False
