@@ -1,0 +1,15 @@
+1 - Lancer Jena 
+2 - crée une database en persistance sur jena, nom : preferences
+3 - crée une database en persistance sur jena, nom : foodies
+4 - lancer sur un terminal bash le curl suivant : 
+curl -X POST --header "Content-Type: text/turtle" --data-binary "@SHACL.ttl" http://localhost:3030/preferences/data?graph=http://foodies.org/validation/shacl
+
+Lancement de l'application : 
+1 - lancer le run.py sur un terminal bash : 
+python3 run.py 
+
+2 - aller sur : localhost:5000/dev 
+3 - Si souhaite collect data alors tu click sur collect 
+4 - sinon utilise le collect.json dans la racine pour Send data en persistance sur jena 
+
+5 - enjoy app
