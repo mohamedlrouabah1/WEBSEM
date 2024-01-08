@@ -10,7 +10,7 @@ from pyshacl import validate
 def fetch_and_parse(url, session):
     '''
     Fetches the given URL and returns a BeautifulSoup object
-    
+
     Returns None if the request failed
     '''
     try:
@@ -24,9 +24,9 @@ def fetch_and_parse(url, session):
 def process_domain(domain, session):
     '''
     Fetches the sitemap for the given domain and processes each page in the sitemap
-    
+
     Returns a dictionary of JSON-LD data with the URL as the key
-    
+
     Example:
     {
         "https://coopcycle.org/fr/": {
@@ -70,9 +70,9 @@ def process_domain(domain, session):
 def collect(url):
     '''
     Launches the scraping process for the given URL
-    
+
     Scrapes the sitemap for the given URL and all subdomains
-    
+
     Saves the results to a JSON file
     '''
     session = requests.Session()
@@ -88,7 +88,7 @@ def collect(url):
         for future in tqdm(as_completed(futures), total=len(futures), desc='Scraping CoopCycle'):
             all_data.update(future.result())
 
-    with open('collect.json', 'w') as file:
+    with open('collect.json', 'w', encoding="utf-8") as file:
         json.dump(all_data, file)
     result = json.dumps(all_data)
     return result
@@ -109,10 +109,10 @@ def send_collect_to_fuseki(fuseki_url, dataset_name, json_ld_data):
             try:
                 response = requests.post(graph_uri, data=json.dumps(restaurant_json_data), headers=headers)
                 if response.status_code > 250:
-                    print(f"Failed to send data for {restaurant_url}. Status code: {response.status_code}, Response: {response.text}") 
+                    print(f"Failed to send data for {restaurant_url}. Status code: {response.status_code}, Response: {response.text}")
             except requests.RequestException as e:
                 print(f"Error occurred while sending data for {restaurant_url} to Fuseki: {e}")
-                
+
         else:
             print(f"Data for {restaurant_url} is not valid. Skipping...")
 
