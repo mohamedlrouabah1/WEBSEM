@@ -1,5 +1,6 @@
 import geopy.distance
 from SPARQLWrapper import SPARQLWrapper, JSON
+from config import LDP_URL
 
 
 def calculate_distance(lat1, lon1, lat2, lon2):
@@ -16,14 +17,14 @@ def calculate_distance(lat1, lon1, lat2, lon2):
     return dist
 
 
-def query_restaurants(fuseki_url, dataset_name, user_lat, user_lon, georadius, current_time, day_of_week, max_price, rank_by):
+def query_restaurants(user_lat, user_lon, georadius, current_time, day_of_week, max_price, rank_by):
 
     # Filtre pour le prix maximum
     max_price_filter = f"FILTER (xsd:decimal(?deliveryPrice) <= {max_price})" if max_price is not None else ""
     # Filtre pour les horaires d'ouverture
     time_filter = f"FILTER (STR(?day) = '{day_of_week}' && ?opens <= '{current_time}' && ?closes >= '{current_time}')" if day_of_week and current_time else ""
 
-    sparql = SPARQLWrapper(f"{fuseki_url}/{dataset_name}/query")
+    sparql = SPARQLWrapper(f'{LDP_URL}/query')
 
     query = f"""
      PREFIX schema: <http://schema.org/>

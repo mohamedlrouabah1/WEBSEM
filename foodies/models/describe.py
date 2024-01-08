@@ -2,7 +2,7 @@ from __future__ import annotations
 import requests
 from rdflib import Namespace, URIRef, Literal, Graph, BNode
 from rdflib.namespace import RDF, XSD
-from config import TIMEOUT
+from config import LDP_URL, TIMEOUT
 
 SCHEMA = Namespace('http://schema.org/')
 WD = Namespace('http://www.wikidata.org/entity/')
@@ -78,7 +78,7 @@ def create_rdf_graph(user_prefs:dict) -> Graph:
 
     return g
 
-def send_data_to_fuseki(fuseki_url:str, dataset_name:str, rdf_graph:Graph, user_name:str) -> None:
+def send_data_to_fuseki(rdf_graph:Graph, user_name:str) -> None:
     """
     Send RDF graph to a Jena Fuseki dataset.
 
@@ -86,12 +86,12 @@ def send_data_to_fuseki(fuseki_url:str, dataset_name:str, rdf_graph:Graph, user_
     :param dataset_name: Name of the dataset in Fuseki to which data is to be sent
     :param rdf_graph: RDF graph to be sent
     """
-    data_insertion_endpoint = f"{fuseki_url}/{dataset_name}/data?graph=http://foodies.org/user/{user_name.replace(' ', '_')}"
+    data_insertion_endpoint = f"{LDP_URL}/data?graph=http://foodies.org/user/{user_name.replace(' ', '_')}"
     headers = {"Content-Type": "text/turtle"}
     try:
-        response = requests.post(data_insertion_endpoint, data=rdf_graph.serialize(format="turtle"), headers=headers)
-        if response.status_code == 200 or response.status_code == 201:
-            print(f"Data successfully sent to Jena Fuseki.")
+        response = requests.post(data_insertion_endpoint, data=rdf_graph.serialize(format="turtle"), headers=headers, timeout=TIMEOUT)
+        if response.status_code in (200, 201):
+            print('Data successfully sent to Jena Fuseki.')
         else:
             print(f"Failed to send data. Status code: {response.status_code}, Response: {response.text}")
     except requests.RequestException as e:
@@ -129,8 +129,9 @@ def fetch_user_preferences(uri_name:str) -> dict:
                         lat = g.value(geo_midpoint, SCHEMA.latitude)
                         lon = g.value(geo_midpoint, SCHEMA.longitude)
 
-                    user_prefs['lat'] = float(lat) if lat else None
-                    user_prefs['lon'] = float(lon) if lon else None
+                        user_prefs['lat'] = float(lat) if lat else None
+                        user_prefs['lon'] = float(lon) if lon else None
+
 
                     geo_radius = g.value(geo_within, SCHEMA.geoRadius)
                     user_prefs['max_distance'] = float(geo_radius) if geo_radius else None

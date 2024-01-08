@@ -1,13 +1,16 @@
-import requests
-from bs4 import BeautifulSoup
+from __future__ import annotations
 import json
 from concurrent.futures import ThreadPoolExecutor
 from concurrent.futures import as_completed
+from bs4 import BeautifulSoup
+import requests
 from tqdm import tqdm
 from rdflib import Graph
 from pyshacl import validate
 
-def fetch_and_parse(url, session):
+from config import LDP_URL, TIMEOUT
+
+def fetch_and_parse(url, session) -> BeautifulSoup:
     '''
     Fetches the given URL and returns a BeautifulSoup object
 
@@ -45,7 +48,8 @@ def process_domain(domain, session):
     }
     '''
     # skip /a-propos dans toute les langues
-    skip = ['/a-propos', '/about','/about-us' '/uber-uns', '/acerca-de', '/su-di-noi', '/sobre-nosotros', '/o-nas','/riguardo-a-noi']
+    skip = ['/a-propos', '/about','/about-us' '/uber-uns', '/acerca-de',
+            '/su-di-noi', '/sobre-nosotros', '/o-nas','/riguardo-a-noi']
     domain_data = {}
     domain_soup = fetch_and_parse(domain, session)
     if domain_soup:
@@ -67,7 +71,7 @@ def process_domain(domain, session):
                     # }
     return domain_data
 
-def collect(url):
+def collect(url:str) -> str:
     '''
     Launches the scraping process for the given URL
 
@@ -79,7 +83,11 @@ def collect(url):
     response = session.get(url)
     soup = BeautifulSoup(response.content, 'html.parser')
     select_menu = soup.find('select', id='city-dropdown')
-    coop_urls = [option['value'] + '/sitemap.xml' for option in select_menu.find_all('option') if option['value'] and 'coopcycle.org' in option['value']]
+    coop_urls = [
+        option['value'] + '/sitemap.xml'
+        for option in select_menu.find_all('option')
+        if option['value'] and 'coopcycle.org' in option['value']
+        ]
 
     all_data = {}
 
@@ -90,10 +98,11 @@ def collect(url):
 
     with open('collect.json', 'w', encoding="utf-8") as file:
         json.dump(all_data, file)
+
     result = json.dumps(all_data)
     return result
 
-def send_collect_to_fuseki(fuseki_url, dataset_name, json_ld_data):
+def send_collect_to_fuseki(json_ld_data):
     """
     Send JSON-LD data to a Jena Fuseki dataset.
 
@@ -101,14 +110,14 @@ def send_collect_to_fuseki(fuseki_url, dataset_name, json_ld_data):
     :param dataset_name: Name of the dataset in Fuseki to which data is to be sent
     :param json_ld_data: JSON-LD data to be sent
     """
-    data_insertion_endpoint = f"{fuseki_url}/{dataset_name}/data"
+    data_insertion_endpoint = f'{LDP_URL}/data'
     headers = {"Content-Type": "application/ld+json"}
 
     for restaurant_url,restaurant_json_data in tqdm(json_ld_data.items(), desc='Sending data to Fuseki'):
         if shacl_validation(restaurant_json_data):
             graph_uri = f"{data_insertion_endpoint}?graph={restaurant_url}"
             try:
-                response = requests.post(graph_uri, data=json.dumps(restaurant_json_data), headers=headers)
+                response = requests.post(graph_uri, data=json.dumps(restaurant_json_data), headers=headers, timeout=TIMEOUT)
                 if response.status_code > 250:
                     print(f"Failed to send data for {restaurant_url}. Status code: {response.status_code}, Response: {response.text}")
             except requests.RequestException as e:
@@ -131,8 +140,8 @@ def shacl_validation(jsonld_data):
     rdf_graph.parse(data=jsonld_data, format='json-ld')
 
     # Load SHACL shapes
-    shacl_shapes_uri = 'http://localhost:3030/preferences/data?graph=http://foodies.org/validation/shacl'
-    response = requests.get(shacl_shapes_uri)
+    shacl_shapes_uri = f'{LDP_URL}/preferences/data?graph=http://foodies.org/validation/shacl'
+    response = requests.get(shacl_shapes_uri, timeout=TIMEOUT)
     if response.status_code != 200:
         print("Failed to load SHACL shapes from the URI")
         return False
