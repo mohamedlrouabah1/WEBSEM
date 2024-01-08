@@ -10,6 +10,8 @@ from Bs4 import BeautifulSoup
 import requests
 from tqdm import tqdm
 
+from coopcycle_scrapper.ldp_fuseki import LdpFuseki
+
 class CoopCycleScrapper:
     """
     Scrapper for CoopCycle.
@@ -25,6 +27,34 @@ class CoopCycleScrapper:
     def __init__(self):
         self.session = requests.Session()
         self.subdomains = self._get_subdomains()
+        self.ldp = LdpFuseki()
+
+    def run(self):
+        """Main entry point for the scrapper"""
+        ldjson_str = self.scrap_restaurants_jsonld()
+        ldjson = json.loads(ldjson_str)
+        self.ldp.upload_ldjson(ldjson)
+
+
+    def scrap_restaurants_jsonld(self) -> str:
+        """"Get all restaurants from all subdomains of the main domain"""
+        all_data = {}
+
+        with ThreadPoolExecutor(max_workers=10) as executor:
+            futures = [executor.submit(
+                            self._extract_subdomain_ld_json,
+                            domain, self.session
+                            )
+                        for domain in self.subdomains]
+
+            for future in tqdm(as_completed(futures),total=len(futures),desc='Scraping CoopCycle'):
+                all_data.update(future.result())
+
+        with open(CoopCycleScrapper.SAVE_PATH, 'w', encoding="utf-8") as f:
+            json.dump(all_data, f)
+
+        result = json.dumps(all_data)
+        return result
 
     def _get_subdomains(self) -> list[str]:
         """
@@ -44,30 +74,6 @@ class CoopCycleScrapper:
             if option['value'] and 'coopcycle.org' in option['value']
             ]
         return coop_urls
-
-    def run(self):
-        """Main entry point for the scrapper"""
-        self.scrap_restaurants_jsonld()
-
-    def scrap_restaurants_jsonld(self):
-        """"Get all restaurants from all subdomains of the main domain"""
-        all_data = {}
-
-        with ThreadPoolExecutor(max_workers=10) as executor:
-            futures = [executor.submit(
-                            self._extract_subdomain_ld_json,
-                            domain, self.session
-                            )
-                        for domain in self.subdomains]
-
-            for future in tqdm(as_completed(futures),total=len(futures),desc='Scraping CoopCycle'):
-                all_data.update(future.result())
-
-        with open(CoopCycleScrapper.SAVE_PATH, 'w', encoding="utf-8") as f:
-            json.dump(all_data, f)
-
-        result = json.dumps(all_data)
-        return result
 
     def _fetch_and_parse_html(self, url:str, session:requests.Session) -> BeautifulSoup:
         """
