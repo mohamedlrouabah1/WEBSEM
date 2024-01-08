@@ -13,7 +13,7 @@ document.getElementById('address-input').addEventListener('input', function() {
                 const city = address.city || address.town || address.village || '';
                 const country = address.country || '';
                 const postcode = address.postcode || '';
-                return `<div class="autocomplete-item" data-lat="${place.lat}" data-lon="${place.lon}" 
+                return `<div class="autocomplete-item" data-lat="${place.lat}" data-lon="${place.lon}"
                         onclick="selectAddress('${place.display_name}', ${place.lat}, ${place.lon}, '${city}', '${country}', '${postcode}')">
                             ${place.display_name}
                         </div>`;
@@ -62,7 +62,7 @@ function collectAndSendPreferences() {
             longitude: position.coords.longitude, // add longitude
             max_price: document.getElementById('max_price').value,
             seller_url: document.getElementById('seller_url').value,
-            item_offered: document.getElementById('item_offered').value, 
+            item_offered: document.getElementById('item_offered').value,
         };
 
         // Now send the data with the fetch call
@@ -83,16 +83,15 @@ function collectAndSendPreferences() {
         });
 
     }, function() {
-        // Handle error
         alert("Unable to retrieve your location");
     });
 }
 
 function loadUserPreferences(){
     var username = document.getElementById('usernameInput').value;
-    
+
     username = username.replace(/\s+/g, '_');
-    fetch('/user-preferences', {
+    fetch('/user/preferences', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -107,7 +106,7 @@ function loadUserPreferences(){
         }
     })
     .catch(error => console.error('Error:', error));
-}  
+}
 // function getCurrentLocation() {
 //     if (navigator.geolocation) {
 //         navigator.geolocation.getCurrentPosition(function(position) {
