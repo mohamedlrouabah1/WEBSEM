@@ -1,6 +1,7 @@
 bs4
 Flask
 flask-caching
+flask-sitemap
 geopy
 gunicorn
 pyshacl
