@@ -1,3 +1,6 @@
+from __future__ import annotations
+import os
+import sys
 import argparse
 import subprocess
 from datetime import datetime
@@ -168,7 +171,9 @@ def main():
     elif args.mode == 'server':
         print("Starting the server.")
         try:
-            subprocess.run(['python', 'foodies/app.py'], check=True)
+            # get the path of the python exe
+            executable = os.path.abspath(sys.executable)
+            subprocess.run([executable, 'foodies/app.py'], check=True)
             print("Server started.")
 
         except subprocess.CalledProcessError as e:

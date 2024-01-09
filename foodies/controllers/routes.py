@@ -2,6 +2,8 @@
 Routes for the Foodies application.
 """
 import sys
+import argparse
+import subprocess
 
 from datetime import datetime
 from flask import Blueprint
@@ -80,3 +82,45 @@ def preferences():
         return jsonify({'message': 'Fichier SHACL introuvable'})
     except Exception as e:
         return jsonify({'message': f'Erreur lors de la validation : {e}'})
+
+
+
+
+# simulate the CLI via HTTP
+@main_bp.route('/main', methods=['GET'])
+def simulate_command_line():
+    try:
+        # Analyser les arguments HTTP
+        args = parse_http_arguments()
+
+        # Exécuter le programme principal en fonction du mode spécifié
+        if args.mode == 'collect':
+            collect(args.upload, args.init_fuseki)
+            return jsonify({'status': 'success', 'message': 'Collect operation completed.'})
+
+        elif args.mode == 'query':
+            # Exécuter la requête et retourner les résultats
+            results = query_restaurants(
+                float(args.latitude) if args.latitude else None,
+                float(args.longitude) if args.longitude else None,
+                float(args.distance) if args.distance else None,
+                args.time, args.day_of_week,
+                float(args.price), args.rank_by
+            )
+            return jsonify({'status': 'success', 'results': results})
+
+        elif args.mode == 'describe':
+            # Exécuter la description des préférences utilisateur et retourner les résultats
+            description_results = describe_user_preferences(args.fetch)
+            return jsonify({'status': 'success', 'description_results': description_results})
+
+        elif args.mode == 'server':
+            # Exécuter le serveur et retourner un message de succès
+            subprocess.run(['python', 'app.py'], check=True)
+            return jsonify({'status': 'success', 'message': 'Server started successfully.'})
+
+        else:
+            return jsonify({'status': 'error', 'message': 'Invalid mode specified.'})
+
+    except Exception as e:
+        return jsonify({'status': 'error', 'message': str(e)})
