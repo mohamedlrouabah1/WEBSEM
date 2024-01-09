@@ -1,61 +1,179 @@
-import datetime
-import sys
+import argparse
+import subprocess
+from datetime import datetime
 
-from models.query import  query_restaurants
-from models.describe import fetch_user_preferences
+from coopcycle_scrapper.scrapper import CoopCycleScrapper
+from coopcycle_scrapper.ldp_fuseki import LdpFuseki
+from controllers.routes import query_restaurants
+from models.describe import describe_user_preferences
+from models.menu import create_menu_graph, upload_menu
+
+def parse_command_line_arguments() -> argparse.Namespace:
+    """
+    Define the command line arguments for the main program.
+    """
+    parser = argparse.ArgumentParser(
+        prog='foodies',
+        description='M2 Semantic Web project : food delivery application'
+    )
+
+    parser.add_argument(
+        '-m', '--mode',
+        choices=['collect', 'query', 'describe', 'server'],
+        default='query',
+        help='The mode to run the program in.'
+    )
+
+    ## Collect mode
+
+    parser.add_argument(
+        '-i', '--init-fuseki',
+        action='store_true',
+        help='Initialize Fuseki datasets and shacl validation graph.'
+    )
+
+    parser.add_argument(
+        '-u', '--upload',
+        action='store_true',
+        help='Upload scrapped data to Fuseki.'
+    )
+
+    ## Query mode
+    now = datetime.now()
+
+    parser.add_argument(
+        '-d', '--day-of-week',
+        default=now.strftime("%A"),
+        help='The day of the delivery.'
+    )
+
+    parser.add_argument(
+        '-t', '--time',
+        default=now.strftime("%H:%M"),
+        help='The time of the delivery in format : %H:%M.'
+    )
+
+    parser.add_argument(
+        '-lat', '--latitude',
+        default=None,
+        help='The latitude of the user.'
+    )
+
+    parser.add_argument(
+        '-lon', '--longitude',
+        default=None,
+        help='The longitude of the user.'
+    )
+
+    parser.add_argument(
+        '-dist', '--distance',
+        default=1000,
+        help='The maximum distance from the user.'
+    )
+
+    parser.add_argument(
+        '-p', '--price',
+        default=114.00,
+        help='The maximum price of the delivery.'
+    )
+
+    parser.add_argument(
+        '-type', '--type-of-food',
+        help='The type of food wanted.'
+    )
+
+    parser.add_argument(
+        '-r', '--rank-by',
+        choices=['distance', 'price'],
+        default='distance',
+        help='The ranking criteria.'
+    )
+
+    parser.add_argument(
+        '-fetch', '--fetch',
+        help='''
+        A URI to a turtle graph.
+        mode query:
+        The URI to fetch the user preferences from.
+        mode describe:
+        The URI to fetch a coopcycle member from.
+        '''
+    )
+
+    return parser.parse_args()
+
+
+def collect(upload_to_fuseki:bool, init_fuseki:bool, uri:str=None):
+    """
+    Collect data from CoopCycle or a given URI and upload it to Fuseki.
+    """
+
+    if init_fuseki:
+        print("Initializing Fuseki datasets and shacl validation graph.")
+        LdpFuseki(update=True)
+
+    scrapper = CoopCycleScrapper(upload_to_fuseki)
+
+    if uri:
+        print(f"Collecting data from {uri}")
+        ldjson = scrapper.scrap_restaurant_from_url(uri)
+        scrapper.ldp.upload_ldjson(ldjson) # auto validated agains shacl
+
+        menus = scrapper.scrap_menu_from_url(uri)
+        menus_graph = create_menu_graph(menus)
+        upload_menu(menus_graph)
+
+    else:
+        print("Collecting data from CoopCycle.")
+        scrapper.run()
+
+
 
 def main():
-    # url = "https://coopcycle.org/fr/"
-    fuseki_url = "http://localhost:3030"
-    dataset_name = "shacl"
-    # data = collect(url)
-    # load json file
-    # data = json.load(open('collect.json'))
-    # # validate json file
-    # if shacl_validation('SHACL.ttl',data):
-    #     send_data_to_fuseki(fuseki_url, dataset_name, data)
+    """
+    Main program.
+    """
+    args = parse_command_line_arguments()
 
-    # collect user preferences
-    # user_prefs = collect_user_preferences()
-    # print(user_prefs)
-    # # create user preferences ttl file
-    # rdf_graph= create_rdf_graph(user_prefs)
-    # # validate user preferences
-    # if shacl_validation('SHACL.ttl',user_prefs):
-    #     send_data_to_fuseki(fuseki_url, "pref", rdf_graph, user_prefs['name'])
+    print('Bienvenue sur foodies !')
+    print('Vous avez sélectionné le mode :', args.mode)
+    print("Lancez le programme avec -h pour obtenir plus d'informations sur les arguments.")
 
-    now = datetime.datetime.now()
-    rank_by = 'distance'  # Default ranking
-    if len(sys.argv) < 2:
-        print("Usage: python main.py [preference URI]")
-        return
 
-    preference_uri = sys.argv[1]
-    user_prefs = fetch_user_preferences(preference_uri)
-    print(user_prefs)
-    # preferences_uri = "pref-charpenay.ttl"
-    # preferences_uri = "pref-alex.ttl"
-    # user_prefs = fetch_user_preferences(preferences_uri)
-    query_restaurants(fuseki_url, dataset_name, now, user_prefs['lat'], user_prefs['lon'], user_prefs['max_distance'], user_prefs['max_price'], rank_by)
+    if args.mode == 'collect':
+        collect(args.upload, args.init_fuseki, args.fetch)
 
-    # to launch pref : python3 main.py http://localhost:3030/pref/data?graph=http://example.org/pref-alex
-if __name__ == "__main__":
+    elif args.mode == 'query':
+        # display all arguments selected for the query mode pass to the query_restaurant function
+        print("Querying restaurants with the following arguments :")
+        print("\t- Day of week :", args.day_of_week)
+        print("\t- Time :", args.time)
+        print("\t- Latitude :", args.latitude)
+        print("\t- Longitude :", args.longitude)
+        print("\t- Distance :", args.distance)
+        print("\t- Price :", args.price)
+        print("\t- Rank by :", args.rank_by)
+        print("\t- Type of food :", args.type_of_food)
+        query_restaurants(
+            float(args.latitude) if args.latitude else None,
+            float(args.longitude) if args.longitude else None,
+            float(args.distance) if args.distance else None,
+            args.time, args.day_of_week,
+            float(args.price), args.rank_by
+        )
+
+    elif args.mode == 'describe':
+        describe_user_preferences(args.fetch)
+
+    elif args.mode == 'server':
+        print("Starting the server.")
+        try:
+            subprocess.run(['python', 'foodies/app.py'], check=True)
+            print("Server started.")
+
+        except subprocess.CalledProcessError as e:
+            print(f"Erreur lors de l'exécution de app.py : {e}")
+
+
+if __name__ == '__main__':
     main()
-
-# ################################# #
-# if len(sys.argv) < 7:
-#     print("Usage: python main.py <date> <time> <latitude> <longitude> <max_distance_km> <max_price> [--rank-by distance|price]")
-#     sys.exit(1)
-
-# date_str, time_str, user_lat, user_lon, max_distance, max_price = sys.argv[1:7]
-# if len(sys.argv) == 8:
-#     rank_by = sys.argv[7] if sys.argv[7] in ['distance', 'price'] else 'distance'
-# user_latitude = 44.8345933 # user's latitude
-# user_longitude = -0.5753607  # user's longitude
-# max_distance_km = 10  # Maximum distance in kilometers
-# price = 114.00  # Maximum price in euros
-# date_time = datetime.datetime.strptime(f"{date_str} {time_str}", "%Y-%m-%d %H:%M")
-# query_restaurants(fuseki_url, dataset_name, date_time, float(user_lat), float(user_lon), float(max_distance), float(max_price), rank_by)
-# pour test avec tes données que tu choisis sinon tu enleve le sys.argv si tu veux les utilsier en brute
-# python main.py 2023-03-15 14:00 44.8345933 -0.5753607 10 15.00 --rank-by price
-# ################################# #
