@@ -15,7 +15,7 @@ LDP_DATASETS = [
     'preferences',
 ]
 
-TIMEOUT=20
+TIMEOUT=60
 
 SCRAPPED_DATA_FILE='foodies/data/collect.json'
 

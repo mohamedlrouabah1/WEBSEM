@@ -16,10 +16,13 @@ class LdpFuseki:
     ENDPOINT_DATA=f'{LDP_URL}'
     ENDPOINT_SHACL=f'http://{LDP_HOST}:{LDP_PORT}/preferences/data?graph=http://foodies.org/validation/shacl'
 
-    def __init__(self):
+    def __init__(self, update=False):
         """
         Create the required dataset if it does not exist.
         """
+        if not update:
+            return
+
         for dataset in LDP_DATASETS:
             response = requests.get(
                 f'http://{LDP_HOST}:{LDP_PORT}/$/datasets/{dataset}',
@@ -105,10 +108,8 @@ class LdpFuseki:
             rdf_graph, shacl_graph, inference='rdfs', abort_on_first=False
             )
 
-        if conforms:
-            print("Data is valid according to SHACL shape.", file=sys.stderr)
-        else:
+        if not conforms:
             print("Data is not valid according to SHACL shape.", file=sys.stderr)
-            print(results_text)
+            print(results_text, file=sys.stderr)
 
         return conforms

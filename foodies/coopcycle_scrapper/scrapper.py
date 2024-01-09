@@ -26,6 +26,7 @@ class CoopCycleScrapper:
     SAVE_PATH = 'foodies/data/collect.json'
 
     def __init__(self):
+        print("Create web scrapper.")
         self.session = requests.Session()
         self.subdomains = self._get_subdomains()
         self.ldp = LdpFuseki()
@@ -34,7 +35,7 @@ class CoopCycleScrapper:
         """Main entry point for the scrapper"""
         ldjson_str = self.scrap_restaurants_jsonld()
         ldjson = json.loads(ldjson_str)
-        self.ldp.upload_ldjson(ldjson)
+        #self.ldp.upload_ldjson(ldjson)
 
 
     def scrap_restaurants_jsonld(self) -> str:
@@ -43,7 +44,7 @@ class CoopCycleScrapper:
 
         with ThreadPoolExecutor(max_workers=10) as executor:
             futures = [executor.submit(
-                            self._extract_subdomain_ld_json,
+                            self._scrap_restaurants_from_sitemap,
                             domain, self.session
                             )
                         for domain in self.subdomains]
@@ -83,7 +84,10 @@ class CoopCycleScrapper:
         Returns None if the request failed
         """
         try:
-            response = session.get(url)
+            response = session.get(
+                url,
+                headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',}
+                )
             response.raise_for_status()
             return BeautifulSoup(response.content, 'html.parser')
         except requests.RequestException as e:
@@ -91,7 +95,7 @@ class CoopCycleScrapper:
             return None
 
 
-    def _extract_subdomain_ld_json(self, domain_sitemap:str, session:requests.Session) -> dict[str, str]:
+    def _scrap_restaurants_from_sitemap(self, domain_sitemap:str, session:requests.Session) -> dict[str, str]:
         '''
         Fetches the sitemap for the given domain and processes each page in the sitemap
 
@@ -115,24 +119,32 @@ class CoopCycleScrapper:
         }
         '''
         domain_data = {}
+        restaurants_menus = {}
         if domain_sitemap := self._fetch_and_parse_html(domain_sitemap, session):
             loc_tags = domain_sitemap.find_all('loc')
             changefreq_tags = domain_sitemap.find_all('changefreq')
 
+            # for all the restaurant pages listed in the sitemap
             for loc, changefreq in zip(loc_tags, changefreq_tags):
                 if any(skip_word in loc.text for skip_word in CoopCycleScrapper.SKIPPED_URL):
                     continue
 
-                domain_data[loc.text] = self._scrap_ldjson_from_url(loc.text, session)
+                domain_data[loc.text] = self._scrap_restaurant_from_url(loc.text, session)
+
                 # domain_data[loc.text] = {
                 #     'changefreq': changefreq.text if changefreq else None,
                 #     'json_ld': json_ld
                 # }
+                restaurants_menus[loc.text] = self._scrap_menu_from_url(loc.text, session)
+
+            # save json file for debug
+            with open('foodies/data/menus.json', 'w', encoding="utf-8") as f:
+                json.dump(restaurants_menus, f)
 
         return domain_data
 
 
-    def _scrap_ldjson_from_url(self, url:str, session:requests.Session) -> str:
+    def _scrap_restaurant_from_url(self, url:str, session:requests.Session) -> str:
         '''
         Fetches the given URL and returns the JSON-LD data in the page
 
@@ -173,15 +185,13 @@ class CoopCycleScrapper:
 
                 elif child.name == 'div':
                     menus[menu_title].append( {
-                        'name': child.find(class_='menu-item-name').text, # 'h5'
-                        'description': child.find(class_='menu-item-description').text, # 'small'
-                        'price': child.find( class_='menu-item-price').text.strip(), # 'span',
+                        'name': tag_name.text if (tag_name := child.find(class_='menu-item-name')) else "No name", # 'h5'
+                        'description': tag_desc.text if (tag_desc := child.find(class_='menu-item-description')) else "No description", # 'small'
+                        'price': tag_price.text.strip() if (tag_price := child.find( class_='menu-item-price')) else None, # 'span',
                         'image': img_tag['src'] if (img_tag := child.find('img')) else None
                     })
 
-        # save json file for debug
-        with open('foodies/data/menus.json', 'w', encoding="utf-8") as f:
-            json.dump(menus, f)
+        return menus
 
 if __name__ == '__main__':
     CoopCycleScrapper().run()
