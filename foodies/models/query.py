@@ -1,3 +1,4 @@
+from __future__ import annotations
 import geopy.distance
 from SPARQLWrapper import SPARQLWrapper, JSON
 from config import LDP_URL
