@@ -183,7 +183,8 @@ class CoopCycleScrapper:
             for child in menu_wrapper.children:
                 if child.name == 'h2':
                     menu_title = child.text.strip()
-                    menus[menu_title] = []
+                    if menu_title not in menus:
+                        menus[menu_title] = []
 
                 elif child.name == 'div':
                     menus[menu_title].append( {
