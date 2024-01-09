@@ -1,67 +1,52 @@
-"""
-Transform the json file of scrapped menu items into a
-turtle graph
-"""
-from __future__ import annotations
-import requests
 import json
-from rdflib import Namespace, URIRef, Literal, Graph
+import requests
+from rdflib import Graph, URIRef, Literal, Namespace
 from rdflib.namespace import RDF, XSD
-# from config import LDP_URL, TIMEOUT
+from urllib.parse import quote
 
+SCHEMA = Namespace("http://schema.org/")
 
-SCHEMA = Namespace('http://schema.org/')
-WD = Namespace('http://www.wikidata.org/entity/')
+def encode_uri_component(component):
+    return quote(component.replace(" ", "_"), safe='')
 
-def create_restaurants_menus_graph(menus:dict) -> Graph:
+def create_menu_graph(restaurant_uri, menu_data):
     g = Graph()
-    for uri, menus in menus.items():
-        restaurant_uri = URIRef(uri)
-        if menus is None:
-            continue
+    # restaurant_ref = URIRef(restaurant_uri)
 
-        for menu_name, items in menus.items():
-            if items is None:
-                continue
+    for category, items in menu_data.items():
+        for item in items:
+            item_uri = f"{restaurant_uri}/menu/{encode_uri_component(category)}/{encode_uri_component(item['name'])}"
+            item_ref = URIRef(item_uri)
+            g.add((item_ref, RDF.type, SCHEMA.MenuItem))
+            g.add((item_ref, SCHEMA.name, Literal(item["name"], datatype=XSD.string)))
+            g.add((item_ref, SCHEMA.description, Literal(item.get("description", ""), datatype=XSD.string)))
+            g.add((item_ref, SCHEMA.price, Literal(item.get("price", "").replace("\u00a0\u20ac", " EUR"), datatype=XSD.string)))
 
-            menu_uri = URIRef(f"{uri}/menu/{menu_name.replace(' ', '_')}")
-            g.add((restaurant_uri, SCHEMA.hasMenu, menu_uri))
-
-            for item in items:
-                if item['name'] is None:
-                    continue
-                name = item['name'].replace(' ', '_').replace('\"', '')
-                item_uri = URIRef(f"{menu_uri}/item/{name}")
-                g.add((item_uri, RDF.type, SCHEMA.MenuItem))
-                g.add((item_uri, SCHEMA.name, Literal(item['name'], datatype=XSD.string)))
-                g.add((item_uri, SCHEMA.description, Literal(item['description'], datatype=XSD.string)))
-                price = rf'{item["price"]}'
-                g.add((item_uri, SCHEMA.price, Literal(price, datatype=XSD.string)))
-                g.add((menu_uri, SCHEMA.hasMenuItem, item_uri))
-
-    # save graph for debug
-    g.serialize('foodies/data/menus.ttl', format='turtle')
+            if item.get("image"):
+                g.add((item_ref, SCHEMA.image, URIRef(item["image"])))
 
     return g
 
 if __name__ == '__main__':
-    with open('foodies/data/menus.json', 'r', encoding="utf-8") as f:
-        menus = json.load(f)
-        create_restaurants_menus_graph(menus)
+    with open('foodies/data/menus.json', 'r', encoding='utf-8') as file:
+        data = json.load(file)
 
-    #upload ttl to fuseki
-    LDP_HOST = 'localhost'
-    LDP_PORT = '3030'
-    LDP_MAIN_DATASET = 'foodies'
-    LDP_URL = f"http://{LDP_HOST}:{LDP_PORT}/{LDP_MAIN_DATASET}"
-    with open('foodies/data/menus.ttl', 'r', encoding="utf-8") as f:
-        data = f.read()
-        headers = {"Content-Type": "text/turtle"}
-        response = requests.post(
-                    f"{LDP_URL}/data?graph=http://foodies.org/menus",
-                    data=data,
-                    headers=headers,
-                    timeout=60
-                )
-        print(response.status_code)
-        print(response.text)
+        for restaurant_uri, menu_data in data.items():
+            g = create_menu_graph(restaurant_uri, menu_data)
+            ttl_data = g.serialize(format='turtle')
+
+            # Upload to Fuseki
+            LDP_HOST = 'localhost'
+            LDP_PORT = '3030'
+            LDP_MAIN_DATASET = 'foodies'
+            LDP_URL = f"http://{LDP_HOST}:{LDP_PORT}/{LDP_MAIN_DATASET}"
+            headers = {"Content-Type": "text/turtle"}
+            response = requests.post(
+                        f"{LDP_URL}/data?graph={restaurant_uri}",
+                        data=ttl_data,
+                        headers=headers,
+                        timeout=60
+                    )
+            print(f"Uploading data for {restaurant_uri}")
+            print(response.status_code)
+            print(response.text)
