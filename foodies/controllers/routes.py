@@ -2,13 +2,10 @@
 Routes for the Foodies application.
 """
 import sys
-import argparse
-import subprocess
 from argparse import Namespace
 from datetime import datetime
 from flask import Blueprint
 from flask import jsonify, redirect, render_template, request, url_for
-from models.describe import describe_user_preferences
 from models.query import query_restaurants, query_menu_by_name
 from cache import cache
 from coopcycle_scrapper.ldp_fuseki import LdpFuseki

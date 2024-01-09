@@ -3,11 +3,11 @@ import os
 import sys
 import subprocess
 from argparse import Namespace
-from .coopcycle_scrapper.scrapper import CoopCycleScrapper
-from .coopcycle_scrapper.ldp_fuseki import LdpFuseki
-from .controllers.routes import query_restaurants
-from .models.describe import describe_user_preferences
-from .models.menu import create_menu_graph, upload_menu
+from coopcycle_scrapper.scrapper import CoopCycleScrapper
+from coopcycle_scrapper.ldp_fuseki import LdpFuseki
+from models.query import query_restaurants
+from models.describe import describe_user_preferences
+from models.menu import create_menu_graph, upload_menu
 
 def collect(upload_to_fuseki:bool, init_fuseki:bool, uri:str=None):
     """

@@ -9,9 +9,11 @@ from config import LDP_URL, TIMEOUT, LDP_HOST, LDP_PORT
 SCHEMA = Namespace("http://schema.org/")
 
 def encode_uri_component(component):
+    """Clean a string to be used as a URI component."""
     return quote(component.replace(" ", "_"), safe='')
 
 def create_menu_graph(restaurant_uri, menu_data):
+    """Create a graph for the menu of a restaurant."""
     g = Graph()
     # restaurant_ref = URIRef(restaurant_uri)
 
@@ -31,9 +33,7 @@ def create_menu_graph(restaurant_uri, menu_data):
 
 
 def upload_menu(restaurant_uri:str, ttl_data:str):
-    """
-    Uploads the given menu turtle graph to the LDP.
-    """
+    """Uploads the given menu turtle graph to the LDP."""
     headers = {"Content-Type": "text/turtle"}
     response = requests.post(
         f"{LDP_URL}/{encode_uri_component(restaurant_uri)}/menu",

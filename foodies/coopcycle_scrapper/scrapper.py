@@ -4,7 +4,6 @@ This file can either be used as a module or as a standalone script.
 """
 from __future__ import annotations
 import json
-import sys
 from concurrent.futures import ThreadPoolExecutor
 from concurrent.futures import as_completed
 from bs4 import BeautifulSoup

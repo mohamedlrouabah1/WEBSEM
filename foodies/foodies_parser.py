@@ -44,7 +44,7 @@ def parse_command_line_arguments() -> argparse.Namespace:
     parser.add_argument(
         '-t', '--time',
         default=now.strftime("%H:%M"),
-        help='The time of the delivery in format : %H:%M.'
+        help='The time of the delivery in format : H:M.'
     )
 
     parser.add_argument(
