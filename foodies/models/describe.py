@@ -136,3 +136,11 @@ def fetch_user_preferences(uri_name:str) -> dict:
                     user_prefs['max_distance'] = float(geo_radius) if geo_radius else None
 
     return user_prefs
+
+
+if __name__ == '__main__':
+
+    user_prefs = collect_user_preferences()
+    rdf_graph = create_rdf_graph(user_prefs)
+    send_data_to_fuseki(rdf_graph, user_prefs['name'])
+    print(fetch_user_preferences(user_prefs['name']))
