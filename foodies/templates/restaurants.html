@@ -59,16 +59,40 @@
                             {% else %}
                             <a href="{{ restaurant.graph }}" class="btn btn-primary">Visiter le site</a>
                             {% endif %}
+                            <button type="button" class="btn btn-info fetch-menu" data-restaurant-id="{{ restaurant.graph }}" data-toggle="modal" data-target="#menuModal">
+                                Afficher le Menu
+                            </button>
+                            
                         </div>
                     </div>
                 </div>
             </div>
             
+
             {% endfor %}
         </div>
         {% else %}
             <p>Aucun restaurant trouvé.</p>
         {% endif %}
+        <!-- Menu Modal -->
+        <div class="modal fade" id="menuModal" tabindex="-1" role="dialog" aria-labelledby="menuModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="menuModalLabel">Menu</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" id="menuContent">
+                        <!-- Menu content will be displayed here dynamically -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
@@ -104,6 +128,70 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+        function fetchAndDisplayMenu(restaurantId) {
+            // Use fetch to retrieve the menu data (replace with your actual API endpoint)
+            fetch(`/menu`, {
+                method: 'POST', // Use POST method to send restaurant ID
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ restaurant_id: restaurantId }) // Send restaurant_id in JSON format
+            })
+                .then(response => response.json())
+                .then(data => {
+                    const menuContent = document.getElementById("menuContent");
+        
+                    // Clear any previous menu content
+                    menuContent.innerHTML = "";
+        
+                    // Check if menu data is available
+                    if (data && data.menu.length > 0) {
+                        const ul = document.createElement("ul");
+                        ul.classList.add("list-group");
+        
+                        // Create menu items
+                        data.menu.forEach(menuItem => {
+                            const li = document.createElement("li");
+                            li.classList.add("list-group-item");
+                            li.innerHTML = `
+                                <table>
+                                    <tr>
+                                        ${menuItem.image ? `<td><img src="${menuItem.image}" alt="${menuItem.name}" width="100" height="100"></td>` : ''}
+                                        <td>
+                                            <strong>Nom : ${menuItem.name}</strong><br>
+                                            Description : ${menuItem.description} <br>
+                                            Price : ${menuItem.price}
+                                        </td>
+                                    </tr>
+                                </table>
+                            `;
+                            ul.appendChild(li);
+                        });
+        
+                        menuContent.appendChild(ul);
+                    } else {
+                        // Display a message if no menu data is available
+                        menuContent.innerHTML = "<p>Menu not available.</p>";
+                    }
+                })
+                .catch(error => {
+                    console.error("Error fetching menu:", error);
+                    const menuContent = document.getElementById("menuContent");
+                    menuContent.innerHTML = "<p>Error fetching menu data.</p>";
+                });
+        }
+        
+        // Add click event listener to the "Afficher le Menu" buttons
+        const fetchMenuButtons = document.querySelectorAll(".fetch-menu");
+        fetchMenuButtons.forEach(button => {
+            button.addEventListener("click", function () {
+                const restaurantId = this.getAttribute("data-restaurant-id");
+                fetchAndDisplayMenu(restaurantId);
+            });
+        });
+        
+    </script>
     
 </body>
 </html>

@@ -193,3 +193,5 @@ function sendSearchQuery(params) {
     })
     .catch(error => console.error('Error:', error));
 }
+
+
