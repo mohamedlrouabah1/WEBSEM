@@ -6,7 +6,7 @@ from pyshacl import validate
 from rdflib import Graph
 from tqdm import tqdm
 
-from config import LDP_URL, LDP_HOST, LDP_PORT, TIMEOUT
+from config import LDP_URL, LDP_HOST, LDP_PORT, TIMEOUT, LDP_DATASETS
 class LdpFuseki:
     """
     Use to interact with the Linked Data Platform of the foodies project.
@@ -16,7 +16,23 @@ class LdpFuseki:
     ENDPOINT_SHACL=f'http://{LDP_HOST}:{LDP_PORT}/preferences/data?graph=http://foodies.org/validation/shacl'
 
     def __init__(self):
-        """"""
+        """
+        Create the required dataset if it does not exist.
+        """
+        for dataset in LDP_DATASETS:
+            response = requests.get(
+                f'http://{LDP_HOST}:{LDP_PORT}/$/datasets/{dataset}',
+                params={'dbType': 'tdb2', 'dbName': dataset},
+            )
+
+            if response.status_code == 404:
+                print(f"Error while creating dataset {dataset}.", file=sys.stderr)
+
+
+        with open('foodies/data/collect.json', 'r') as f:
+            data = json.load(f)
+            self.upload_ldjson(data)
+
 
     def upload_ldjson(self, data:dict[str,dict]) -> bool:
         """
@@ -26,6 +42,8 @@ class LdpFuseki:
         errors = 0
 
         for restaurant_url,restaurant_ldjson in tqdm(data.items(),desc='Sending data to Fuseki'):
+            if restaurant_ldjson is None:
+                continue
             if self._validate_ldjson_against_shacl(restaurant_ldjson):
                 try:
                     response = requests.post(
