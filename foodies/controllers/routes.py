@@ -2,16 +2,16 @@
 Routes for the Foodies application.
 """
 import sys
-import argparse
 import subprocess
-
+from argparse import Namespace
 from datetime import datetime
 from flask import Blueprint
 from flask import jsonify, redirect, render_template, request, url_for
-from models.describe import create_rdf_graph, send_data_to_fuseki
+from models.describe import describe_user_preferences
 from models.query import query_restaurants
 from cache import cache
 from coopcycle_scrapper.ldp_fuseki import LdpFuseki
+from modes import collect, query, describe, server
 
 
 main_bp = Blueprint('main', __name__)
@@ -84,43 +84,54 @@ def preferences():
         return jsonify({'message': f'Erreur lors de la validation : {e}'})
 
 
+##### simulate the CLI via HTTP #####
+
+def parse_http_arguments() -> Namespace:
+    """
+    Parse HTTP arguments for the main program.
+    """
+    args = Namespace()
+
+    args.mode = request.args.get('mode', default='query')
+
+    args.init_fuseki = request.args.get('init-fuseki', default=False, type=bool)
+    args.upload = request.args.get('upload', default=False, type=bool)
+
+    now = datetime.now()
+
+    args.day_of_week = request.args.get('day-of-week', default=now.strftime("%A"))
+    args.time = request.args.get('time', default=now.strftime("%H:%M"))
+    args.latitude = request.args.get('latitude', default=None)
+    args.longitude = request.args.get('longitude', default=None)
+    args.distance = request.args.get('distance', default=1000, type=float)
+    args.price = request.args.get('price', default=114.00, type=float)
+    args.type_of_food = request.args.get('type-of-food', default=None)
+    args.rank_by = request.args.get('rank-by', default='distance')
+
+    args.fetch = request.args.get('fetch', default=None)
+
+    return args
 
 
-# simulate the CLI via HTTP
-@main_bp.route('/main', methods=['GET'])
+# @main_bp.route('/main', methods=['GET'])
 def simulate_command_line():
     try:
-        # Analyser les arguments HTTP
         args = parse_http_arguments()
 
-        # Exécuter le programme principal en fonction du mode spécifié
         if args.mode == 'collect':
             collect(args.upload, args.init_fuseki)
             return jsonify({'status': 'success', 'message': 'Collect operation completed.'})
 
         elif args.mode == 'query':
-            # Exécuter la requête et retourner les résultats
-            results = query_restaurants(
-                float(args.latitude) if args.latitude else None,
-                float(args.longitude) if args.longitude else None,
-                float(args.distance) if args.distance else None,
-                args.time, args.day_of_week,
-                float(args.price), args.rank_by
-            )
+            query(args)
             return jsonify({'status': 'success', 'results': results})
 
         elif args.mode == 'describe':
-            # Exécuter la description des préférences utilisateur et retourner les résultats
-            description_results = describe_user_preferences(args.fetch)
+            describe(args.fetch)
             return jsonify({'status': 'success', 'description_results': description_results})
 
         elif args.mode == 'server':
-            # Exécuter le serveur et retourner un message de succès
-            subprocess.run(['python', 'app.py'], check=True)
-            return jsonify({'status': 'success', 'message': 'Server started successfully.'})
-
-        else:
-            return jsonify({'status': 'error', 'message': 'Invalid mode specified.'})
+            server()
 
     except Exception as e:
         return jsonify({'status': 'error', 'message': str(e)})
