@@ -139,7 +139,7 @@ def fetch_user_preferences(uri_name:str) -> dict:
 
 
 
-def describe_user_preferences(uri:str=None) -> None:
+def describe_user_preferences(uri:str=None) -> Graph:
     """
     Ask the user to enter their preferences and send them to a Jena Fuseki dataset.
     If an uri is provided, fetch the user preferences from the turtle graph at the uri.
@@ -162,6 +162,7 @@ def describe_user_preferences(uri:str=None) -> None:
     print("Verifying graph with shacl and then upload to fuseki.")
     send_data_to_fuseki(rdf_graph, user_prefs['name'])
     print(fetch_user_preferences(user_prefs['name']))
+    return rdf_graph
 
 
 if __name__ == '__main__':

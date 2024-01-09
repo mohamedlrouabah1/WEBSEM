@@ -11,7 +11,8 @@ from models.describe import describe_user_preferences
 from models.query import query_restaurants
 from cache import cache
 from coopcycle_scrapper.ldp_fuseki import LdpFuseki
-from modes import collect, query, describe, server
+from modes import collect, describe, server
+from modes import query as query_mode
 
 
 main_bp = Blueprint('main', __name__)
@@ -113,8 +114,11 @@ def parse_http_arguments() -> Namespace:
     return args
 
 
-# @main_bp.route('/main', methods=['GET'])
+@main_bp.route('/main', methods=['GET'])
 def simulate_command_line():
+    """
+    Endpoint to simulate the behavior of the CLI using http requests.
+    """
     try:
         args = parse_http_arguments()
 
@@ -123,12 +127,12 @@ def simulate_command_line():
             return jsonify({'status': 'success', 'message': 'Collect operation completed.'})
 
         elif args.mode == 'query':
-            query(args)
-            return jsonify({'status': 'success', 'results': results})
+            res = query_mode(args)
+            return jsonify({'status': 'success', 'results': res})
 
         elif args.mode == 'describe':
-            describe(args.fetch)
-            return jsonify({'status': 'success', 'description_results': description_results})
+            res = describe(args.fetch)
+            return jsonify({'status': 'success', 'description_results': res})
 
         elif args.mode == 'server':
             server()

@@ -17,7 +17,7 @@ def calculate_distance(lat1, lon1, lat2, lon2):
     return dist
 
 
-def query_restaurants(user_lat, user_lon, georadius, current_time, day_of_week, max_price, rank_by):
+def query_restaurants(user_lat, user_lon, georadius, current_time, day_of_week, max_price, rank_by) -> list:
 
     # Filtre pour le prix maximum
     max_price_filter = f"FILTER (xsd:decimal(?deliveryPrice) <= {max_price})" if max_price is not None else ""

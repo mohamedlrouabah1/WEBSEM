@@ -5,9 +5,9 @@ import subprocess
 from argparse import Namespace
 from .coopcycle_scrapper.scrapper import CoopCycleScrapper
 from .coopcycle_scrapper.ldp_fuseki import LdpFuseki
-from controllers.routes import query_restaurants
-from models.describe import describe_user_preferences
-from models.menu import create_menu_graph, upload_menu
+from .controllers.routes import query_restaurants
+from .models.describe import describe_user_preferences
+from .models.menu import create_menu_graph, upload_menu
 
 def collect(upload_to_fuseki:bool, init_fuseki:bool, uri:str=None):
     """
@@ -26,15 +26,15 @@ def collect(upload_to_fuseki:bool, init_fuseki:bool, uri:str=None):
         scrapper.ldp.upload_ldjson(ldjson) # auto validated agains shacl
 
         menus = scrapper.scrap_menu_from_url(uri, scrapper.session)
-        menus_graph = create_menu_graph(menus)
-        upload_menu(menus_graph)
+        menus_graph = create_menu_graph(uri, menus)
+        upload_menu(uri, menus_graph)
 
     else:
         print("Collecting data from CoopCycle.")
         scrapper.run()
 
 
-def query(args:Namespace):
+def query(args:Namespace) -> list:
     """Search for a delivery service given the user input."""
     # display all arguments selected for the query mode pass to the query_restaurant function
     print("Querying restaurants with the following arguments :")
@@ -46,7 +46,7 @@ def query(args:Namespace):
     print("\t- Price :", args.price)
     print("\t- Rank by :", args.rank_by)
     print("\t- Type of food :", args.type_of_food)
-    query_restaurants(
+    return query_restaurants(
         float(args.latitude) if args.latitude else None,
         float(args.longitude) if args.longitude else None,
         float(args.distance) if args.distance else None,
@@ -56,7 +56,7 @@ def query(args:Namespace):
 
 def describe(uri:str):
     """Ask or fetch user preferences and upload them on the ldp."""
-    describe_user_preferences(uri)
+    return describe_user_preferences(uri)
 
 def server():
     """
