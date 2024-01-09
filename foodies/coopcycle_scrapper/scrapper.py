@@ -25,17 +25,20 @@ class CoopCycleScrapper:
 
     SAVE_PATH = 'foodies/data/collect.json'
 
-    def __init__(self):
+    def __init__(self, upload=True):
         print("Create web scrapper.")
         self.session = requests.Session()
+        self.upload = upload
         self.subdomains = self._get_subdomains()
         self.ldp = LdpFuseki()
 
     def run(self):
         """Main entry point for the scrapper"""
         ldjson_str = self.scrap_restaurants_jsonld()
-        ldjson = json.loads(ldjson_str)
-        #self.ldp.upload_ldjson(ldjson)
+
+        if self.upload:
+            ldjson = json.loads(ldjson_str)
+            self.ldp.upload_ldjson(ldjson)
 
 
     def scrap_restaurants_jsonld(self) -> str:
@@ -129,13 +132,13 @@ class CoopCycleScrapper:
                 if any(skip_word in loc.text for skip_word in CoopCycleScrapper.SKIPPED_URL):
                     continue
 
-                domain_data[loc.text] = self._scrap_restaurant_from_url(loc.text, session)
+                domain_data[loc.text] = self.scrap_restaurant_from_url(loc.text, session)
 
                 # domain_data[loc.text] = {
                 #     'changefreq': changefreq.text if changefreq else None,
                 #     'json_ld': json_ld
                 # }
-                restaurants_menus[loc.text] = self._scrap_menu_from_url(loc.text, session)
+                restaurants_menus[loc.text] = self.scrap_menu_from_url(loc.text, session)
 
             # save json file for debug
             with open('foodies/data/menus.json', 'w', encoding="utf-8") as f:
@@ -144,7 +147,7 @@ class CoopCycleScrapper:
         return domain_data
 
 
-    def _scrap_restaurant_from_url(self, url:str, session:requests.Session) -> str:
+    def scrap_restaurant_from_url(self, url:str, session:requests.Session) -> str:
         '''
         Fetches the given URL and returns the JSON-LD data in the page
 
@@ -159,7 +162,7 @@ class CoopCycleScrapper:
         return None
 
 
-    def _scrap_menu_from_url(self, restaurant_url:str, session:requests.Session) -> dict:
+    def scrap_menu_from_url(self, restaurant_url:str, session:requests.Session) -> dict:
         '''
         Fetches the given URL and returns the menu in the page
 

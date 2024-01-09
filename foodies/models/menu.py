@@ -1,8 +1,10 @@
 import json
 import requests
+import sys
 from rdflib import Graph, URIRef, Literal, Namespace
 from rdflib.namespace import RDF, XSD
 from urllib.parse import quote
+from config import LDP_URL, TIMEOUT, LDP_HOST, LDP_PORT
 
 SCHEMA = Namespace("http://schema.org/")
 
@@ -27,26 +29,29 @@ def create_menu_graph(restaurant_uri, menu_data):
 
     return g
 
+
+def upload_menu(restaurant_uri:str, ttl_data:str):
+    """
+    Uploads the given menu turtle graph to the LDP.
+    """
+    headers = {"Content-Type": "text/turtle"}
+    response = requests.post(
+        f"{LDP_URL}/{encode_uri_component(restaurant_uri)}/menu",
+        data=ttl_data,
+        headers=headers,
+        timeout=TIMEOUT,
+    )
+
+    if response.status_code != 200:
+        print(f"Error while uploading menu for {restaurant_uri}.", file=sys.stderr)
+        print(response.text, file=sys.stderr)
+
 if __name__ == '__main__':
     with open('foodies/data/menus.json', 'r', encoding='utf-8') as file:
         data = json.load(file)
 
-        for restaurant_uri, menu_data in data.items():
-            g = create_menu_graph(restaurant_uri, menu_data)
-            ttl_data = g.serialize(format='turtle')
+        for uri, menus in data.items():
+            g = create_menu_graph(uri, menus)
+            menu_ttl = g.serialize(format='turtle')
 
-            # Upload to Fuseki
-            LDP_HOST = 'localhost'
-            LDP_PORT = '3030'
-            LDP_MAIN_DATASET = 'foodies'
-            LDP_URL = f"http://{LDP_HOST}:{LDP_PORT}/{LDP_MAIN_DATASET}"
-            headers = {"Content-Type": "text/turtle"}
-            response = requests.post(
-                        f"{LDP_URL}/data?graph={restaurant_uri}",
-                        data=ttl_data,
-                        headers=headers,
-                        timeout=60
-                    )
-            print(f"Uploading data for {restaurant_uri}")
-            print(response.status_code)
-            print(response.text)
+            upload_menu(uri, menu_ttl)

@@ -136,3 +136,33 @@ def fetch_user_preferences(uri_name:str) -> dict:
                     user_prefs['max_distance'] = float(geo_radius) if geo_radius else None
 
     return user_prefs
+
+
+
+def describe_user_preferences(uri:str=None) -> None:
+    """
+    Ask the user to enter their preferences and send them to a Jena Fuseki dataset.
+    If an uri is provided, fetch the user preferences from the turtle graph at the uri.
+    """
+    if uri:
+        print(f"Fetching user preferences from {uri}")
+        response = requests.get(
+            uri,
+            headers={'Accept': 'text/turtle'},
+            timeout=60
+        )
+        ref_graph = Graph()
+        ref_graph.parse(data=response.text, format='ttl')
+        print(ref_graph.serialize(format='turtle').decode('utf-8'))
+
+    else:
+        user_prefs = collect_user_preferences()
+        rdf_graph = create_rdf_graph(user_prefs)
+
+    print("Verifying graph with shacl and then upload to fuseki.")
+    send_data_to_fuseki(rdf_graph, user_prefs['name'])
+    print(fetch_user_preferences(user_prefs['name']))
+
+
+if __name__ == '__main__':
+    describe_user_preferences()
