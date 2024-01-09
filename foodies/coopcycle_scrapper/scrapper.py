@@ -4,6 +4,7 @@ This file can either be used as a module or as a standalone script.
 """
 from __future__ import annotations
 import json
+import sys
 from concurrent.futures import ThreadPoolExecutor
 from concurrent.futures import as_completed
 from bs4 import BeautifulSoup
@@ -145,6 +146,42 @@ class CoopCycleScrapper:
                 return json_ld
         return None
 
+
+    def _scrap_menu_from_url(self, restaurant_url:str, session:requests.Session) -> dict:
+        '''
+        Fetches the given URL and returns the menu in the page
+
+        Returns None if the request failed
+
+        else dict of menus with key menu name or default and value a list of items of the menu.
+        '''
+        menus = {}
+        scrapped_page = self._fetch_and_parse_html(restaurant_url, session)
+        if not scrapped_page:
+            return menus
+
+        menu_wrappers = scrapped_page.find_all('div', class_='restaurant-menu-wrapper')
+
+        for menu_wrapper in menu_wrappers:
+            menu_title = "default"
+            menus[menu_title] = []
+
+            for child in menu_wrapper.children:
+                if child.name == 'h2':
+                    menu_title = child.text.strip()
+                    menus[menu_title] = []
+
+                elif child.name == 'div':
+                    menus[menu_title].append( {
+                        'name': child.find(class_='menu-item-name').text, # 'h5'
+                        'description': child.find(class_='menu-item-description').text, # 'small'
+                        'price': child.find( class_='menu-item-price').text.strip(), # 'span',
+                        'image': img_tag['src'] if (img_tag := child.find('img')) else None
+                    })
+
+        # save json file for debug
+        with open('foodies/data/menus.json', 'w', encoding="utf-8") as f:
+            json.dump(menus, f)
 
 if __name__ == '__main__':
     CoopCycleScrapper().run()
