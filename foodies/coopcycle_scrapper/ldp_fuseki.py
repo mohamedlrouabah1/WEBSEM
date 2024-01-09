@@ -6,7 +6,8 @@ from pyshacl import validate
 from rdflib import Graph
 from tqdm import tqdm
 
-from config import LDP_URL, LDP_HOST, LDP_PORT, TIMEOUT, LDP_DATASETS
+from config import LDP_URL, LDP_HOST, LDP_PORT, TIMEOUT, LDP_DATASETS, SCRAPPED_DATA_FILE
+from config import COOPCYCLE_SHACL_FILE
 class LdpFuseki:
     """
     Use to interact with the Linked Data Platform of the foodies project.
@@ -23,15 +24,26 @@ class LdpFuseki:
             response = requests.get(
                 f'http://{LDP_HOST}:{LDP_PORT}/$/datasets/{dataset}',
                 params={'dbType': 'tdb2', 'dbName': dataset},
+                timeout=TIMEOUT
             )
 
             if response.status_code == 404:
                 print(f"Error while creating dataset {dataset}.", file=sys.stderr)
 
 
-        with open('foodies/data/collect.json', 'r') as f:
+        with open(SCRAPPED_DATA_FILE, 'r', encoding="utf-8") as f:
             data = json.load(f)
             self.upload_ldjson(data)
+
+        # upload shacl graph inside preferences dataset :
+        shacl = Graph()
+        shacl.parse(COOPCYCLE_SHACL_FILE, format='ttl')
+        response = requests.post(
+                    f"{LdpFuseki.ENDPOINT_SHACL}",
+                    data=shacl.serialize(format='turtle'),
+                    headers={"Content-Type": "text/turtle"},
+                    timeout=TIMEOUT
+                )
 
 
     def upload_ldjson(self, data:dict[str,dict]) -> bool:

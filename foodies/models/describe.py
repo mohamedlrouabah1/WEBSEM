@@ -13,17 +13,11 @@ def collect_user_preferences() -> dict:
     """
     preferences = {}
 
-    preferences['name'] = input("Enter your name: ")
-    preferences['address'] = input("Enter your address: ")
-    preferences['postal_code'] = input("Enter your postal code: ")
-    preferences['city'] = input("Enter your city: ")
-    preferences['country'] = input("Enter your country: ")
-    preferences['max_distance'] = float(input("Enter your maximum distance for a meal (in meters): "))
-    preferences['longitude'] = float(input("Enter your longitude: "))
-    preferences['latitude'] = float(input("Enter your latitude: "))
-    preferences['max_price'] = float(input("Enter your maximum price for a meal (in EUR): "))
-    preferences['seller_url'] = input("Enter the URL of the seller (restaurant): ")
-    preferences['item_offered'] = input("Enter the Wikidata ID of the item offered: ")
+    for key in ('name', 'address', 'postal_code', 'city', 'country', 'seller_url', 'item_offered'):
+        preferences[key] = input(f"Enter your {key}: ")
+
+    for key in ('max_distance', 'longitude', 'latitude', 'max_price'):
+        preferences[key] = float(input(f"Enter your {key}: "))
 
     return preferences
 
