@@ -2,13 +2,14 @@
 Routes for the Foodies application.
 """
 import sys
+import argparse
 import subprocess
 from argparse import Namespace
 from datetime import datetime
 from flask import Blueprint
 from flask import jsonify, redirect, render_template, request, url_for
 from models.describe import describe_user_preferences
-from models.query import query_restaurants
+from models.query import query_restaurants, query_menu_by_name
 from cache import cache
 from coopcycle_scrapper.ldp_fuseki import LdpFuseki
 from modes import collect, describe, server
@@ -59,6 +60,8 @@ def query():
     cache.set(cache_key, results, timeout=200)
     return redirect(url_for('main.show_restaurants', key=cache_key))
 
+
+
 @main_bp.route('/restaurants', methods=['GET'])
 def show_restaurants():
     """Get restaurant details"""
@@ -83,6 +86,33 @@ def preferences():
         return jsonify({'message': 'Fichier SHACL introuvable'})
     except Exception as e:
         return jsonify({'message': f'Erreur lors de la validation : {e}'})
+
+
+@main_bp.route('/menu', methods=['POST'])
+def query_menu_by_id():
+    """
+    Query a SPARQL endpoint to retrieve the menu of a specific restaurant by ID.
+    """
+    try:
+        data = request.get_json()
+        restaurant_id = data.get('restaurant_id')
+        print(f"Restaurant ID: {restaurant_id}")
+        if not restaurant_id:
+            return jsonify({'message': 'Restaurant ID is required in the request.'}), 400
+
+        menu_data = query_menu_by_name(restaurant_id)
+
+        # Check if menu data is available
+        if menu_data and 'menu' in menu_data:
+            return jsonify(menu_data)
+        else:
+            # Return a message if no menu data is available
+            return jsonify({'message': 'Menu not found for the given restaurant ID.'}), 404
+    except Exception as e:
+        print(f"Error querying menu: {e}")
+        return jsonify({'message': 'Error querying menu data.'}), 500
+
+
 
 
 ##### simulate the CLI via HTTP #####
@@ -120,8 +150,10 @@ def simulate_command_line():
     Endpoint to simulate the behavior of the CLI using http requests.
     """
     try:
+        # Analyser les arguments HTTP
         args = parse_http_arguments()
 
+        # Exécuter le programme principal en fonction du mode spécifié
         if args.mode == 'collect':
             collect(args.upload, args.init_fuseki)
             return jsonify({'status': 'success', 'message': 'Collect operation completed.'})

@@ -121,3 +121,48 @@ def query_restaurants(user_lat, user_lon, georadius, current_time, day_of_week, 
     except Exception as e:
         print(f"Error querying Fuseki: {e}")
         return []
+
+
+def query_menu_by_name(graph_name):
+    # Modifier votre requête SPARQL pour récupérer le menu en fonction du nom du graph
+    sparql = SPARQLWrapper(f'{LDP_URL}/query')
+    query = f"""
+     PREFIX ns1: <http://schema.org/>
+     PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+     SELECT ?menuItemName ?menuItemDescription ?menuItemPrice ?menuItemImage
+     WHERE {{
+       GRAPH <{graph_name}> {{
+         ?menuItem a ns1:MenuItem ;
+           ns1:name ?menuItemName .
+         OPTIONAL {{ ?menuItem ns1:description ?menuItemDescription . }}
+         OPTIONAL {{ ?menuItem ns1:price ?menuItemPrice . }}
+         OPTIONAL {{ ?menuItem ns1:image ?menuItemImage . }}
+       }}
+     }}
+     """
+
+    try:
+        sparql.setQuery(query)
+        sparql.setReturnFormat(JSON)
+        results = sparql.query().convert()
+
+        menu_data = []
+        for result in results["results"]["bindings"]:
+            name = result['menuItemName']['value'] if 'menuItemName' in result else "Unknown"
+            description = result.get('menuItemDescription', {}).get('value', 'Description not available')
+            price = result.get('menuItemPrice', {}).get('value', 'Price not available')
+            image = result.get('menuItemImage', {}).get('value', 'Image URL not available')
+
+            menu_item = {
+                'name': name,
+                'description': description,
+                'price': price,
+                'image': image
+            }
+            menu_data.append(menu_item)
+
+        return {'menu': menu_data}
+    except Exception as e:
+        print(f"Erreur lors de la requête du menu : {e}")
+        return {}
