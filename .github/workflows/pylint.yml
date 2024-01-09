@@ -25,3 +25,9 @@ jobs:
       - name: Analysing the code with pylint
         run: |
           pylint --rcfile=.github/workflows/.pylintrc $(git ls-files '*.py')
+
+      - uses: akhileshns/heroku-deploy@v3.12.14
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: 'foodies-ldp'
+          heroku_email: ${{secrets.HEROKU_EMAIL}}
