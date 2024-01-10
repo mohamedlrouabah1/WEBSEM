@@ -6,7 +6,7 @@ import requests
 from rdflib import Graph, URIRef, Literal, Namespace
 from rdflib.namespace import RDF, XSD
 sys.path.append('../foodies')
-from foodies.config import LDP_URL, TIMEOUT
+from foodies.config import LDP_URL, TIMEOUT, AUTHORIZATION_HEADER
 
 SCHEMA = Namespace("http://schema.org/")
 
@@ -36,11 +36,13 @@ def create_menu_graph(restaurant_uri, menu_data):
 
 def upload_menu(restaurant_uri:str, ttl_data:str):
     """Uploads the given menu turtle graph to the LDP."""
-    headers = {"Content-Type": "text/turtle"}
     response = requests.post(
         f"{LDP_URL}/{encode_uri_component(restaurant_uri)}/menu",
         data=ttl_data,
-        headers=headers,
+        headers={
+            "Content-Type": "text/turtle",
+            **AUTHORIZATION_HEADER,
+        },
         timeout=TIMEOUT,
     )
 

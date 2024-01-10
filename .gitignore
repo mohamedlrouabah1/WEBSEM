@@ -9,4 +9,7 @@ venv/
 examples/
 scrapping/
 
+
+# config files
 **/shiro.ini
+.env
