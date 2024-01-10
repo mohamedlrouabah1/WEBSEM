@@ -3,6 +3,8 @@
 # Specify a configuration file.
 #rcfile=
 
+disable=W0141
+
 # Python code to execute, usually for sys.path manipulation such as
 # pygtk.require().
 #init-hook=
