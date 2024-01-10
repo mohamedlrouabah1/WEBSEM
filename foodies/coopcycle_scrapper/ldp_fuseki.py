@@ -87,7 +87,7 @@ class LdpFuseki:
         """
         Validate JSON-LD data against a SHACL shape.
 
-        :param jsonld_data: JSON-LD data to be validated
+        :param data: JSON-LD data to be validated
         :return: Boolean indicating if data is valid
         """
         # Convert JSON-LD to RDF graph
