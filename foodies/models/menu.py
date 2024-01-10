@@ -1,11 +1,12 @@
 from __future__ import annotations
 import sys
 import json
+from urllib.parse import quote
 import requests
 from rdflib import Graph, URIRef, Literal, Namespace
 from rdflib.namespace import RDF, XSD
-from urllib.parse import quote
-from config import LDP_URL, TIMEOUT
+sys.path.append('../foodies')
+from foodies.config import LDP_URL, TIMEOUT
 
 SCHEMA = Namespace("http://schema.org/")
 

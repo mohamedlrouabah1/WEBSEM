@@ -1,8 +1,10 @@
 from __future__ import annotations
+import sys
 import requests
 from rdflib import Namespace, URIRef, Literal, Graph, BNode
 from rdflib.namespace import RDF, XSD
-from config import LDP_URL, TIMEOUT, LDP_HOST, LDP_PORT
+sys.path.append('../foodies')
+from foodies.config import LDP_URL, TIMEOUT, LDP_HOST, LDP_PORT
 
 SCHEMA = Namespace('http://schema.org/')
 WD = Namespace('http://www.wikidata.org/entity/')
