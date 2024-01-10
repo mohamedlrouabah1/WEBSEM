@@ -125,7 +125,6 @@ def query_restaurants(user_lat, user_lon, georadius, current_time, day_of_week, 
 
 
 def query_menu_by_name(graph_name):
-    # Modifier votre requête SPARQL pour récupérer le menu en fonction du nom du graph
     sparql = SPARQLWrapper(f'{LDP_URL}/query')
     query = f"""
      PREFIX ns1: <http://schema.org/>

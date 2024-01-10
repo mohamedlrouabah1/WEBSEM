@@ -8,3 +8,5 @@ venv/
 # personnal folder to store some examples / output
 examples/
 scrapping/
+
+**/shiro.ini
