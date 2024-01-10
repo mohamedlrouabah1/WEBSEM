@@ -76,11 +76,12 @@ def preferences():
 
         if LdpFuseki().upload_ldjson(data['name']):
             return jsonify({'message': 'Préférences enregistrées avec succès'})
-        else:
-            return jsonify({'message': 'Échec de la validation SHACL'})
+
+        return jsonify({'message': 'Échec de la validation SHACL'})
 
     except FileNotFoundError:
         return jsonify({'message': 'Fichier SHACL introuvable'})
+
     except Exception as e:
         return jsonify({'message': f'Erreur lors de la validation : {e}'})
 
@@ -102,9 +103,10 @@ def query_menu_by_id():
         # Check if menu data is available
         if menu_data and 'menu' in menu_data:
             return jsonify(menu_data)
-        else:
-            # Return a message if no menu data is available
-            return jsonify({'message': 'Menu not found for the given restaurant ID.'}), 404
+
+        # Return a message if no menu data is available
+        return jsonify({'message': 'Menu not found for the given restaurant ID.'}), 404
+
     except Exception as e:
         print(f"Error querying menu: {e}")
         return jsonify({'message': 'Error querying menu data.'}), 500
