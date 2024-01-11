@@ -14,6 +14,7 @@ from controllers.user import user_bp
 debug = os.getenv('DEBUG', 'True') == 'True'
 
 app = Flask(__name__, template_folder='templates', static_folder='static')
+app.config['ADDITIONAL_STATIC_FOLDER'] = 'foodies/data'
 app.config.from_mapping(CACHE_CONFIG)
 app.secret_key = os.environ.get('SECRET_KEY', 'dev')
 

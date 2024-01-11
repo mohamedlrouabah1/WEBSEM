@@ -45,6 +45,7 @@ def send_to_fuseki():
         with open("foodies/data/collect.json", "r", encoding="utf-8") as f:
             data = json.load(f)
         LdpFuseki().upload_ldjson(data)
+        LdpFuseki().upload_menu()
         return render_template('dev.html' , result=jsonify({'message': 'Données envoyées avec succès'}))
 
     except Exception as e:
