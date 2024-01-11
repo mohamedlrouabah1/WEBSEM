@@ -3,8 +3,7 @@ import sys
 import requests
 from rdflib import Namespace, URIRef, Literal, Graph, BNode
 from rdflib.namespace import RDF, XSD
-sys.path.append('../foodies')
-from foodies.config import LDP_URL, TIMEOUT, LDP_HOST, LDP_PORT, AUTHORIZATION_HEADER
+from config import LDP_URL, TIMEOUT, LDP_HOST, LDP_PORT, AUTHORIZATION_HEADER
 
 SCHEMA = Namespace('http://schema.org/')
 WD = Namespace('http://www.wikidata.org/entity/')
@@ -106,7 +105,7 @@ def fetch_user_preferences(uri_name:str) -> dict:
     """
     response = requests.get(
         f"http://{LDP_HOST}:{LDP_PORT}/preferences/data?graph=http://foodies.org/user/{uri_name}",
-        headers=AUTHORIZATION_HEADER
+        headers=AUTHORIZATION_HEADER,
         timeout=TIMEOUT
         )
 

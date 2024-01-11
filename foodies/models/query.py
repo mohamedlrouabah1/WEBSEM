@@ -1,9 +1,7 @@
 from __future__ import annotations
-import sys
 import geopy.distance
 from SPARQLWrapper import SPARQLWrapper, JSON
-sys.path.append('../foodies')
-from foodies.config import LDP_URL
+from config import LDP_URL
 
 
 def calculate_distance(lat1, lon1, lat2, lon2):

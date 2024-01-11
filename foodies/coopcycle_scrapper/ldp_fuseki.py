@@ -5,9 +5,11 @@ import requests
 from pyshacl import validate
 from rdflib import Graph
 from tqdm import tqdm
-
+sys.path.append('../foodies')
 from config import LDP_URL, LDP_HOST, LDP_PORT, TIMEOUT, LDP_DATASETS, SCRAPPED_DATA_FILE
 from config import COOPCYCLE_SHACL_FILE, AUTHORIZATION_HEADER
+
+
 class LdpFuseki:
     """
     Use to interact with the Linked Data Platform of the foodies project.
@@ -24,8 +26,8 @@ class LdpFuseki:
             return
 
         for dataset in LDP_DATASETS:
-            response = requests.get(
-                f'http://{LDP_HOST}:{LDP_PORT}/$/datasets/{dataset}',
+            response = requests.post(
+                f'http://{LDP_HOST}:{LDP_PORT}/$/datasets',
                 params={'dbType': 'tdb2', 'dbName': dataset},
                 headers=AUTHORIZATION_HEADER,
                 timeout=TIMEOUT

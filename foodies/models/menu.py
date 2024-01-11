@@ -5,8 +5,7 @@ from urllib.parse import quote
 import requests
 from rdflib import Graph, URIRef, Literal, Namespace
 from rdflib.namespace import RDF, XSD
-sys.path.append('../foodies')
-from foodies.config import LDP_URL, TIMEOUT, AUTHORIZATION_HEADER
+from config import LDP_URL, TIMEOUT, AUTHORIZATION_HEADER
 
 SCHEMA = Namespace("http://schema.org/")
 
