@@ -1,0 +1,1937 @@
+@prefix ns1: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/122-asador-don-pollo> ns1:hasMenu <https://eramangasteiz.coopcycle.org/es/restaurant/122-asador-don-pollo/menu/Asados>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/122-asador-don-pollo/menu/Bebidas>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/122-asador-don-pollo/menu/Ensaladas>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/122-asador-don-pollo/menu/Patatas>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/122-asador-don-pollo/menu/Pescados>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/122-asador-don-pollo/menu/Postres>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/122-asador-don-pollo/menu/Raciones>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/122-asador-don-pollo/menu/Salsas>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/122-asador-don-pollo/menu/Top_Ventas>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/122-asador-don-pollo/menu/default> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/123-deep-blue-bar> ns1:hasMenu <https://eramangasteiz.coopcycle.org/es/restaurant/123-deep-blue-bar/menu/Bebidas>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/123-deep-blue-bar/menu/Bocadillos>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/123-deep-blue-bar/menu/Burguers>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/123-deep-blue-bar/menu/Entrantes>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/123-deep-blue-bar/menu/Platos_combinados>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/123-deep-blue-bar/menu/Postres>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/123-deep-blue-bar/menu/Raciones>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/123-deep-blue-bar/menu/Top_Ventas>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/123-deep-blue-bar/menu/default> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/124-guere-poke> ns1:hasMenu <https://eramangasteiz.coopcycle.org/es/restaurant/124-guere-poke/menu/Bebidas>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/124-guere-poke/menu/Bebidas_Alcoholicas>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/124-guere-poke/menu/Entrantes>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/124-guere-poke/menu/Hot_Poke>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/124-guere-poke/menu/Pokes_Gourmet>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/124-guere-poke/menu/Pokes_KM_.0>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/124-guere-poke/menu/Postres>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/124-guere-poke/menu/default> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/15-klaritxu> ns1:hasMenu <https://eramangasteiz.coopcycle.org/es/restaurant/15-klaritxu/menu/Croquetas>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/15-klaritxu/menu/Empanadas>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/15-klaritxu/menu/Loretxus>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/15-klaritxu/menu/Para_acompañar>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/15-klaritxu/menu/Tortillas>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/15-klaritxu/menu/default> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/18-pollo-bueno> ns1:hasMenu <https://eramangasteiz.coopcycle.org/es/restaurant/18-pollo-bueno/menu/Bebidas_alcoholicas>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/18-pollo-bueno/menu/Bebidas_no-alcoholicas>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/18-pollo-bueno/menu/Entrantes>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/18-pollo-bueno/menu/Extras>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/18-pollo-bueno/menu/Platos_calientes>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/18-pollo-bueno/menu/Postres>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/18-pollo-bueno/menu/default> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/20-dolomiti> ns1:hasMenu <https://eramangasteiz.coopcycle.org/es/restaurant/20-dolomiti/menu/Bebidas>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/20-dolomiti/menu/CARNES>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/20-dolomiti/menu/ENSALADAS>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/20-dolomiti/menu/ENTRANTES_CALIENTES>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/20-dolomiti/menu/ENTRANTES_FRIOS>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/20-dolomiti/menu/GNOCCHI>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/20-dolomiti/menu/PAN>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/20-dolomiti/menu/PASTA_AL_HORNO_GRATINADA>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/20-dolomiti/menu/PASTA_FRESCA__LARGA>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/20-dolomiti/menu/PASTA_RELLENA>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/20-dolomiti/menu/PESCADOS>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/20-dolomiti/menu/PIZZAS>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/20-dolomiti/menu/POSTRES>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/20-dolomiti/menu/RISOTTOS>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/20-dolomiti/menu/Vinos>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/20-dolomiti/menu/default> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/27-el-txoko-taberna> ns1:hasMenu <https://eramangasteiz.coopcycle.org/es/restaurant/27-el-txoko-taberna/menu/Bebidas>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/27-el-txoko-taberna/menu/Bebidas_mexicanas>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/27-el-txoko-taberna/menu/Burritos>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/27-el-txoko-taberna/menu/Cervezas_mexicanas>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/27-el-txoko-taberna/menu/Enchilada>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/27-el-txoko-taberna/menu/Entrantes>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/27-el-txoko-taberna/menu/Extras>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/27-el-txoko-taberna/menu/Flautas>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/27-el-txoko-taberna/menu/Nachos>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/27-el-txoko-taberna/menu/Postre_de_la_casa>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/27-el-txoko-taberna/menu/Quesadilla>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/27-el-txoko-taberna/menu/Sincronizadas>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/27-el-txoko-taberna/menu/Tacos>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/27-el-txoko-taberna/menu/default> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/28-dottor-pizza> ns1:hasMenu <https://eramangasteiz.coopcycle.org/es/restaurant/28-dottor-pizza/menu/ANTIPASTI>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/28-dottor-pizza/menu/ARANCINI_DI_RISO>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/28-dottor-pizza/menu/BIBITE>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/28-dottor-pizza/menu/BIRRE_0,30_LT>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/28-dottor-pizza/menu/CALZONI>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/28-dottor-pizza/menu/DOLCI>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/28-dottor-pizza/menu/FRITTI_-_MCCAIN>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/28-dottor-pizza/menu/LASAGNE>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/28-dottor-pizza/menu/PIZZE>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/28-dottor-pizza/menu/SALSA_EXTRA>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/28-dottor-pizza/menu/default> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/30-ark-grill> ns1:hasMenu <https://eramangasteiz.coopcycle.org/es/restaurant/30-ark-grill/menu/Ark_Supreme>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/30-ark-grill/menu/Cervezas>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/30-ark-grill/menu/Hamburguesas>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/30-ark-grill/menu/Para_Picar>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/30-ark-grill/menu/Postres>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/30-ark-grill/menu/Refrescos>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/30-ark-grill/menu/default> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/41-wayoyo-etxean-egina> ns1:hasMenu <https://eramangasteiz.coopcycle.org/es/restaurant/41-wayoyo-etxean-egina/menu/AREPAS>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/41-wayoyo-etxean-egina/menu/BEBIDAS_SIN_ALCOHOL>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/41-wayoyo-etxean-egina/menu/CERVEZAS>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/41-wayoyo-etxean-egina/menu/Entrantes>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/41-wayoyo-etxean-egina/menu/Postres>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/41-wayoyo-etxean-egina/menu/Recomendaciones_WAYOYO>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/41-wayoyo-etxean-egina/menu/TACOS>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/41-wayoyo-etxean-egina/menu/VINOS>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/41-wayoyo-etxean-egina/menu/default> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/45-waska> ns1:hasMenu <https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/ARABAKO_TXAKOLINA>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/BRICHOES>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/CAVAS>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/CERVEZAS>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/COSITAS_RICAS>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/ENTRE_DOS_PANES>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/EUSKAL_SAGARDOA>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/LAS_ENSALADAS>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/LOS_CLASICOS_NUNCA_FALLAN>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/MENÚ_DEL_DÍA>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/MEZCLA_DE_CULTURAS>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/OPCIONES_100%_VEGETALES>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/PARA_LOS_CROQUETEROS>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/PRODUCTOS_TOP>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/VINOS_BLANCOS_RIOJA_ALAVESA>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/VINOS_BLANCOS_RUEDA>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/VINOS_TINTOS_RIOJA_ALAVESA>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/default> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/47-quinoa> ns1:hasMenu <https://eramangasteiz.coopcycle.org/es/restaurant/47-quinoa/menu/A_LA_BRASA>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/47-quinoa/menu/BEBIDAS>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/47-quinoa/menu/DULCE_FINAL>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/47-quinoa/menu/EXTRAS>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/47-quinoa/menu/FESTIVAL_DE_CEVICHES>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/47-quinoa/menu/NUESTRAS_CARNES>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/47-quinoa/menu/NUESTRAS_CAUSAS>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/47-quinoa/menu/PESCADOS_Y_MARISCOS>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/47-quinoa/menu/TAPAS_PERUANAS>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/47-quinoa/menu/TOP_VENTAS>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/47-quinoa/menu/default> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/48-arkupe> ns1:hasMenu <https://eramangasteiz.coopcycle.org/es/restaurant/48-arkupe/menu/PAN>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/48-arkupe/menu/PARA_EMPEZAR>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/48-arkupe/menu/POSTRES>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/48-arkupe/menu/PUCHEROS>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/48-arkupe/menu/SEGUNDOS>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/48-arkupe/menu/VINOS_BLANCOS>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/48-arkupe/menu/VINOS_TINTOS_AÑO>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/48-arkupe/menu/VINOS_TINTOS_CRIANZA>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/48-arkupe/menu/default> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/51-txakurzain> ns1:hasMenu <https://eramangasteiz.coopcycle.org/es/restaurant/51-txakurzain/menu/ANTIPARASITARIOS_GATO>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/51-txakurzain/menu/ANTIPARASITARIOS_PERROS>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/51-txakurzain/menu/BOLSAS_EARTH_RATED>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/51-txakurzain/menu/CHUCHES>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/51-txakurzain/menu/COSMÉTICA>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/51-txakurzain/menu/KNATUR_DIETA_BARF>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/51-txakurzain/menu/LITTLE_ONE_ROEDORES>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/51-txakurzain/menu/NUTRIBEST_GATO>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/51-txakurzain/menu/NUTRIBEST_PERRO>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/51-txakurzain/menu/PIEDRAS_DE_GATO_Y_LECHOS_VEGETALES>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/51-txakurzain/menu/Pienso_para_Perro_Txakurzain>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/51-txakurzain/menu/Snacks_para_perro_y_gato>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/51-txakurzain/menu/default> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/52-kirolak> ns1:hasMenu <https://eramangasteiz.coopcycle.org/es/restaurant/52-kirolak/menu/Taller>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/52-kirolak/menu/default> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/55-maicker-s-delivery-take-away> ns1:hasMenu <https://eramangasteiz.coopcycle.org/es/restaurant/55-maicker-s-delivery-take-away/menu/Bebidas>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/55-maicker-s-delivery-take-away/menu/Bebidas_Alcoholicas>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/55-maicker-s-delivery-take-away/menu/Burgers_y_Wraps>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/55-maicker-s-delivery-take-away/menu/Ensaladas>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/55-maicker-s-delivery-take-away/menu/Entrantes>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/55-maicker-s-delivery-take-away/menu/Hot_Dogs>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/55-maicker-s-delivery-take-away/menu/Menús>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/55-maicker-s-delivery-take-away/menu/Postres>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/55-maicker-s-delivery-take-away/menu/default> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/64-mano-lenta> ns1:hasMenu <https://eramangasteiz.coopcycle.org/es/restaurant/64-mano-lenta/menu/BRASA>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/64-mano-lenta/menu/Guisos_a_fuego_lento>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/64-mano-lenta/menu/POSTRES>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/64-mano-lenta/menu/default>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/64-mano-lenta/menu/platos> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/65-tandoori> ns1:hasMenu <https://eramangasteiz.coopcycle.org/es/restaurant/65-tandoori/menu/Barbacoa>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/65-tandoori/menu/Basmati_-_Arroz>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/65-tandoori/menu/Bebidas>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/65-tandoori/menu/Biryanis_-_Pallellas>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/65-tandoori/menu/Cordero_Guisado>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/65-tandoori/menu/Ensaladas>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/65-tandoori/menu/Entrantes>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/65-tandoori/menu/Menú_niños>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/65-tandoori/menu/Nan>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/65-tandoori/menu/Pescado_Guisado>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/65-tandoori/menu/Pollo_Guisado>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/65-tandoori/menu/Postres>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/65-tandoori/menu/Sopas>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/65-tandoori/menu/Ternera_Guisada>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/65-tandoori/menu/Verduras>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/65-tandoori/menu/default> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/70-himalaya-tandoori> ns1:hasMenu <https://eramangasteiz.coopcycle.org/es/restaurant/70-himalaya-tandoori/menu/AL_HORNO_TANDOORI_ESPECIAL>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/70-himalaya-tandoori/menu/APERTIVOS_Y_SOPAS>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/70-himalaya-tandoori/menu/ARROZ>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/70-himalaya-tandoori/menu/Bebidas_Alcoholicas>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/70-himalaya-tandoori/menu/Bebidas_Np-alcoholicas>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/70-himalaya-tandoori/menu/CURRY_Y_PLATOS_VEGETARIANOS>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/70-himalaya-tandoori/menu/ENTRANTES>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/70-himalaya-tandoori/menu/ENTRANTES_TIPICAS_DE_NEPAL>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/70-himalaya-tandoori/menu/ESPECIALIDADES_DE_LA_CASA_AL_HORNO_Y_TANDOORI>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/70-himalaya-tandoori/menu/MENÚS_PARA_NIÑOS>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/70-himalaya-tandoori/menu/PLATOS_BIRYANI>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/70-himalaya-tandoori/menu/PLATOS_ESPECIALES_HIMALAYA>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/70-himalaya-tandoori/menu/POSTRES_DE_LA_CASA>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/70-himalaya-tandoori/menu/default> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/71-hong-kong> ns1:hasMenu <https://eramangasteiz.coopcycle.org/es/restaurant/71-hong-kong/menu/Bebidas>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/71-hong-kong/menu/Dim_Sun>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/71-hong-kong/menu/Entrantes>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/71-hong-kong/menu/Extras>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/71-hong-kong/menu/Huevos_y_Verduras>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/71-hong-kong/menu/Menus_para_compartir>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/71-hong-kong/menu/Pescados_y_Mariscos>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/71-hong-kong/menu/Platos_Especiales>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/71-hong-kong/menu/Platos_Principales>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/71-hong-kong/menu/Sopa>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/71-hong-kong/menu/default> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/75-london-cafe-vitoria> ns1:hasMenu <https://eramangasteiz.coopcycle.org/es/restaurant/75-london-cafe-vitoria/menu/BEBIDAS>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/75-london-cafe-vitoria/menu/BOCADILLOS>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/75-london-cafe-vitoria/menu/CERVEZAS_DE_IMPORTACIÓN>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/75-london-cafe-vitoria/menu/ENSALADAS>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/75-london-cafe-vitoria/menu/HAMBURGUESAS>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/75-london-cafe-vitoria/menu/NUESTROS_PLATOS>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/75-london-cafe-vitoria/menu/PARA_PICAR>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/75-london-cafe-vitoria/menu/POSTRES>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/75-london-cafe-vitoria/menu/SANDWICHES_RECIÉN_HECHOS>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/75-london-cafe-vitoria/menu/default> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/76-panaditas> ns1:hasMenu <https://eramangasteiz.coopcycle.org/es/restaurant/76-panaditas/menu/BEBIDAS>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/76-panaditas/menu/CERVEZAS>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/76-panaditas/menu/PACKS>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/76-panaditas/menu/PANADITAS_GOLOSOS>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/76-panaditas/menu/PANADITAS_GOURMET>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/76-panaditas/menu/PANADITAS_SUPREME>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/76-panaditas/menu/VINOS>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/76-panaditas/menu/default> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/79-el-mexicano-y-mucho-mas> ns1:hasMenu <https://eramangasteiz.coopcycle.org/es/restaurant/79-el-mexicano-y-mucho-mas/menu/BEBIDAS_ALCOHOLICAS>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/79-el-mexicano-y-mucho-mas/menu/ENCHILADAS>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/79-el-mexicano-y-mucho-mas/menu/ENTRANTES>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/79-el-mexicano-y-mucho-mas/menu/LAS_TORTAS>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/79-el-mexicano-y-mucho-mas/menu/POSTRES>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/79-el-mexicano-y-mucho-mas/menu/REFRESCOS_MEXICANOS>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/79-el-mexicano-y-mucho-mas/menu/default> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/80-aporpan> ns1:hasMenu <https://eramangasteiz.coopcycle.org/es/restaurant/80-aporpan/menu/Bebidas>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/80-aporpan/menu/Bebidas_alcoholicas>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/80-aporpan/menu/Bebidas_calientes>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/80-aporpan/menu/Carnes_y_marinos_de_picoteo>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/80-aporpan/menu/Lo_dulce>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/80-aporpan/menu/Panadería>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/80-aporpan/menu/Tartas_enteras>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/80-aporpan/menu/default> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/84-artepan> ns1:hasMenu <https://eramangasteiz.coopcycle.org/es/restaurant/84-artepan/menu/Bizcochos>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/84-artepan/menu/Bollería>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/84-artepan/menu/Chocolates>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/84-artepan/menu/Panes>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/84-artepan/menu/Pastas>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/84-artepan/menu/Tartas>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/84-artepan/menu/default> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/86-eatyjet-some-like-it-hot> ns1:hasMenu <https://eramangasteiz.coopcycle.org/es/restaurant/86-eatyjet-some-like-it-hot/menu/BEBIDAS>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/86-eatyjet-some-like-it-hot/menu/BURGERS_#DesignedForDelivery>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/86-eatyjet-some-like-it-hot/menu/ENTRANTES>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/86-eatyjet-some-like-it-hot/menu/ESPECIAL_DEL_MES>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/86-eatyjet-some-like-it-hot/menu/EXTRAS>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/86-eatyjet-some-like-it-hot/menu/POSTRES>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/86-eatyjet-some-like-it-hot/menu/SEGUNDA_MEJOR_HAMBURGUESA_DE_ESPAÑA>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/86-eatyjet-some-like-it-hot/menu/SIN_GLUTEN>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/86-eatyjet-some-like-it-hot/menu/VEGGIE_BURGERS>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/86-eatyjet-some-like-it-hot/menu/default> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/94-cafeteria-pub-smile> ns1:hasMenu <https://eramangasteiz.coopcycle.org/es/restaurant/94-cafeteria-pub-smile/menu/Caprichos>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/94-cafeteria-pub-smile/menu/Nuestras_auténticas_Hamburguesas:>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/94-cafeteria-pub-smile/menu/Para_compartir:>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/94-cafeteria-pub-smile/menu/Postre_de_la_casa>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/94-cafeteria-pub-smile/menu/Top_Ventas>,
+        <https://eramangasteiz.coopcycle.org/es/restaurant/94-cafeteria-pub-smile/menu/default> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/122-asador-don-pollo/menu/Asados> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/122-asador-don-pollo/menu/Asados/item/1/2_Pollo_asado_XL> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/122-asador-don-pollo/menu/Asados/item/1/2_Pollo_asado_XL> a ns1:MenuItem ;
+    ns1:description "No description"^^xsd:string ;
+    ns1:name "1/2 Pollo asado XL"^^xsd:string ;
+    ns1:price "9,80 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/122-asador-don-pollo/menu/Bebidas> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/122-asador-don-pollo/menu/Bebidas/item/Agua_(50_Cl.)> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/122-asador-don-pollo/menu/Bebidas/item/Agua_(50_Cl.)> a ns1:MenuItem ;
+    ns1:description "No description"^^xsd:string ;
+    ns1:name "Agua (50 Cl.)"^^xsd:string ;
+    ns1:price "1,90 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/122-asador-don-pollo/menu/Ensaladas> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/122-asador-don-pollo/menu/Ensaladas/item/Aliño_para_ensalada> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/122-asador-don-pollo/menu/Ensaladas/item/Aliño_para_ensalada> a ns1:MenuItem ;
+    ns1:description "Ración"^^xsd:string ;
+    ns1:name "Aliño para ensalada"^^xsd:string ;
+    ns1:price "2,10 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/122-asador-don-pollo/menu/Patatas> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/122-asador-don-pollo/menu/Patatas/item/Patatas_Ali_Oli> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/122-asador-don-pollo/menu/Patatas/item/Patatas_Ali_Oli> a ns1:MenuItem ;
+    ns1:description "No description"^^xsd:string ;
+    ns1:name "Patatas Ali Oli"^^xsd:string ;
+    ns1:price "6,90 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/122-asador-don-pollo/menu/Pescados> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/122-asador-don-pollo/menu/Pescados/item/Merluza_Rebozada_o_en_salsa> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/122-asador-don-pollo/menu/Pescados/item/Merluza_Rebozada_o_en_salsa> a ns1:MenuItem ;
+    ns1:description "No description"^^xsd:string ;
+    ns1:name "Merluza Rebozada o en salsa"^^xsd:string ;
+    ns1:price "10,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/122-asador-don-pollo/menu/Postres> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/122-asador-don-pollo/menu/Postres/item/Arroz_con_Leche_Casero> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/122-asador-don-pollo/menu/Postres/item/Arroz_con_Leche_Casero> a ns1:MenuItem ;
+    ns1:description "No description"^^xsd:string ;
+    ns1:name "Arroz con Leche Casero"^^xsd:string ;
+    ns1:price "4,60 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/122-asador-don-pollo/menu/Raciones> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/122-asador-don-pollo/menu/Raciones/item/Arroz_Basmati_con_Pollo_y_Verduras> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/122-asador-don-pollo/menu/Raciones/item/Arroz_Basmati_con_Pollo_y_Verduras> a ns1:MenuItem ;
+    ns1:description "Ración"^^xsd:string ;
+    ns1:name "Arroz Basmati con Pollo y Verduras"^^xsd:string ;
+    ns1:price "10,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/122-asador-don-pollo/menu/Salsas> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/122-asador-don-pollo/menu/Salsas/item/Salsa_Brava> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/122-asador-don-pollo/menu/Salsas/item/Salsa_Brava> a ns1:MenuItem ;
+    ns1:description "No disponible"^^xsd:string ;
+    ns1:name "Salsa Brava"^^xsd:string ;
+    ns1:price "2,30 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/122-asador-don-pollo/menu/Top_Ventas> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/122-asador-don-pollo/menu/Top_Ventas/item/Croquetas_caseras_de_jamón,_pollo_o_bacalao_(6_unidades)> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/122-asador-don-pollo/menu/Top_Ventas/item/Croquetas_caseras_de_jamón,_pollo_o_bacalao_(6_unidades)> a ns1:MenuItem ;
+    ns1:description "No description"^^xsd:string ;
+    ns1:name "Croquetas caseras de jamón, pollo o bacalao (6 unidades)"^^xsd:string ;
+    ns1:price "9,70 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/123-deep-blue-bar/menu/Bebidas> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/123-deep-blue-bar/menu/Bebidas/item/Aquarius> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/123-deep-blue-bar/menu/Bebidas/item/Aquarius> a ns1:MenuItem ;
+    ns1:description "No description"^^xsd:string ;
+    ns1:name "Aquarius"^^xsd:string ;
+    ns1:price "2,20 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/123-deep-blue-bar/menu/Bocadillos> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/123-deep-blue-bar/menu/Bocadillos/item/Lomo_con_Pimiento_y_Queso> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/123-deep-blue-bar/menu/Bocadillos/item/Lomo_con_Pimiento_y_Queso> a ns1:MenuItem ;
+    ns1:description "Acompañado de pimiento y queso"^^xsd:string ;
+    ns1:name "Lomo con Pimiento y Queso"^^xsd:string ;
+    ns1:price "8,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/123-deep-blue-bar/menu/Burguers> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/123-deep-blue-bar/menu/Burguers/item/Deep_Blue> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/123-deep-blue-bar/menu/Burguers/item/Deep_Blue> a ns1:MenuItem ;
+    ns1:description "Crema de patata alavesa trufada, carne 100% de vacuno, cebolla caramelizada, salsa Deep Blue y Foie fresco a la plancha"^^xsd:string ;
+    ns1:name "Deep Blue"^^xsd:string ;
+    ns1:price "13,10 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/123-deep-blue-bar/menu/Entrantes> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/123-deep-blue-bar/menu/Entrantes/item/Rabas_caseras> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/123-deep-blue-bar/menu/Entrantes/item/Rabas_caseras> a ns1:MenuItem ;
+    ns1:description "Lechuga, tomate, pollo, miel y mostaza"^^xsd:string ;
+    ns1:name "Rabas caseras"^^xsd:string ;
+    ns1:price "9,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/123-deep-blue-bar/menu/Platos_combinados> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/123-deep-blue-bar/menu/Platos_combinados/item/Plato_Lomo,_Huevo,_Pimientos_y_Patatas> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/123-deep-blue-bar/menu/Platos_combinados/item/Plato_Lomo,_Huevo,_Pimientos_y_Patatas> a ns1:MenuItem ;
+    ns1:description "Acompañado de pimientos y patatas"^^xsd:string ;
+    ns1:name "Plato Lomo, Huevo, Pimientos y Patatas"^^xsd:string ;
+    ns1:price "8,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/123-deep-blue-bar/menu/Postres> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/123-deep-blue-bar/menu/Postres/item/Brownie_casero> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/123-deep-blue-bar/menu/Postres/item/Brownie_casero> a ns1:MenuItem ;
+    ns1:description "Con helado de vainilla o chocolate"^^xsd:string ;
+    ns1:name "Brownie casero"^^xsd:string ;
+    ns1:price "5,10 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/123-deep-blue-bar/menu/Raciones> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/123-deep-blue-bar/menu/Raciones/item/Patatas_bravioli> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/123-deep-blue-bar/menu/Raciones/item/Patatas_bravioli> a ns1:MenuItem ;
+    ns1:description "No description"^^xsd:string ;
+    ns1:name "Patatas bravioli"^^xsd:string ;
+    ns1:price "7,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/123-deep-blue-bar/menu/Top_Ventas> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/123-deep-blue-bar/menu/Top_Ventas/item/Cheese_Bacon_BBQ*> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/123-deep-blue-bar/menu/Top_Ventas/item/Cheese_Bacon_BBQ*> a ns1:MenuItem ;
+    ns1:description """Salsa barbacoa, lechuga, carne 100% de vacuno, queso Cheddar, aros de cebolla crujientes, cebolla caramelizada y salsa Deep Blue\r
+11,50 €"""^^xsd:string ;
+    ns1:name "Cheese Bacon BBQ*"^^xsd:string ;
+    ns1:price "11,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/124-guere-poke/menu/Bebidas> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/124-guere-poke/menu/Bebidas/item/Agua> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/124-guere-poke/menu/Bebidas/item/Agua> a ns1:MenuItem ;
+    ns1:description "No description"^^xsd:string ;
+    ns1:name "Agua"^^xsd:string ;
+    ns1:price "1,30 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/124-guere-poke/menu/Bebidas_Alcoholicas> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/124-guere-poke/menu/Bebidas_Alcoholicas/item/Cerveza_La_Salve> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/124-guere-poke/menu/Bebidas_Alcoholicas/item/Cerveza_La_Salve> a ns1:MenuItem ;
+    ns1:description "No disponible"^^xsd:string ;
+    ns1:name "Cerveza La Salve"^^xsd:string ;
+    ns1:price "2,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/124-guere-poke/menu/Entrantes> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/124-guere-poke/menu/Entrantes/item/Guacamole_y_Natxotalo> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/124-guere-poke/menu/Entrantes/item/Guacamole_y_Natxotalo> a ns1:MenuItem ;
+    ns1:description "Guacamole casero con tomate, cebolla roja y lima, con nachos de maíz para dipear."^^xsd:string ;
+    ns1:name "Guacamole y Natxotalo"^^xsd:string ;
+    ns1:price "7,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/124-guere-poke/menu/Hot_Poke> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/124-guere-poke/menu/Hot_Poke/item/Txerri_al_horno> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/124-guere-poke/menu/Hot_Poke/item/Txerri_al_horno> a ns1:MenuItem ;
+    ns1:description "Base de arroz o quinoa, lechuga de caserío, txerri al horno, cebolla, pepinillo, queso fundido, salsa miel mostaza y teriyaki."^^xsd:string ;
+    ns1:name "Txerri al horno"^^xsd:string ;
+    ns1:price "5,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/124-guere-poke/menu/Pokes_Gourmet> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/124-guere-poke/menu/Pokes_Gourmet/item/Gilda> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/124-guere-poke/menu/Pokes_Gourmet/item/Gilda> a ns1:MenuItem ;
+    ns1:description "Lechuga de caserío, atún Echebastar, piparritas, anchoa Arroyabe, huevitos de codorniz, pepinillo, aceituna picada, cebolla frita, sésamo y salsa vinagreta."^^xsd:string ;
+    ns1:name "Gilda"^^xsd:string ;
+    ns1:price "5,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/124-guere-poke/menu/Pokes_KM_.0> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/124-guere-poke/menu/Pokes_KM_.0/item/Itsasoa> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/124-guere-poke/menu/Pokes_KM_.0/item/Itsasoa> a ns1:MenuItem ;
+    ns1:description "Arroz, salmón, atún Alakrana, cebolla roja, zanahoria, mango, cebolla frita y salsa miel mostaza."^^xsd:string ;
+    ns1:name "Itsasoa"^^xsd:string ;
+    ns1:price "4,35 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/124-guere-poke/menu/Postres> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/124-guere-poke/menu/Postres/item/Palmera_multicereal> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/124-guere-poke/menu/Postres/item/Palmera_multicereal> a ns1:MenuItem ;
+    ns1:description "No description"^^xsd:string ;
+    ns1:name "Palmera multicereal"^^xsd:string ;
+    ns1:price "1,70 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/15-klaritxu/menu/Croquetas> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/15-klaritxu/menu/Croquetas/item/Croquetas_variadas> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/15-klaritxu/menu/Croquetas/item/Croquetas_variadas> a ns1:MenuItem ;
+    ns1:description "No disponible"^^xsd:string ;
+    ns1:name "Croquetas variadas"^^xsd:string ;
+    ns1:price "10,80 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/15-klaritxu/menu/Empanadas> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/15-klaritxu/menu/Empanadas/item/Empanada_Mexicana_con_Aguacate_Grande> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/15-klaritxu/menu/Empanadas/item/Empanada_Mexicana_con_Aguacate_Grande> a ns1:MenuItem ;
+    ns1:description """40x35cm (6-8 personas)
+\r
+Una de las empanadas más demandadas, por su sabor a carne con el picante que tanto gusta, y el cremoso aguacate."""^^xsd:string ;
+    ns1:name "Empanada Mexicana con Aguacate Grande"^^xsd:string ;
+    ns1:price "24,90 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/15-klaritxu/menu/Loretxus> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/15-klaritxu/menu/Loretxus/item/Loretxus_Mixtas_Picantes_(6_unidades)> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/15-klaritxu/menu/Loretxus/item/Loretxus_Mixtas_Picantes_(6_unidades)> a ns1:MenuItem ;
+    ns1:description "No disponible"^^xsd:string ;
+    ns1:name "Loretxus Mixtas Picantes (6 unidades)"^^xsd:string ;
+    ns1:price "13,90 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/15-klaritxu/menu/Para_acompañar> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/15-klaritxu/menu/Para_acompañar/item/Tinto_joven_Rioja_Alavesa_Betikoa> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/15-klaritxu/menu/Para_acompañar/item/Tinto_joven_Rioja_Alavesa_Betikoa> a ns1:MenuItem ;
+    ns1:description "No description"^^xsd:string ;
+    ns1:name "Tinto joven Rioja Alavesa Betikoa"^^xsd:string ;
+    ns1:price "12,75 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/15-klaritxu/menu/Tortillas> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/15-klaritxu/menu/Tortillas/item/Tortilla_Pisto_Grande> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/15-klaritxu/menu/Tortillas/item/Tortilla_Pisto_Grande> a ns1:MenuItem ;
+    ns1:description """6-8 personas
+\r
+Si optas por una opción más “vegetal” tienes nuestra pisto, de lo más suculenta.
+\r
+Ingredientes: Salsa pisto (pimientos, cebolla, tomate, calabacín), patatas, cebolla y huevos."""^^xsd:string ;
+    ns1:name "Tortilla Pisto Grande"^^xsd:string ;
+    ns1:price "19,10 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/18-pollo-bueno/menu/Bebidas_alcoholicas> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/18-pollo-bueno/menu/Bebidas_alcoholicas/item/Lata_cerveza_33_cl_keler> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/18-pollo-bueno/menu/Bebidas_alcoholicas/item/Lata_cerveza_33_cl_keler> a ns1:MenuItem ;
+    ns1:description "No disponible"^^xsd:string ;
+    ns1:name "Lata cerveza 33 cl keler"^^xsd:string ;
+    ns1:price "2,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/18-pollo-bueno/menu/Bebidas_no-alcoholicas> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/18-pollo-bueno/menu/Bebidas_no-alcoholicas/item/Coca_cola_lata> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/18-pollo-bueno/menu/Bebidas_no-alcoholicas/item/Coca_cola_lata> a ns1:MenuItem ;
+    ns1:description "No disponible"^^xsd:string ;
+    ns1:name "Coca cola lata"^^xsd:string ;
+    ns1:price "2,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/18-pollo-bueno/menu/Entrantes> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/18-pollo-bueno/menu/Entrantes/item/Ensaladas> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/18-pollo-bueno/menu/Entrantes/item/Ensaladas> a ns1:MenuItem ;
+    ns1:description "Lechuga Lombarda aceitunas tomate zanahoria rallada"^^xsd:string ;
+    ns1:name "Ensaladas"^^xsd:string ;
+    ns1:price "5,25 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/18-pollo-bueno/menu/Extras> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/18-pollo-bueno/menu/Extras/item/Salsa_200_ml> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/18-pollo-bueno/menu/Extras/item/Salsa_200_ml> a ns1:MenuItem ;
+    ns1:description "No description"^^xsd:string ;
+    ns1:name "Salsa 200 ml"^^xsd:string ;
+    ns1:price "1,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/18-pollo-bueno/menu/Platos_calientes> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/18-pollo-bueno/menu/Platos_calientes/item/Codillo_asado_grande> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/18-pollo-bueno/menu/Platos_calientes/item/Codillo_asado_grande> a ns1:MenuItem ;
+    ns1:description "1 racion"^^xsd:string ;
+    ns1:name "Codillo asado grande"^^xsd:string ;
+    ns1:price "18,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/18-pollo-bueno/menu/Postres> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/18-pollo-bueno/menu/Postres/item/Helado_Ben_&_Jerry´s_Chunky_Monkey> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/18-pollo-bueno/menu/Postres/item/Helado_Ben_&_Jerry´s_Chunky_Monkey> a ns1:MenuItem ;
+    ns1:description "Chunky Monkey - helado de platano con chocolate y nueces"^^xsd:string ;
+    ns1:name "Helado Ben & Jerry´s Chunky Monkey"^^xsd:string ;
+    ns1:price "7,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/20-dolomiti/menu/Bebidas> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/20-dolomiti/menu/Bebidas/item/Kas_Naranja_330ml> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/20-dolomiti/menu/Bebidas/item/Kas_Naranja_330ml> a ns1:MenuItem ;
+    ns1:description "Cerveza Italiana"^^xsd:string ;
+    ns1:name "Kas Naranja 330ml"^^xsd:string ;
+    ns1:price "3,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/20-dolomiti/menu/CARNES> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/20-dolomiti/menu/CARNES/item/RABO_DE_BUEY_ESTOFADO> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/20-dolomiti/menu/CARNES/item/RABO_DE_BUEY_ESTOFADO> a ns1:MenuItem ;
+    ns1:description "No disponible"^^xsd:string ;
+    ns1:name "RABO DE BUEY ESTOFADO"^^xsd:string ;
+    ns1:price "21,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/20-dolomiti/menu/ENSALADAS> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/20-dolomiti/menu/ENSALADAS/item/ENSALADA_DE_PASTA_FRESCA> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/20-dolomiti/menu/ENSALADAS/item/ENSALADA_DE_PASTA_FRESCA> a ns1:MenuItem ;
+    ns1:description "Acompañada de vinagreta de tomate y albahaca y con jamón Ibérico, mozzarella de búfala y piñones"^^xsd:string ;
+    ns1:name "ENSALADA DE PASTA FRESCA"^^xsd:string ;
+    ns1:price "16,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/20-dolomiti/menu/ENTRANTES_CALIENTES> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/20-dolomiti/menu/ENTRANTES_CALIENTES/item/CROQUETAS_DE_BOLETUS_(6)> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/20-dolomiti/menu/ENTRANTES_CALIENTES/item/CROQUETAS_DE_BOLETUS_(6)> a ns1:MenuItem ;
+    ns1:description "Acompañadas de Idiazábal"^^xsd:string ;
+    ns1:name "CROQUETAS DE BOLETUS (6)"^^xsd:string ;
+    ns1:price "11,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/20-dolomiti/menu/ENTRANTES_FRIOS> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/20-dolomiti/menu/ENTRANTES_FRIOS/item/JAMÓN_IBÉRICO_DE_BELLOTA> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/20-dolomiti/menu/ENTRANTES_FRIOS/item/JAMÓN_IBÉRICO_DE_BELLOTA> a ns1:MenuItem ;
+    ns1:description "Jamón y lomo Ibérico, pimientos de Gernika, Idiazabal y croquetas variadas (3 + 3)"^^xsd:string ;
+    ns1:name "JAMÓN IBÉRICO DE BELLOTA"^^xsd:string ;
+    ns1:price "23,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/20-dolomiti/menu/GNOCCHI> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/20-dolomiti/menu/GNOCCHI/item/GNOCCHI_A_LA_GORGONZOLA> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/20-dolomiti/menu/GNOCCHI/item/GNOCCHI_A_LA_GORGONZOLA> a ns1:MenuItem ;
+    ns1:description "No description"^^xsd:string ;
+    ns1:name "GNOCCHI A LA GORGONZOLA"^^xsd:string ;
+    ns1:price "13,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/20-dolomiti/menu/PAN> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/20-dolomiti/menu/PAN/item/FOCACCIA_CON_GUARNICIÓN_DE_TOMATE_NATURAL_Y_ALBAHACA> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/20-dolomiti/menu/PAN/item/FOCACCIA_CON_GUARNICIÓN_DE_TOMATE_NATURAL_Y_ALBAHACA> a ns1:MenuItem ;
+    ns1:description "Significa \"Hogaza\" en Italiano e sun pan plano con especias y aliñado con aceite de oliva, muy tradicional en la cocina Italiana. (Tamaño de pizza - 8 porciones)"^^xsd:string ;
+    ns1:name "FOCACCIA CON GUARNICIÓN DE TOMATE NATURAL Y ALBAHACA"^^xsd:string ;
+    ns1:price "9,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/20-dolomiti/menu/PASTA_AL_HORNO_GRATINADA> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/20-dolomiti/menu/PASTA_AL_HORNO_GRATINADA/item/PENNE_GRATINATI> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/20-dolomiti/menu/PASTA_AL_HORNO_GRATINADA/item/PENNE_GRATINATI> a ns1:MenuItem ;
+    ns1:description "Macarrones gratinados con carne picada, champiñones, queso y un toque de bechamel"^^xsd:string ;
+    ns1:name "PENNE GRATINATI"^^xsd:string ;
+    ns1:price "15,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/20-dolomiti/menu/PASTA_FRESCA__LARGA> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/20-dolomiti/menu/PASTA_FRESCA__LARGA/item/AGLIO,_OLIO_E_PEPERONCINIO> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/20-dolomiti/menu/PASTA_FRESCA__LARGA/item/AGLIO,_OLIO_E_PEPERONCINIO> a ns1:MenuItem ;
+    ns1:description "Ajo, aceite y picante"^^xsd:string ;
+    ns1:name "AGLIO, OLIO E PEPERONCINIO"^^xsd:string ;
+    ns1:price "10,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/20-dolomiti/menu/PASTA_RELLENA> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/20-dolomiti/menu/PASTA_RELLENA/item/RAVIOLI_RELLENOS_DE_FOIE_Y_TRUFA> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/20-dolomiti/menu/PASTA_RELLENA/item/RAVIOLI_RELLENOS_DE_FOIE_Y_TRUFA> a ns1:MenuItem ;
+    ns1:description "Con crema de hongos"^^xsd:string ;
+    ns1:name "RAVIOLI RELLENOS DE FOIE Y TRUFA"^^xsd:string ;
+    ns1:price "18,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/20-dolomiti/menu/PESCADOS> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/20-dolomiti/menu/PESCADOS/item/MERLUZA_A_LA_PLANCHA> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/20-dolomiti/menu/PESCADOS/item/MERLUZA_A_LA_PLANCHA> a ns1:MenuItem ;
+    ns1:description "Lomo de merluza a la plancha con refrito y guarnición."^^xsd:string ;
+    ns1:name "MERLUZA A LA PLANCHA"^^xsd:string ;
+    ns1:price "20,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/20-dolomiti/menu/PIZZAS> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/20-dolomiti/menu/PIZZAS/item/MARGHERITA> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/20-dolomiti/menu/PIZZAS/item/MARGHERITA> a ns1:MenuItem ;
+    ns1:description "Tomate, queso"^^xsd:string ;
+    ns1:name "MARGHERITA"^^xsd:string ;
+    ns1:price "12,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/20-dolomiti/menu/POSTRES> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/20-dolomiti/menu/POSTRES/item/TIRAMISÚ_ARTESANO> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/20-dolomiti/menu/POSTRES/item/TIRAMISÚ_ARTESANO> a ns1:MenuItem ;
+    ns1:description "290 gr."^^xsd:string ;
+    ns1:name "TIRAMISÚ ARTESANO"^^xsd:string ;
+    ns1:price "7,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/20-dolomiti/menu/RISOTTOS> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/20-dolomiti/menu/RISOTTOS/item/RISSOTTO_CON_ALMEJAS> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/20-dolomiti/menu/RISOTTOS/item/RISSOTTO_CON_ALMEJAS> a ns1:MenuItem ;
+    ns1:description "No disponible"^^xsd:string ;
+    ns1:name "RISSOTTO CON ALMEJAS"^^xsd:string ;
+    ns1:price "21,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/20-dolomiti/menu/Vinos> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/20-dolomiti/menu/Vinos/item/Vino_Tinto_Viña_Enara_(Rioja_Alavesa)_Joven_(75cl)> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/20-dolomiti/menu/Vinos/item/Vino_Tinto_Viña_Enara_(Rioja_Alavesa)_Joven_(75cl)> a ns1:MenuItem ;
+    ns1:description "No description"^^xsd:string ;
+    ns1:name "Vino Tinto Viña Enara (Rioja Alavesa) Joven (75cl)"^^xsd:string ;
+    ns1:price "12,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/27-el-txoko-taberna/menu/Bebidas> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/27-el-txoko-taberna/menu/Bebidas/item/Coca-Cola> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/27-el-txoko-taberna/menu/Bebidas/item/Coca-Cola> a ns1:MenuItem ;
+    ns1:description "33 cl"^^xsd:string ;
+    ns1:name "Coca-Cola"^^xsd:string ;
+    ns1:price "2,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/27-el-txoko-taberna/menu/Bebidas_mexicanas> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/27-el-txoko-taberna/menu/Bebidas_mexicanas/item/Jarritos_toronja> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/27-el-txoko-taberna/menu/Bebidas_mexicanas/item/Jarritos_toronja> a ns1:MenuItem ;
+    ns1:description "No disponible"^^xsd:string ;
+    ns1:name "Jarritos toronja"^^xsd:string ;
+    ns1:price "3,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/27-el-txoko-taberna/menu/Burritos> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/27-el-txoko-taberna/menu/Burritos/item/Burrito_cochinita_pibil> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/27-el-txoko-taberna/menu/Burritos/item/Burrito_cochinita_pibil> a ns1:MenuItem ;
+    ns1:description "El Burrito esta elaborado con tortilla de Trigo de !!36 cm!!"^^xsd:string ;
+    ns1:name "Burrito cochinita pibil"^^xsd:string ;
+    ns1:price "12,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/27-el-txoko-taberna/menu/Cervezas_mexicanas> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/27-el-txoko-taberna/menu/Cervezas_mexicanas/item/Sol> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/27-el-txoko-taberna/menu/Cervezas_mexicanas/item/Sol> a ns1:MenuItem ;
+    ns1:description "No description"^^xsd:string ;
+    ns1:name "Sol"^^xsd:string ;
+    ns1:price "3,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/27-el-txoko-taberna/menu/Enchilada> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/27-el-txoko-taberna/menu/Enchilada/item/Enchiladas_roja> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/27-el-txoko-taberna/menu/Enchilada/item/Enchiladas_roja> a ns1:MenuItem ;
+    ns1:description "Especialidad rellena generalmente de pollo que se prepara con tortillas de maíz untadas con salsa de chile y gratinadas"^^xsd:string ;
+    ns1:name "Enchiladas roja"^^xsd:string ;
+    ns1:price "14,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/27-el-txoko-taberna/menu/Entrantes> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/27-el-txoko-taberna/menu/Entrantes/item/Empanada> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/27-el-txoko-taberna/menu/Entrantes/item/Empanada> a ns1:MenuItem ;
+    ns1:description "1 Unidad"^^xsd:string ;
+    ns1:name "Empanada"^^xsd:string ;
+    ns1:price "3,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/27-el-txoko-taberna/menu/Extras> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/27-el-txoko-taberna/menu/Extras/item/Ración_extra_de_tortillas> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/27-el-txoko-taberna/menu/Extras/item/Ración_extra_de_tortillas> a ns1:MenuItem ;
+    ns1:description "¡Casero! No hay otra manera de hacerlo"^^xsd:string ;
+    ns1:name "Ración extra de tortillas"^^xsd:string ;
+    ns1:price "1,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/27-el-txoko-taberna/menu/Flautas> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/27-el-txoko-taberna/menu/Flautas/item/Flautas_de_pollo> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/27-el-txoko-taberna/menu/Flautas/item/Flautas_de_pollo> a ns1:MenuItem ;
+    ns1:description "4 Tortilla de maíz fritas rellenas de  Pollo con lechuga crema agria, salsa verde y queso fresco"^^xsd:string ;
+    ns1:name "Flautas de pollo"^^xsd:string ;
+    ns1:price "12,80 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/27-el-txoko-taberna/menu/Nachos> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/27-el-txoko-taberna/menu/Nachos/item/Nachos_con_carne> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/27-el-txoko-taberna/menu/Nachos/item/Nachos_con_carne> a ns1:MenuItem ;
+    ns1:description "Elaborados en tortilla de maíz natural, queso Cheddar y Picadillo"^^xsd:string ;
+    ns1:name "Nachos con carne"^^xsd:string ;
+    ns1:price "10,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/27-el-txoko-taberna/menu/Postre_de_la_casa> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/27-el-txoko-taberna/menu/Postre_de_la_casa/item/Chesse_Cake_de_Cajeta> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/27-el-txoko-taberna/menu/Postre_de_la_casa/item/Chesse_Cake_de_Cajeta> a ns1:MenuItem ;
+    ns1:description "No description"^^xsd:string ;
+    ns1:name "Chesse Cake de Cajeta"^^xsd:string ;
+    ns1:price "5,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/27-el-txoko-taberna/menu/Quesadilla> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/27-el-txoko-taberna/menu/Quesadilla/item/Quesadillas> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/27-el-txoko-taberna/menu/Quesadilla/item/Quesadillas> a ns1:MenuItem ;
+    ns1:description "2 Unidades"^^xsd:string ;
+    ns1:name "Quesadillas"^^xsd:string ;
+    ns1:price "0,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/27-el-txoko-taberna/menu/Sincronizadas> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/27-el-txoko-taberna/menu/Sincronizadas/item/Sincronizadas_de_jamón,_queso_y_champiñones> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/27-el-txoko-taberna/menu/Sincronizadas/item/Sincronizadas_de_jamón,_queso_y_champiñones> a ns1:MenuItem ;
+    ns1:description "Hechas con harina de trigo"^^xsd:string ;
+    ns1:name "Sincronizadas de jamón, queso y champiñones"^^xsd:string ;
+    ns1:price "10,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/27-el-txoko-taberna/menu/Tacos> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/27-el-txoko-taberna/menu/Tacos/item/Tacos_cochinila_pibil> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/27-el-txoko-taberna/menu/Tacos/item/Tacos_cochinila_pibil> a ns1:MenuItem ;
+    ns1:description "El Taco está elaborado con tortilla de maíz hecha a mano (3 tacos por orden)"^^xsd:string ;
+    ns1:name "Tacos cochinila pibil"^^xsd:string ;
+    ns1:price "11,70 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/28-dottor-pizza/menu/ANTIPASTI> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/28-dottor-pizza/menu/ANTIPASTI/item/PARMIGIANA_DI_MELANZANE> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/28-dottor-pizza/menu/ANTIPASTI/item/PARMIGIANA_DI_MELANZANE> a ns1:MenuItem ;
+    ns1:description "Lasagna de berenjenas fritas, tomate, fior di latte, provola ahumada, albahaca y grana padano DOP"^^xsd:string ;
+    ns1:name "PARMIGIANA DI MELANZANE"^^xsd:string ;
+    ns1:price "7,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/28-dottor-pizza/menu/ARANCINI_DI_RISO> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/28-dottor-pizza/menu/ARANCINI_DI_RISO/item/ARANCINO_ROSSO> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/28-dottor-pizza/menu/ARANCINI_DI_RISO/item/ARANCINO_ROSSO> a ns1:MenuItem ;
+    ns1:description "No disponible"^^xsd:string ;
+    ns1:name "ARANCINO ROSSO"^^xsd:string ;
+    ns1:price "3,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/28-dottor-pizza/menu/BIBITE> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/28-dottor-pizza/menu/BIBITE/item/AGUA_0,5cl> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/28-dottor-pizza/menu/BIBITE/item/AGUA_0,5cl> a ns1:MenuItem ;
+    ns1:description "No description"^^xsd:string ;
+    ns1:name "AGUA 0,5cl"^^xsd:string ;
+    ns1:price "1,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/28-dottor-pizza/menu/BIRRE_0,30_LT> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/28-dottor-pizza/menu/BIRRE_0,30_LT/item/ESTRELLA_GALICIA> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/28-dottor-pizza/menu/BIRRE_0,30_LT/item/ESTRELLA_GALICIA> a ns1:MenuItem ;
+    ns1:description "Cerveza de Cerdeña"^^xsd:string ;
+    ns1:name "ESTRELLA GALICIA"^^xsd:string ;
+    ns1:price "2,80 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/28-dottor-pizza/menu/CALZONI> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/28-dottor-pizza/menu/CALZONI/item/CLASSICO_Calzone> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/28-dottor-pizza/menu/CALZONI/item/CLASSICO_Calzone> a ns1:MenuItem ;
+    ns1:description "Tomate, fior di latte, champiñones y jamón york italiano"^^xsd:string ;
+    ns1:name "CLASSICO Calzone"^^xsd:string ;
+    ns1:price "11,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/28-dottor-pizza/menu/DOLCI> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/28-dottor-pizza/menu/DOLCI/item/CHEESECAKE_DOTTOR_PIZZA> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/28-dottor-pizza/menu/DOLCI/item/CHEESECAKE_DOTTOR_PIZZA> a ns1:MenuItem ;
+    ns1:description "No description"^^xsd:string ;
+    ns1:name "CHEESECAKE DOTTOR PIZZA"^^xsd:string ;
+    ns1:price "6,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/28-dottor-pizza/menu/FRITTI_-_MCCAIN> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/28-dottor-pizza/menu/FRITTI_-_MCCAIN/item/ALITAS_DE_POLLO_CRUJIENTES> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/28-dottor-pizza/menu/FRITTI_-_MCCAIN/item/ALITAS_DE_POLLO_CRUJIENTES> a ns1:MenuItem ;
+    ns1:description "5 UDS"^^xsd:string ;
+    ns1:name "ALITAS DE POLLO CRUJIENTES"^^xsd:string ;
+    ns1:price "6,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/28-dottor-pizza/menu/LASAGNE> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/28-dottor-pizza/menu/LASAGNE/item/BOLOGNESE_Lasaña> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/28-dottor-pizza/menu/LASAGNE/item/BOLOGNESE_Lasaña> a ns1:MenuItem ;
+    ns1:description "Ragù bolognese, bechamel, fior di latte, grana padano DOP"^^xsd:string ;
+    ns1:name "BOLOGNESE Lasaña"^^xsd:string ;
+    ns1:price "11,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/28-dottor-pizza/menu/PIZZE> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/28-dottor-pizza/menu/PIZZE/item/VENEZIANA_Pizza> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/28-dottor-pizza/menu/PIZZE/item/VENEZIANA_Pizza> a ns1:MenuItem ;
+    ns1:description "Tomate, fior di latte, jamón cocido, champiñones y albahaca"^^xsd:string ;
+    ns1:name "VENEZIANA Pizza"^^xsd:string ;
+    ns1:price "10,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/28-dottor-pizza/menu/SALSA_EXTRA> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/28-dottor-pizza/menu/SALSA_EXTRA/item/ACEITE_PICCANTE_CALABRESE> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/28-dottor-pizza/menu/SALSA_EXTRA/item/ACEITE_PICCANTE_CALABRESE> a ns1:MenuItem ;
+    ns1:description "No disponible"^^xsd:string ;
+    ns1:name "ACEITE PICCANTE CALABRESE"^^xsd:string ;
+    ns1:price "0,30 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/30-ark-grill/menu/Ark_Supreme> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/30-ark-grill/menu/Ark_Supreme/item/Hamburguesa_Cumbarco> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/30-ark-grill/menu/Ark_Supreme/item/Hamburguesa_Cumbarco> a ns1:MenuItem ;
+    ns1:description "Pan de hamburguesa, carne, queso, bacon crunchy, aros de cebolla, alegrías riojanas, brotes de lechuga, tomate y tomate caramelizado."^^xsd:string ;
+    ns1:name "Hamburguesa Cumbarco"^^xsd:string ;
+    ns1:price "12,95 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/30-ark-grill/menu/Cervezas> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/30-ark-grill/menu/Cervezas/item/Estrella_Galicia_Lata_330ml> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/30-ark-grill/menu/Cervezas/item/Estrella_Galicia_Lata_330ml> a ns1:MenuItem ;
+    ns1:description "No description"^^xsd:string ;
+    ns1:name "Estrella Galicia Lata 330ml"^^xsd:string ;
+    ns1:price "2,60 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/30-ark-grill/menu/Hamburguesas> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/30-ark-grill/menu/Hamburguesas/item/Hamburguesa_Pekado> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/30-ark-grill/menu/Hamburguesas/item/Hamburguesa_Pekado> a ns1:MenuItem ;
+    ns1:description "Pan de hamburguesa, triple carne, bacon, queso cheddar, salsa cheddar, salsa barbacoa y salsa rosa."^^xsd:string ;
+    ns1:name "Hamburguesa Pekado"^^xsd:string ;
+    ns1:price "15,95 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/30-ark-grill/menu/Para_Picar> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/30-ark-grill/menu/Para_Picar/item/Nuggets_(6_uds)> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/30-ark-grill/menu/Para_Picar/item/Nuggets_(6_uds)> a ns1:MenuItem ;
+    ns1:description "Bocaditos de pollo rebozados, crujientes y dorados."^^xsd:string ;
+    ns1:name "Nuggets (6 uds)"^^xsd:string ;
+    ns1:price "4,90 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/30-ark-grill/menu/Postres> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/30-ark-grill/menu/Postres/item/Coulant_de_Caramelo> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/30-ark-grill/menu/Postres/item/Coulant_de_Caramelo> a ns1:MenuItem ;
+    ns1:description "Cremoso y esponjoso"^^xsd:string ;
+    ns1:name "Coulant de Caramelo"^^xsd:string ;
+    ns1:price "3,30 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/30-ark-grill/menu/Refrescos> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/30-ark-grill/menu/Refrescos/item/Agua_Botella_330ml> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/30-ark-grill/menu/Refrescos/item/Agua_Botella_330ml> a ns1:MenuItem ;
+    ns1:description "No description"^^xsd:string ;
+    ns1:name "Agua Botella 330ml"^^xsd:string ;
+    ns1:price "1,80 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/41-wayoyo-etxean-egina/menu/AREPAS> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/41-wayoyo-etxean-egina/menu/AREPAS/item/CARACAS> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/41-wayoyo-etxean-egina/menu/AREPAS/item/CARACAS> a ns1:MenuItem ;
+    ns1:description "No disponible"^^xsd:string ;
+    ns1:name "CARACAS"^^xsd:string ;
+    ns1:price "9,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/41-wayoyo-etxean-egina/menu/BEBIDAS_SIN_ALCOHOL> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/41-wayoyo-etxean-egina/menu/BEBIDAS_SIN_ALCOHOL/item/Pepsi_Lata_330ml> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/41-wayoyo-etxean-egina/menu/BEBIDAS_SIN_ALCOHOL/item/Pepsi_Lata_330ml> a ns1:MenuItem ;
+    ns1:description "No disponible"^^xsd:string ;
+    ns1:name "Pepsi Lata 330ml"^^xsd:string ;
+    ns1:price "2,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/41-wayoyo-etxean-egina/menu/CERVEZAS> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/41-wayoyo-etxean-egina/menu/CERVEZAS/item/Tres_Mares_AMBER> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/41-wayoyo-etxean-egina/menu/CERVEZAS/item/Tres_Mares_AMBER> a ns1:MenuItem ;
+    ns1:description "No disponible"^^xsd:string ;
+    ns1:name "Tres Mares \"AMBER\""^^xsd:string ;
+    ns1:price "4,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/41-wayoyo-etxean-egina/menu/Entrantes> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/41-wayoyo-etxean-egina/menu/Entrantes/item/TUESCO> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/41-wayoyo-etxean-egina/menu/Entrantes/item/TUESCO> a ns1:MenuItem ;
+    ns1:description "No disponible"^^xsd:string ;
+    ns1:name "TUESCO"^^xsd:string ;
+    ns1:price "9,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/41-wayoyo-etxean-egina/menu/Postres> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/41-wayoyo-etxean-egina/menu/Postres/item/Tiramisú_de_Miguel> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/41-wayoyo-etxean-egina/menu/Postres/item/Tiramisú_de_Miguel> a ns1:MenuItem ;
+    ns1:description """¡El postre mas famoso de toda EUROPA! Hecho desde cero en nuestra cocina.\r
+Café, queso mascarpone, cacao y lima."""^^xsd:string ;
+    ns1:name "Tiramisú de Miguel"^^xsd:string ;
+    ns1:price "6,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/41-wayoyo-etxean-egina/menu/Recomendaciones_WAYOYO> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/41-wayoyo-etxean-egina/menu/Recomendaciones_WAYOYO/item/GUACAMOLE_RUSTICO> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/41-wayoyo-etxean-egina/menu/Recomendaciones_WAYOYO/item/GUACAMOLE_RUSTICO> a ns1:MenuItem ;
+    ns1:description "No disponible"^^xsd:string ;
+    ns1:name "GUACAMOLE RUSTICO"^^xsd:string ;
+    ns1:price "6,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/41-wayoyo-etxean-egina/menu/TACOS> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/41-wayoyo-etxean-egina/menu/TACOS/item/Los_BIRRIAS_del_WAYO> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/41-wayoyo-etxean-egina/menu/TACOS/item/Los_BIRRIAS_del_WAYO> a ns1:MenuItem ;
+    ns1:description "No disponible"^^xsd:string ;
+    ns1:name "Los BIRRIAS del WAYO"^^xsd:string ;
+    ns1:price "13,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/41-wayoyo-etxean-egina/menu/VINOS> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/41-wayoyo-etxean-egina/menu/VINOS/item/ALBIKER> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/41-wayoyo-etxean-egina/menu/VINOS/item/ALBIKER> a ns1:MenuItem ;
+    ns1:description "No disponible"^^xsd:string ;
+    ns1:name "ALBIKER"^^xsd:string ;
+    ns1:price "12,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/ARABAKO_TXAKOLINA> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/ARABAKO_TXAKOLINA/item/EUKENI_ARABAKO_TXAKOLINA> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/ARABAKO_TXAKOLINA/item/EUKENI_ARABAKO_TXAKOLINA> a ns1:MenuItem ;
+    ns1:description "No disponible"^^xsd:string ;
+    ns1:name "EUKENI ARABAKO TXAKOLINA"^^xsd:string ;
+    ns1:price "15,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/BRICHOES> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/BRICHOES/item/BRIOCHE_TOSTADO_DE_RABO_ESTILO_THAI> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/BRICHOES/item/BRIOCHE_TOSTADO_DE_RABO_ESTILO_THAI> a ns1:MenuItem ;
+    ns1:description "Con chucrut de Lombarda y yogur"^^xsd:string ;
+    ns1:name "BRIOCHE TOSTADO DE RABO ESTILO THAI"^^xsd:string ;
+    ns1:price "17,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/CAVAS> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/CAVAS/item/CAVA_BRUT_FRANCES__RICART> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/CAVAS/item/CAVA_BRUT_FRANCES__RICART> a ns1:MenuItem ;
+    ns1:description "No description"^^xsd:string ;
+    ns1:name "CAVA BRUT FRANCES  RICART"^^xsd:string ;
+    ns1:price "15,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/CERVEZAS> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/CERVEZAS/item/BAIAS_CHAVELA_IPA> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/CERVEZAS/item/BAIAS_CHAVELA_IPA> a ns1:MenuItem ;
+    ns1:description "No description"^^xsd:string ;
+    ns1:name "BAIAS CHAVELA IPA"^^xsd:string ;
+    ns1:price "4,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/COSITAS_RICAS> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/COSITAS_RICAS/item/PATATAS_BRAVAS> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/COSITAS_RICAS/item/PATATAS_BRAVAS> a ns1:MenuItem ;
+    ns1:description "Patata alavesa casera con salsa brava y ali-oli"^^xsd:string ;
+    ns1:name "PATATAS BRAVAS"^^xsd:string ;
+    ns1:price "7,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/ENTRE_DOS_PANES> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/ENTRE_DOS_PANES/item/HAMBURGUESA_DE_VACA_GALLEGA> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/ENTRE_DOS_PANES/item/HAMBURGUESA_DE_VACA_GALLEGA> a ns1:MenuItem ;
+    ns1:description "Con mayonesa de hoisin,olivas negras,limón y pimentón,queso chedar y cezina de waygu"^^xsd:string ;
+    ns1:name "HAMBURGUESA DE VACA GALLEGA"^^xsd:string ;
+    ns1:price "14,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/EUSKAL_SAGARDOA> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/EUSKAL_SAGARDOA/item/SIDRA_NATURAL_DE__KUARTANGO> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/EUSKAL_SAGARDOA/item/SIDRA_NATURAL_DE__KUARTANGO> a ns1:MenuItem ;
+    ns1:description "No description"^^xsd:string ;
+    ns1:name "SIDRA NATURAL DE  KUARTANGO"^^xsd:string ;
+    ns1:price "6,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/LAS_ENSALADAS> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/LAS_ENSALADAS/item/ENSALADA_DE_TOMATE> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/LAS_ENSALADAS/item/ENSALADA_DE_TOMATE> a ns1:MenuItem ;
+    ns1:description "Tomate feo de Tudela, bonito del norte, cebolla y vinagreta"^^xsd:string ;
+    ns1:name "ENSALADA DE TOMATE"^^xsd:string ;
+    ns1:price "13,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/LOS_CLASICOS_NUNCA_FALLAN> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/LOS_CLASICOS_NUNCA_FALLAN/item/CARRILLERAS_DE_TERNERA> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/LOS_CLASICOS_NUNCA_FALLAN/item/CARRILLERAS_DE_TERNERA> a ns1:MenuItem ;
+    ns1:description "Glaseadas al oporto, con minestrone de lenteja verdina eco"^^xsd:string ;
+    ns1:name "CARRILLERAS DE TERNERA"^^xsd:string ;
+    ns1:price "18,90 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/MENÚ_DEL_DÍA> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/MENÚ_DEL_DÍA/item/MENU_DEL_DÍA> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/MENÚ_DEL_DÍA/item/MENU_DEL_DÍA> a ns1:MenuItem ;
+    ns1:description "No disponible"^^xsd:string ;
+    ns1:name "MENU DEL DÍA"^^xsd:string ;
+    ns1:price "16,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/MEZCLA_DE_CULTURAS> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/MEZCLA_DE_CULTURAS/item/RISOTTO_DE_ALBAHACA,ESPINACAS_Y_LIMÓN> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/MEZCLA_DE_CULTURAS/item/RISOTTO_DE_ALBAHACA,ESPINACAS_Y_LIMÓN> a ns1:MenuItem ;
+    ns1:description "Arroz cremoso de chipirones guisados en jugo de cebolla y parmesano"^^xsd:string ;
+    ns1:name "RISOTTO DE ALBAHACA,ESPINACAS Y LIMÓN"^^xsd:string ;
+    ns1:price "19,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/OPCIONES_100%_VEGETALES> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/OPCIONES_100%_VEGETALES/item/HUMUS_NEGRO_ECO_CON_NATXOS_Y_SHITAKES> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/OPCIONES_100%_VEGETALES/item/HUMUS_NEGRO_ECO_CON_NATXOS_Y_SHITAKES> a ns1:MenuItem ;
+    ns1:description "No description"^^xsd:string ;
+    ns1:name "HUMUS NEGRO ECO CON NATXOS Y SHITAKES"^^xsd:string ;
+    ns1:price "12,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/PARA_LOS_CROQUETEROS> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/PARA_LOS_CROQUETEROS/item/CROQUETAS_DE_IDIAZABAL_AHUMADO_Y_NUECES> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/PARA_LOS_CROQUETEROS/item/CROQUETAS_DE_IDIAZABAL_AHUMADO_Y_NUECES> a ns1:MenuItem ;
+    ns1:description "6 UND"^^xsd:string ;
+    ns1:name "CROQUETAS DE IDIAZABAL AHUMADO Y NUECES"^^xsd:string ;
+    ns1:price "12,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/PRODUCTOS_TOP> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/PRODUCTOS_TOP/item/CEZINA_DE_WAGYU_PREMIUM> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/PRODUCTOS_TOP/item/CEZINA_DE_WAGYU_PREMIUM> a ns1:MenuItem ;
+    ns1:description "Con parmesano y aove Alavés"^^xsd:string ;
+    ns1:name "CEZINA DE WAGYU PREMIUM"^^xsd:string ;
+    ns1:price "17,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/VINOS_BLANCOS_RIOJA_ALAVESA> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/VINOS_BLANCOS_RIOJA_ALAVESA/item/BLANCO_CASA_PRIMICIA> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/VINOS_BLANCOS_RIOJA_ALAVESA/item/BLANCO_CASA_PRIMICIA> a ns1:MenuItem ;
+    ns1:description "No description"^^xsd:string ;
+    ns1:name "BLANCO CASA PRIMICIA"^^xsd:string ;
+    ns1:price "12,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/VINOS_BLANCOS_RUEDA> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/VINOS_BLANCOS_RUEDA/item/MARQUES_DE_ULLIA> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/VINOS_BLANCOS_RUEDA/item/MARQUES_DE_ULLIA> a ns1:MenuItem ;
+    ns1:description "No description"^^xsd:string ;
+    ns1:name "MARQUES DE ULLIA"^^xsd:string ;
+    ns1:price "15,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/VINOS_TINTOS_RIOJA_ALAVESA> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/VINOS_TINTOS_RIOJA_ALAVESA/item/JOVEN_MC__CASA_PRIMICIA> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/45-waska/menu/VINOS_TINTOS_RIOJA_ALAVESA/item/JOVEN_MC__CASA_PRIMICIA> a ns1:MenuItem ;
+    ns1:description "No description"^^xsd:string ;
+    ns1:name "JOVEN MC  CASA PRIMICIA"^^xsd:string ;
+    ns1:price "12,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/47-quinoa/menu/A_LA_BRASA> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/47-quinoa/menu/A_LA_BRASA/item/1/4_Pollo_a_la_brasa_para_peques> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/47-quinoa/menu/A_LA_BRASA/item/1/4_Pollo_a_la_brasa_para_peques> a ns1:MenuItem ;
+    ns1:description "1/4 de pollo al carbón + patatas + ensalada"^^xsd:string ;
+    ns1:name "1/4 Pollo a la brasa para peques"^^xsd:string ;
+    ns1:price "11,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/47-quinoa/menu/BEBIDAS> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/47-quinoa/menu/BEBIDAS/item/Agua_(330_ml.)> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/47-quinoa/menu/BEBIDAS/item/Agua_(330_ml.)> a ns1:MenuItem ;
+    ns1:description ""^^xsd:string ;
+    ns1:name "Agua (330 ml.)"^^xsd:string ;
+    ns1:price "1,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/47-quinoa/menu/DULCE_FINAL> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/47-quinoa/menu/DULCE_FINAL/item/Crema_de_rocoto> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/47-quinoa/menu/DULCE_FINAL/item/Crema_de_rocoto> a ns1:MenuItem ;
+    ns1:description ""^^xsd:string ;
+    ns1:name "Crema de rocoto"^^xsd:string ;
+    ns1:price "1,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/47-quinoa/menu/EXTRAS> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/47-quinoa/menu/EXTRAS/item/Porción_de_cancha> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/47-quinoa/menu/EXTRAS/item/Porción_de_cancha> a ns1:MenuItem ;
+    ns1:description ""^^xsd:string ;
+    ns1:name "Porción de cancha"^^xsd:string ;
+    ns1:price "2,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/47-quinoa/menu/FESTIVAL_DE_CEVICHES> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/47-quinoa/menu/FESTIVAL_DE_CEVICHES/item/Ceviche_mixto_de_rocoto> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/47-quinoa/menu/FESTIVAL_DE_CEVICHES/item/Ceviche_mixto_de_rocoto> a ns1:MenuItem ;
+    ns1:description "Pesca del día, marisco de temporada, crema de rocoto y leche de tigre"^^xsd:string ;
+    ns1:name "Ceviche mixto de rocoto"^^xsd:string ;
+    ns1:price "18,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/47-quinoa/menu/NUESTRAS_CARNES> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/47-quinoa/menu/NUESTRAS_CARNES/item/Ají_De_Gallina> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/47-quinoa/menu/NUESTRAS_CARNES/item/Ají_De_Gallina> a ns1:MenuItem ;
+    ns1:description "Salsa de ají amarillo con trozos de pollo, arroz blanco, patatas a vapor, huevo y aceituna morada"^^xsd:string ;
+    ns1:name "Ají De Gallina"^^xsd:string ;
+    ns1:price "15,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/47-quinoa/menu/NUESTRAS_CAUSAS> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/47-quinoa/menu/NUESTRAS_CAUSAS/item/Causa_Limeña> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/47-quinoa/menu/NUESTRAS_CAUSAS/item/Causa_Limeña> a ns1:MenuItem ;
+    ns1:description "Masa de patata con toque de ají amarillo, zumo de limón y relleno de pollo"^^xsd:string ;
+    ns1:name "Causa Limeña"^^xsd:string ;
+    ns1:price "10,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/47-quinoa/menu/PESCADOS_Y_MARISCOS> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/47-quinoa/menu/PESCADOS_Y_MARISCOS/item/Jalea_de_pescado> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/47-quinoa/menu/PESCADOS_Y_MARISCOS/item/Jalea_de_pescado> a ns1:MenuItem ;
+    ns1:description "Trozos de pescado rebozados y fritos con yuca y salsa de la casa"^^xsd:string ;
+    ns1:name "Jalea de pescado"^^xsd:string ;
+    ns1:price "15,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/47-quinoa/menu/TAPAS_PERUANAS> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/47-quinoa/menu/TAPAS_PERUANAS/item/Ensalada__de_la_casa> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/47-quinoa/menu/TAPAS_PERUANAS/item/Ensalada__de_la_casa> a ns1:MenuItem ;
+    ns1:description "quinoa orgánica con tiras de pollo al grill"^^xsd:string ;
+    ns1:name "Ensalada  de la casa"^^xsd:string ;
+    ns1:price "9,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/47-quinoa/menu/TOP_VENTAS> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/47-quinoa/menu/TOP_VENTAS/item/Arroz_chaufa_mixto> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/47-quinoa/menu/TOP_VENTAS/item/Arroz_chaufa_mixto> a ns1:MenuItem ;
+    ns1:description "Arroz frito al wok con carne y pollo aderezada con sabores orientales, cebollín y tortilla de huevo"^^xsd:string ;
+    ns1:name "Arroz chaufa mixto"^^xsd:string ;
+    ns1:price "14,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/48-arkupe/menu/PAN> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/48-arkupe/menu/PAN/item/PAN> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/48-arkupe/menu/PAN/item/PAN> a ns1:MenuItem ;
+    ns1:description "HOGAZA DE PAN AZKOIEN"^^xsd:string ;
+    ns1:name "PAN"^^xsd:string ;
+    ns1:price "3,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/48-arkupe/menu/PARA_EMPEZAR> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/48-arkupe/menu/PARA_EMPEZAR/item/SALMON_ECOLOGICO_MARINADO_CON_SALSA_TARTARA> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/48-arkupe/menu/PARA_EMPEZAR/item/SALMON_ECOLOGICO_MARINADO_CON_SALSA_TARTARA> a ns1:MenuItem ;
+    ns1:description "No disponible"^^xsd:string ;
+    ns1:name "SALMON ECOLOGICO MARINADO CON SALSA TARTARA"^^xsd:string ;
+    ns1:price "15,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/48-arkupe/menu/POSTRES> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/48-arkupe/menu/POSTRES/item/TARTA_DE_HOJALDRE_Y_MANZANA> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/48-arkupe/menu/POSTRES/item/TARTA_DE_HOJALDRE_Y_MANZANA> a ns1:MenuItem ;
+    ns1:description ""^^xsd:string ;
+    ns1:name "TARTA DE HOJALDRE Y MANZANA"^^xsd:string ;
+    ns1:price "6,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/48-arkupe/menu/PUCHEROS> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/48-arkupe/menu/PUCHEROS/item/ALUBIA_PINTA_ALAVESA_CON_SUS_SACRAMENTOS> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/48-arkupe/menu/PUCHEROS/item/ALUBIA_PINTA_ALAVESA_CON_SUS_SACRAMENTOS> a ns1:MenuItem ;
+    ns1:description "No disponible"^^xsd:string ;
+    ns1:name "ALUBIA PINTA ALAVESA CON SUS SACRAMENTOS"^^xsd:string ;
+    ns1:price "14,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/48-arkupe/menu/SEGUNDOS> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/48-arkupe/menu/SEGUNDOS/item/TXIPIRONES_EN_SU_TINTA_CON_RISOTTO_DE_HONGOS> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/48-arkupe/menu/SEGUNDOS/item/TXIPIRONES_EN_SU_TINTA_CON_RISOTTO_DE_HONGOS> a ns1:MenuItem ;
+    ns1:description "El arroz es de guarnición (envase pequeño)"^^xsd:string ;
+    ns1:name "TXIPIRONES EN SU TINTA CON RISOTTO DE HONGOS"^^xsd:string ;
+    ns1:price "16,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/48-arkupe/menu/VINOS_BLANCOS> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/48-arkupe/menu/VINOS_BLANCOS/item/AMADOR_GARCIA_(_RIOJA)> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/48-arkupe/menu/VINOS_BLANCOS/item/AMADOR_GARCIA_(_RIOJA)> a ns1:MenuItem ;
+    ns1:description "No description"^^xsd:string ;
+    ns1:name "AMADOR GARCIA ( RIOJA)"^^xsd:string ;
+    ns1:price "11,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/48-arkupe/menu/VINOS_TINTOS_AÑO> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/48-arkupe/menu/VINOS_TINTOS_AÑO/item/LUBERRI> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/48-arkupe/menu/VINOS_TINTOS_AÑO/item/LUBERRI> a ns1:MenuItem ;
+    ns1:description "No description"^^xsd:string ;
+    ns1:name "LUBERRI"^^xsd:string ;
+    ns1:price "11,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/48-arkupe/menu/VINOS_TINTOS_CRIANZA> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/48-arkupe/menu/VINOS_TINTOS_CRIANZA/item/LUIS_CAÑAS> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/48-arkupe/menu/VINOS_TINTOS_CRIANZA/item/LUIS_CAÑAS> a ns1:MenuItem ;
+    ns1:description "Botella pequeña 750 ml"^^xsd:string ;
+    ns1:name "LUIS CAÑAS"^^xsd:string ;
+    ns1:price "14,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/51-txakurzain/menu/ANTIPARASITARIOS_GATO> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/51-txakurzain/menu/ANTIPARASITARIOS_GATO/item/Pipeta_mensual_Spot-On_Nexgard_Combo_Gato> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/51-txakurzain/menu/ANTIPARASITARIOS_GATO/item/Pipeta_mensual_Spot-On_Nexgard_Combo_Gato> a ns1:MenuItem ;
+    ns1:description "caja de 3 ud"^^xsd:string ;
+    ns1:name "Pipeta mensual Spot-On Nexgard Combo Gato"^^xsd:string ;
+    ns1:price "46,05 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/51-txakurzain/menu/ANTIPARASITARIOS_PERROS> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/51-txakurzain/menu/ANTIPARASITARIOS_PERROS/item/Collares_Antiparasitarios_Scalibor> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/51-txakurzain/menu/ANTIPARASITARIOS_PERROS/item/Collares_Antiparasitarios_Scalibor> a ns1:MenuItem ;
+    ns1:description "caja de 3 ud"^^xsd:string ;
+    ns1:name "Collares Antiparasitarios Scalibor"^^xsd:string ;
+    ns1:price "28,70 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/51-txakurzain/menu/BOLSAS_EARTH_RATED> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/51-txakurzain/menu/BOLSAS_EARTH_RATED/item/BOLSAS_EARTH_-_Compostables_60_unidades> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/51-txakurzain/menu/BOLSAS_EARTH_RATED/item/BOLSAS_EARTH_-_Compostables_60_unidades> a ns1:MenuItem ;
+    ns1:description "120 ud"^^xsd:string ;
+    ns1:name "BOLSAS EARTH - Compostables 60 unidades"^^xsd:string ;
+    ns1:price "9,60 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/51-txakurzain/menu/CHUCHES> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/51-txakurzain/menu/CHUCHES/item/DENTASTIX_-_Caja_de_28_ud_para_perros_de_5-10_kg> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/51-txakurzain/menu/CHUCHES/item/DENTASTIX_-_Caja_de_28_ud_para_perros_de_5-10_kg> a ns1:MenuItem ;
+    ns1:description ""^^xsd:string ;
+    ns1:name "DENTASTIX - Caja de 28 ud para perros de 5-10 kg"^^xsd:string ;
+    ns1:price "8,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/51-txakurzain/menu/COSMÉTICA> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/51-txakurzain/menu/COSMÉTICA/item/Champú_fisiológico_-_Aceite_de_visón_para_pelo_largo> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/51-txakurzain/menu/COSMÉTICA/item/Champú_fisiológico_-_Aceite_de_visón_para_pelo_largo> a ns1:MenuItem ;
+    ns1:description ""^^xsd:string ;
+    ns1:name "Champú fisiológico - Aceite de visón para pelo largo"^^xsd:string ;
+    ns1:price "7,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/51-txakurzain/menu/KNATUR_DIETA_BARF> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/51-txakurzain/menu/KNATUR_DIETA_BARF/item/KNATUR_DIETA_BARF_-_Pollo_con_verduras_90%_carne_fresca> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/51-txakurzain/menu/KNATUR_DIETA_BARF/item/KNATUR_DIETA_BARF_-_Pollo_con_verduras_90%_carne_fresca> a ns1:MenuItem ;
+    ns1:description "600gr."^^xsd:string ;
+    ns1:name "KNATUR DIETA BARF - Pollo con verduras 90% carne fresca"^^xsd:string ;
+    ns1:price "3,45 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/51-txakurzain/menu/LITTLE_ONE_ROEDORES> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/51-txakurzain/menu/LITTLE_ONE_ROEDORES/item/LITTLE_ONE_ROEDORES_-_Rabbit_Junior> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/51-txakurzain/menu/LITTLE_ONE_ROEDORES/item/LITTLE_ONE_ROEDORES_-_Rabbit_Junior> a ns1:MenuItem ;
+    ns1:description "900 gr."^^xsd:string ;
+    ns1:name "LITTLE ONE ROEDORES - Rabbit Junior"^^xsd:string ;
+    ns1:price "4,10 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/51-txakurzain/menu/NUTRIBEST_GATO> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/51-txakurzain/menu/NUTRIBEST_GATO/item/NUTRIBEST_GATO_-_Esterilizado> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/51-txakurzain/menu/NUTRIBEST_GATO/item/NUTRIBEST_GATO_-_Esterilizado> a ns1:MenuItem ;
+    ns1:description "2kg"^^xsd:string ;
+    ns1:name "NUTRIBEST GATO - Esterilizado"^^xsd:string ;
+    ns1:price "7,90 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/51-txakurzain/menu/NUTRIBEST_PERRO> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/51-txakurzain/menu/NUTRIBEST_PERRO/item/NUTRIBEST_PERRO_Puppy> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/51-txakurzain/menu/NUTRIBEST_PERRO/item/NUTRIBEST_PERRO_Puppy> a ns1:MenuItem ;
+    ns1:description "3kg"^^xsd:string ;
+    ns1:name "NUTRIBEST PERRO Puppy"^^xsd:string ;
+    ns1:price "9,70 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/51-txakurzain/menu/PIEDRAS_DE_GATO_Y_LECHOS_VEGETALES> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/51-txakurzain/menu/PIEDRAS_DE_GATO_Y_LECHOS_VEGETALES/item/Arena_de_gato_económica> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/51-txakurzain/menu/PIEDRAS_DE_GATO_Y_LECHOS_VEGETALES/item/Arena_de_gato_económica> a ns1:MenuItem ;
+    ns1:description "5L"^^xsd:string ;
+    ns1:name "Arena de gato económica"^^xsd:string ;
+    ns1:price "5,70 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/51-txakurzain/menu/Pienso_para_Perro_Txakurzain> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/51-txakurzain/menu/Pienso_para_Perro_Txakurzain/item/Cachorros_de_Pavo> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/51-txakurzain/menu/Pienso_para_Perro_Txakurzain/item/Cachorros_de_Pavo> a ns1:MenuItem ;
+    ns1:description "2 Kg o 12 Kg"^^xsd:string ;
+    ns1:name "Cachorros de Pavo"^^xsd:string ;
+    ns1:price "9,99 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/51-txakurzain/menu/Snacks_para_perro_y_gato> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/51-txakurzain/menu/Snacks_para_perro_y_gato/item/80_%_Ave_de_corral> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/51-txakurzain/menu/Snacks_para_perro_y_gato/item/80_%_Ave_de_corral> a ns1:MenuItem ;
+    ns1:description "70 gr"^^xsd:string ;
+    ns1:name "80 % Ave de corral"^^xsd:string ;
+    ns1:price "0,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/52-kirolak/menu/Taller> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/52-kirolak/menu/Taller/item/Tablas_de_Ski> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/52-kirolak/menu/Taller/item/Tablas_de_Ski> a ns1:MenuItem ;
+    ns1:description "Hasta 1,50 metros"^^xsd:string ;
+    ns1:name "Tablas de Ski"^^xsd:string ;
+    ns1:price "24,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/55-maicker-s-delivery-take-away/menu/Bebidas> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/55-maicker-s-delivery-take-away/menu/Bebidas/item/Kas_Naranja> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/55-maicker-s-delivery-take-away/menu/Bebidas/item/Kas_Naranja> a ns1:MenuItem ;
+    ns1:description "33 cl"^^xsd:string ;
+    ns1:name "Kas Naranja"^^xsd:string ;
+    ns1:price "2,20 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/55-maicker-s-delivery-take-away/menu/Bebidas_Alcoholicas> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/55-maicker-s-delivery-take-away/menu/Bebidas_Alcoholicas/item/Radler_Amstel> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/55-maicker-s-delivery-take-away/menu/Bebidas_Alcoholicas/item/Radler_Amstel> a ns1:MenuItem ;
+    ns1:description "33 cl"^^xsd:string ;
+    ns1:name "Radler Amstel"^^xsd:string ;
+    ns1:price "2,20 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/55-maicker-s-delivery-take-away/menu/Burgers_y_Wraps> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/55-maicker-s-delivery-take-away/menu/Burgers_y_Wraps/item/Smash_Maicker´s> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/55-maicker-s-delivery-take-away/menu/Burgers_y_Wraps/item/Smash_Maicker´s> a ns1:MenuItem ;
+    ns1:description "Pan brioche, 2 carnes de 100 gr tipo Smash, mayo ahumada, bacon caramelizado y cebolla morada"^^xsd:string ;
+    ns1:name "Smash Maicker´s"^^xsd:string ;
+    ns1:price "11,90 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/55-maicker-s-delivery-take-away/menu/Ensaladas> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/55-maicker-s-delivery-take-away/menu/Ensaladas/item/Ensalada_Chicken_Crunchy> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/55-maicker-s-delivery-take-away/menu/Ensaladas/item/Ensalada_Chicken_Crunchy> a ns1:MenuItem ;
+    ns1:description "No disponible"^^xsd:string ;
+    ns1:name "Ensalada Chicken Crunchy"^^xsd:string ;
+    ns1:price "9,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/55-maicker-s-delivery-take-away/menu/Entrantes> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/55-maicker-s-delivery-take-away/menu/Entrantes/item/Patatas_House_Cheddar_-_Chili> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/55-maicker-s-delivery-take-away/menu/Entrantes/item/Patatas_House_Cheddar_-_Chili> a ns1:MenuItem ;
+    ns1:description "Patatas fritas, salsa cheddar y nuestro chili casero"^^xsd:string ;
+    ns1:name "Patatas House Cheddar - Chili"^^xsd:string ;
+    ns1:price "8,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/55-maicker-s-delivery-take-away/menu/Hot_Dogs> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/55-maicker-s-delivery-take-away/menu/Hot_Dogs/item/Hot_Dog_House> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/55-maicker-s-delivery-take-away/menu/Hot_Dogs/item/Hot_Dog_House> a ns1:MenuItem ;
+    ns1:description "Pan brioche, salchicha Viena, bacon crujiente, queso cheddar, piña carmelizada, ketchup, mayonesa, mostaza y chips de patatas fritas"^^xsd:string ;
+    ns1:name "Hot Dog House"^^xsd:string ;
+    ns1:price "6,90 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/55-maicker-s-delivery-take-away/menu/Menús> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/55-maicker-s-delivery-take-away/menu/Menús/item/Menu_Smash_Maicker´s> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/55-maicker-s-delivery-take-away/menu/Menús/item/Menu_Smash_Maicker´s> a ns1:MenuItem ;
+    ns1:description "Pan brioche, 2 carnes de 100 gr tipo Smash, mayo ahumada, bacon caramelizado y cebolla morada."^^xsd:string ;
+    ns1:name "Menu Smash Maicker´s"^^xsd:string ;
+    ns1:price "15,40 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/55-maicker-s-delivery-take-away/menu/Postres> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/55-maicker-s-delivery-take-away/menu/Postres/item/Cheese_cake> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/55-maicker-s-delivery-take-away/menu/Postres/item/Cheese_cake> a ns1:MenuItem ;
+    ns1:description "No disponible"^^xsd:string ;
+    ns1:name "Cheese cake"^^xsd:string ;
+    ns1:price "4,75 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/64-mano-lenta/menu/BRASA> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/64-mano-lenta/menu/BRASA/item/Hamburguesa_de_buey,_salsa_tatemada,_queso_,_encurtidos_y_cilantro> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/64-mano-lenta/menu/BRASA/item/Hamburguesa_de_buey,_salsa_tatemada,_queso_,_encurtidos_y_cilantro> a ns1:MenuItem ;
+    ns1:description "No disponible"^^xsd:string ;
+    ns1:name "Hamburguesa de buey, salsa tatemada, queso , encurtidos y cilantro"^^xsd:string ;
+    ns1:price "12,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/64-mano-lenta/menu/Guisos_a_fuego_lento> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/64-mano-lenta/menu/Guisos_a_fuego_lento/item/Albóndigas_de_rabo,_parmentier_trufado_y_tirabeques> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/64-mano-lenta/menu/Guisos_a_fuego_lento/item/Albóndigas_de_rabo,_parmentier_trufado_y_tirabeques> a ns1:MenuItem ;
+    ns1:description ""^^xsd:string ;
+    ns1:name "Albóndigas de rabo, parmentier trufado y tirabeques"^^xsd:string ;
+    ns1:price "14,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/64-mano-lenta/menu/POSTRES> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/64-mano-lenta/menu/POSTRES/item/Tarta_de_queso> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/64-mano-lenta/menu/POSTRES/item/Tarta_de_queso> a ns1:MenuItem ;
+    ns1:description ""^^xsd:string ;
+    ns1:name "Tarta de queso"^^xsd:string ;
+    ns1:price "6,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/64-mano-lenta/menu/platos> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/64-mano-lenta/menu/platos/item/Patata_hojaldrada_con_nuestra_salsa_caseras> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/64-mano-lenta/menu/platos/item/Patata_hojaldrada_con_nuestra_salsa_caseras> a ns1:MenuItem ;
+    ns1:description ""^^xsd:string ;
+    ns1:name "Patata hojaldrada con nuestra salsa caseras"^^xsd:string ;
+    ns1:price "7,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/65-tandoori/menu/Barbacoa> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/65-tandoori/menu/Barbacoa/item/CHICKEN_TANDOORI> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/65-tandoori/menu/Barbacoa/item/CHICKEN_TANDOORI> a ns1:MenuItem ;
+    ns1:description "Muslo de pollo adobado con gengibre ajo yogur y zumo de limón"^^xsd:string ;
+    ns1:name "CHICKEN TANDOORI"^^xsd:string ;
+    ns1:price "7,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/65-tandoori/menu/Basmati_-_Arroz> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/65-tandoori/menu/Basmati_-_Arroz/item/BOILED_RICE> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/65-tandoori/menu/Basmati_-_Arroz/item/BOILED_RICE> a ns1:MenuItem ;
+    ns1:description "Arroz basmati aromatizado cocinado al vapor"^^xsd:string ;
+    ns1:name "BOILED RICE"^^xsd:string ;
+    ns1:price "5,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/65-tandoori/menu/Bebidas> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/65-tandoori/menu/Bebidas/item/Sprite> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/65-tandoori/menu/Bebidas/item/Sprite> a ns1:MenuItem ;
+    ns1:description "33 ml"^^xsd:string ;
+    ns1:name "Sprite"^^xsd:string ;
+    ns1:price "2,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/65-tandoori/menu/Biryanis_-_Pallellas> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/65-tandoori/menu/Biryanis_-_Pallellas/item/CHICKEN_BIRYANI> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/65-tandoori/menu/Biryanis_-_Pallellas/item/CHICKEN_BIRYANI> a ns1:MenuItem ;
+    ns1:description "Arroz basmati con pollo"^^xsd:string ;
+    ns1:name "CHICKEN BIRYANI"^^xsd:string ;
+    ns1:price "14,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/65-tandoori/menu/Cordero_Guisado> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/65-tandoori/menu/Cordero_Guisado/item/LAMB_HANDI> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/65-tandoori/menu/Cordero_Guisado/item/LAMB_HANDI> a ns1:MenuItem ;
+    ns1:description "Carne de Cordero cocinado con salsa de cebolla dorada pimientos salsa de tomate y yogur"^^xsd:string ;
+    ns1:name "LAMB HANDI"^^xsd:string ;
+    ns1:price "15,30 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/65-tandoori/menu/Ensaladas> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/65-tandoori/menu/Ensaladas/item/MIX_SALAD> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/65-tandoori/menu/Ensaladas/item/MIX_SALAD> a ns1:MenuItem ;
+    ns1:description "Lechuga tomate cebolla maíz espárragos y atún"^^xsd:string ;
+    ns1:name "MIX SALAD"^^xsd:string ;
+    ns1:price "8,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/65-tandoori/menu/Entrantes> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/65-tandoori/menu/Entrantes/item/PAPADOM> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/65-tandoori/menu/Entrantes/item/PAPADOM> a ns1:MenuItem ;
+    ns1:description "Torta fina crujiente de lentejas"^^xsd:string ;
+    ns1:name "PAPADOM"^^xsd:string ;
+    ns1:price "2,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/65-tandoori/menu/Menú_niños> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/65-tandoori/menu/Menú_niños/item/POLLO_TIKKA_4Ud._+_PILAU_ARROZ_O_PATATAS_+_REFRESCO> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/65-tandoori/menu/Menú_niños/item/POLLO_TIKKA_4Ud._+_PILAU_ARROZ_O_PATATAS_+_REFRESCO> a ns1:MenuItem ;
+    ns1:description "No description"^^xsd:string ;
+    ns1:name "POLLO TIKKA 4Ud. + PILAU ARROZ O PATATAS + REFRESCO"^^xsd:string ;
+    ns1:price "13,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/65-tandoori/menu/Nan> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/65-tandoori/menu/Nan/item/SAADA_NAN> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/65-tandoori/menu/Nan/item/SAADA_NAN> a ns1:MenuItem ;
+    ns1:description "Nan básico"^^xsd:string ;
+    ns1:name "SAADA NAN"^^xsd:string ;
+    ns1:price "3,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/65-tandoori/menu/Pescado_Guisado> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/65-tandoori/menu/Pescado_Guisado/item/FISH_HANDI> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/65-tandoori/menu/Pescado_Guisado/item/FISH_HANDI> a ns1:MenuItem ;
+    ns1:description "Merluza guisada"^^xsd:string ;
+    ns1:name "FISH HANDI"^^xsd:string ;
+    ns1:price "15,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/65-tandoori/menu/Pollo_Guisado> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/65-tandoori/menu/Pollo_Guisado/item/CHICKEN_HANDI> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/65-tandoori/menu/Pollo_Guisado/item/CHICKEN_HANDI> a ns1:MenuItem ;
+    ns1:description "Carne de pollo cocinado con salsa de cebolla dorada pimientos salsa de tomate y yogur"^^xsd:string ;
+    ns1:name "CHICKEN HANDI"^^xsd:string ;
+    ns1:price "14,30 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/65-tandoori/menu/Postres> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/65-tandoori/menu/Postres/item/SOOJI_HALWA> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/65-tandoori/menu/Postres/item/SOOJI_HALWA> a ns1:MenuItem ;
+    ns1:description "Pastel de sémola de trigo con mantequilla leche y frutos secos"^^xsd:string ;
+    ns1:name "SOOJI HALWA"^^xsd:string ;
+    ns1:price "5,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/65-tandoori/menu/Sopas> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/65-tandoori/menu/Sopas/item/TOMATO_SOAP> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/65-tandoori/menu/Sopas/item/TOMATO_SOAP> a ns1:MenuItem ;
+    ns1:description "Sopa de Tomate"^^xsd:string ;
+    ns1:name "TOMATO SOAP"^^xsd:string ;
+    ns1:price "5,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/65-tandoori/menu/Ternera_Guisada> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/65-tandoori/menu/Ternera_Guisada/item/BEEF_/_TERNERA_HANDI> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/65-tandoori/menu/Ternera_Guisada/item/BEEF_/_TERNERA_HANDI> a ns1:MenuItem ;
+    ns1:description "Carne de Ternera cocinada con salsa de cebolla dorada pimientos salsa tomate y yogur"^^xsd:string ;
+    ns1:name "BEEF / TERNERA HANDI"^^xsd:string ;
+    ns1:price "13,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/65-tandoori/menu/Verduras> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/65-tandoori/menu/Verduras/item/VEGETABLE_HANDI> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/65-tandoori/menu/Verduras/item/VEGETABLE_HANDI> a ns1:MenuItem ;
+    ns1:description "Mezcla de verduras guisadas"^^xsd:string ;
+    ns1:name "VEGETABLE HANDI"^^xsd:string ;
+    ns1:price "9,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/70-himalaya-tandoori/menu/AL_HORNO_TANDOORI_ESPECIAL> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/70-himalaya-tandoori/menu/AL_HORNO_TANDOORI_ESPECIAL/item/Pollo_Tandoori> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/70-himalaya-tandoori/menu/AL_HORNO_TANDOORI_ESPECIAL/item/Pollo_Tandoori> a ns1:MenuItem ;
+    ns1:description "Muslo de pollo marinado con yogur, jengibre, ajo, hierbas y especias de Nepal"^^xsd:string ;
+    ns1:name "Pollo Tandoori"^^xsd:string ;
+    ns1:price "10,99 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/70-himalaya-tandoori/menu/APERTIVOS_Y_SOPAS> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/70-himalaya-tandoori/menu/APERTIVOS_Y_SOPAS/item/Sopa_de_lentejas> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/70-himalaya-tandoori/menu/APERTIVOS_Y_SOPAS/item/Sopa_de_lentejas> a ns1:MenuItem ;
+    ns1:description "Sopa de lentejas suavemente especiada de Nepal"^^xsd:string ;
+    ns1:name "Sopa de lentejas"^^xsd:string ;
+    ns1:price "4,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/70-himalaya-tandoori/menu/ARROZ> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/70-himalaya-tandoori/menu/ARROZ/item/Arroz_Pilau> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/70-himalaya-tandoori/menu/ARROZ/item/Arroz_Pilau> a ns1:MenuItem ;
+    ns1:description "No description"^^xsd:string ;
+    ns1:name "Arroz Pilau"^^xsd:string ;
+    ns1:price "4,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/70-himalaya-tandoori/menu/Bebidas_Alcoholicas> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/70-himalaya-tandoori/menu/Bebidas_Alcoholicas/item/Volldam> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/70-himalaya-tandoori/menu/Bebidas_Alcoholicas/item/Volldam> a ns1:MenuItem ;
+    ns1:description ""^^xsd:string ;
+    ns1:name "Volldam"^^xsd:string ;
+    ns1:price "1,80 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/70-himalaya-tandoori/menu/Bebidas_Np-alcoholicas> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/70-himalaya-tandoori/menu/Bebidas_Np-alcoholicas/item/Coca_Cola> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/70-himalaya-tandoori/menu/Bebidas_Np-alcoholicas/item/Coca_Cola> a ns1:MenuItem ;
+    ns1:description ""^^xsd:string ;
+    ns1:name "Coca Cola"^^xsd:string ;
+    ns1:price "1,80 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/70-himalaya-tandoori/menu/CURRY_Y_PLATOS_VEGETARIANOS> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/70-himalaya-tandoori/menu/CURRY_Y_PLATOS_VEGETARIANOS/item/Mix_vegetable_curry> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/70-himalaya-tandoori/menu/CURRY_Y_PLATOS_VEGETARIANOS/item/Mix_vegetable_curry> a ns1:MenuItem ;
+    ns1:description "Verduras de temporada condimentada y cocinada en salsa curry"^^xsd:string ;
+    ns1:name "Mix vegetable curry"^^xsd:string ;
+    ns1:price "8,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/70-himalaya-tandoori/menu/ENTRANTES> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/70-himalaya-tandoori/menu/ENTRANTES/item/Cebolla_bhaji> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/70-himalaya-tandoori/menu/ENTRANTES/item/Cebolla_bhaji> a ns1:MenuItem ;
+    ns1:description "Cebolla frita rebozada en harina de garbanzo y especias"^^xsd:string ;
+    ns1:name "Cebolla bhaji"^^xsd:string ;
+    ns1:price "4,99 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/70-himalaya-tandoori/menu/ENTRANTES_TIPICAS_DE_NEPAL> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/70-himalaya-tandoori/menu/ENTRANTES_TIPICAS_DE_NEPAL/item/C_Momo> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/70-himalaya-tandoori/menu/ENTRANTES_TIPICAS_DE_NEPAL/item/C_Momo> a ns1:MenuItem ;
+    ns1:description "Empanadilla de carne picada cocido con cebolla, pimienta, ajos, jengibre con salsa chile suave - 5 piezas"^^xsd:string ;
+    ns1:name "C Momo"^^xsd:string ;
+    ns1:price "7,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/70-himalaya-tandoori/menu/ESPECIALIDADES_DE_LA_CASA_AL_HORNO_Y_TANDOORI> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/70-himalaya-tandoori/menu/ESPECIALIDADES_DE_LA_CASA_AL_HORNO_Y_TANDOORI/item/Chowmein_Vegetal> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/70-himalaya-tandoori/menu/ESPECIALIDADES_DE_LA_CASA_AL_HORNO_Y_TANDOORI/item/Chowmein_Vegetal> a ns1:MenuItem ;
+    ns1:description "Tallarines fritos con cebolla, jengibre, ajo, tomate, col y cilantro fresco con especias de Himalaya"^^xsd:string ;
+    ns1:name "Chowmein Vegetal"^^xsd:string ;
+    ns1:price "9,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/70-himalaya-tandoori/menu/MENÚS_PARA_NIÑOS> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/70-himalaya-tandoori/menu/MENÚS_PARA_NIÑOS/item/Pollo_Korma_con_arroz_Basmati> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/70-himalaya-tandoori/menu/MENÚS_PARA_NIÑOS/item/Pollo_Korma_con_arroz_Basmati> a ns1:MenuItem ;
+    ns1:description "No description"^^xsd:string ;
+    ns1:name "Pollo Korma con arroz Basmati"^^xsd:string ;
+    ns1:price "7,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/70-himalaya-tandoori/menu/PLATOS_BIRYANI> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/70-himalaya-tandoori/menu/PLATOS_BIRYANI/item/Verdura_Biryani> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/70-himalaya-tandoori/menu/PLATOS_BIRYANI/item/Verdura_Biryani> a ns1:MenuItem ;
+    ns1:description ""^^xsd:string ;
+    ns1:name "Verdura Biryani"^^xsd:string ;
+    ns1:price "9,99 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/70-himalaya-tandoori/menu/PLATOS_ESPECIALES_HIMALAYA> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/70-himalaya-tandoori/menu/PLATOS_ESPECIALES_HIMALAYA/item/Pollo_a_la_mantequilla> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/70-himalaya-tandoori/menu/PLATOS_ESPECIALES_HIMALAYA/item/Pollo_a_la_mantequilla> a ns1:MenuItem ;
+    ns1:description "Pollo deshuesado preparado con salsa de tomate, mantequilla y nata fresca con especias suaves"^^xsd:string ;
+    ns1:name "Pollo a la mantequilla"^^xsd:string ;
+    ns1:price "10,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/70-himalaya-tandoori/menu/POSTRES_DE_LA_CASA> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/70-himalaya-tandoori/menu/POSTRES_DE_LA_CASA/item/Helado_de_mango> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/70-himalaya-tandoori/menu/POSTRES_DE_LA_CASA/item/Helado_de_mango> a ns1:MenuItem ;
+    ns1:description "Yogur batido con mango"^^xsd:string ;
+    ns1:name "Helado de mango"^^xsd:string ;
+    ns1:price "5,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/71-hong-kong/menu/Bebidas> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/71-hong-kong/menu/Bebidas/item/Coca_Cola> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/71-hong-kong/menu/Bebidas/item/Coca_Cola> a ns1:MenuItem ;
+    ns1:description "2 litros"^^xsd:string ;
+    ns1:name "Coca Cola"^^xsd:string ;
+    ns1:price "4,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/71-hong-kong/menu/Dim_Sun> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/71-hong-kong/menu/Dim_Sun/item/Shia_Chiao> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/71-hong-kong/menu/Dim_Sun/item/Shia_Chiao> a ns1:MenuItem ;
+    ns1:description "6 unidades - Empanadilas rellenas de gambas y bambú al vapor"^^xsd:string ;
+    ns1:name "Shia Chiao"^^xsd:string ;
+    ns1:price "6,80 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/71-hong-kong/menu/Entrantes> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/71-hong-kong/menu/Entrantes/item/Rollo_de_Vietnam> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/71-hong-kong/menu/Entrantes/item/Rollo_de_Vietnam> a ns1:MenuItem ;
+    ns1:description "5 unidades"^^xsd:string ;
+    ns1:name "Rollo de Vietnam"^^xsd:string ;
+    ns1:price "5,80 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/71-hong-kong/menu/Extras> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/71-hong-kong/menu/Extras/item/Arroz_Blanco> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/71-hong-kong/menu/Extras/item/Arroz_Blanco> a ns1:MenuItem ;
+    ns1:description "Picante!"^^xsd:string ;
+    ns1:name "Arroz Blanco"^^xsd:string ;
+    ns1:price "2,90 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/71-hong-kong/menu/Huevos_y_Verduras> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/71-hong-kong/menu/Huevos_y_Verduras/item/Tortilla_de_Huevos_con_Gambas> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/71-hong-kong/menu/Huevos_y_Verduras/item/Tortilla_de_Huevos_con_Gambas> a ns1:MenuItem ;
+    ns1:description "Queso de soja"^^xsd:string ;
+    ns1:name "Tortilla de Huevos con Gambas"^^xsd:string ;
+    ns1:price "5,20 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/71-hong-kong/menu/Menus_para_compartir> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/71-hong-kong/menu/Menus_para_compartir/item/Menú_Especial_A_para_2_Personas> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/71-hong-kong/menu/Menus_para_compartir/item/Menú_Especial_A_para_2_Personas> a ns1:MenuItem ;
+    ns1:description "Ensalada china, rollos de primavera 2 unidades, arroz frito tres delicias, ternera con salsa de champiñones y pollo con almendras"^^xsd:string ;
+    ns1:name "Menú Especial A para 2 Personas"^^xsd:string ;
+    ns1:price "23,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/71-hong-kong/menu/Pescados_y_Mariscos> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/71-hong-kong/menu/Pescados_y_Mariscos/item/Pescado_con_Bambú_y_Setas_Chinas> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/71-hong-kong/menu/Pescados_y_Mariscos/item/Pescado_con_Bambú_y_Setas_Chinas> a ns1:MenuItem ;
+    ns1:description "Picante!"^^xsd:string ;
+    ns1:name "Pescado con Bambú y Setas Chinas"^^xsd:string ;
+    ns1:price "7,80 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/71-hong-kong/menu/Platos_Especiales> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/71-hong-kong/menu/Platos_Especiales/item/Marisco_a_la_Plancha_China> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/71-hong-kong/menu/Platos_Especiales/item/Marisco_a_la_Plancha_China> a ns1:MenuItem ;
+    ns1:description "Plancha, picante o fritas"^^xsd:string ;
+    ns1:name "Marisco a la Plancha China"^^xsd:string ;
+    ns1:price "9,70 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/71-hong-kong/menu/Platos_Principales> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/71-hong-kong/menu/Platos_Principales/item/Arroz_Frito> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/71-hong-kong/menu/Platos_Principales/item/Arroz_Frito> a ns1:MenuItem ;
+    ns1:description "Elije tu variedad"^^xsd:string ;
+    ns1:name "Arroz Frito"^^xsd:string ;
+    ns1:price "5,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/71-hong-kong/menu/Sopa> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/71-hong-kong/menu/Sopa/item/Sopa_Especial_de_la_Casa> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/71-hong-kong/menu/Sopa/item/Sopa_Especial_de_la_Casa> a ns1:MenuItem ;
+    ns1:description "Picante!"^^xsd:string ;
+    ns1:name "Sopa Especial de la Casa"^^xsd:string ;
+    ns1:price "4,70 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/75-london-cafe-vitoria/menu/BEBIDAS> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/75-london-cafe-vitoria/menu/BEBIDAS/item/Agua_> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/75-london-cafe-vitoria/menu/BEBIDAS/item/Agua_> a ns1:MenuItem ;
+    ns1:description ""^^xsd:string ;
+    ns1:name "Agua "^^xsd:string ;
+    ns1:price "1,20 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/75-london-cafe-vitoria/menu/BOCADILLOS> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/75-london-cafe-vitoria/menu/BOCADILLOS/item/Bocadillo_de_Calamares_con_Alioli> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/75-london-cafe-vitoria/menu/BOCADILLOS/item/Bocadillo_de_Calamares_con_Alioli> a ns1:MenuItem ;
+    ns1:description "Pan de masa madre en horno de leña, berenjenas, champiñones y cebolla caramelizada"^^xsd:string ;
+    ns1:name "Bocadillo de Calamares con Alioli"^^xsd:string ;
+    ns1:price "7,40 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/75-london-cafe-vitoria/menu/CERVEZAS_DE_IMPORTACIÓN> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/75-london-cafe-vitoria/menu/CERVEZAS_DE_IMPORTACIÓN/item/Cerveza_Águila_sin_filtrar_(33_cl.)> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/75-london-cafe-vitoria/menu/CERVEZAS_DE_IMPORTACIÓN/item/Cerveza_Águila_sin_filtrar_(33_cl.)> a ns1:MenuItem ;
+    ns1:description "No description"^^xsd:string ;
+    ns1:name "Cerveza Águila sin filtrar (33 cl.)"^^xsd:string ;
+    ns1:price "2,70 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/75-london-cafe-vitoria/menu/ENSALADAS> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/75-london-cafe-vitoria/menu/ENSALADAS/item/Ensalada_tibia> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/75-london-cafe-vitoria/menu/ENSALADAS/item/Ensalada_tibia> a ns1:MenuItem ;
+    ns1:description "Lechuga, tomate, maíz, bacon, fingers, nueces y salsa César"^^xsd:string ;
+    ns1:name "Ensalada tibia"^^xsd:string ;
+    ns1:price "11,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/75-london-cafe-vitoria/menu/HAMBURGUESAS> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/75-london-cafe-vitoria/menu/HAMBURGUESAS/item/Hamburguesa_London_Eye> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/75-london-cafe-vitoria/menu/HAMBURGUESAS/item/Hamburguesa_London_Eye> a ns1:MenuItem ;
+    ns1:description "Hamburguesa angus, champiñones, cebolla crujiente, queso roquefort con patatas fritas"^^xsd:string ;
+    ns1:name "Hamburguesa London Eye"^^xsd:string ;
+    ns1:price "13,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/75-london-cafe-vitoria/menu/NUESTROS_PLATOS> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/75-london-cafe-vitoria/menu/NUESTROS_PLATOS/item/Picadilly> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/75-london-cafe-vitoria/menu/NUESTROS_PLATOS/item/Picadilly> a ns1:MenuItem ;
+    ns1:description "Pechuga de pollo, ensalada y patatas"^^xsd:string ;
+    ns1:name "Picadilly"^^xsd:string ;
+    ns1:price "13,90 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/75-london-cafe-vitoria/menu/PARA_PICAR> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/75-london-cafe-vitoria/menu/PARA_PICAR/item/Patatas_fritas> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/75-london-cafe-vitoria/menu/PARA_PICAR/item/Patatas_fritas> a ns1:MenuItem ;
+    ns1:description "4 tiras de pollo rebozadas, 4 crujientes de pollo caseros, 4 croquetas caseras y 4 aros de cebolla."^^xsd:string ;
+    ns1:name "Patatas fritas"^^xsd:string ;
+    ns1:price "6,90 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/75-london-cafe-vitoria/menu/POSTRES> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/75-london-cafe-vitoria/menu/POSTRES/item/Coulant_de_Chocolate> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/75-london-cafe-vitoria/menu/POSTRES/item/Coulant_de_Chocolate> a ns1:MenuItem ;
+    ns1:description ""^^xsd:string ;
+    ns1:name "Coulant de Chocolate"^^xsd:string ;
+    ns1:price "5,90 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/75-london-cafe-vitoria/menu/SANDWICHES_RECIÉN_HECHOS> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/75-london-cafe-vitoria/menu/SANDWICHES_RECIÉN_HECHOS/item/Sándwich_Mixto> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/75-london-cafe-vitoria/menu/SANDWICHES_RECIÉN_HECHOS/item/Sándwich_Mixto> a ns1:MenuItem ;
+    ns1:description "Con jamón york y queso"^^xsd:string ;
+    ns1:name "Sándwich Mixto"^^xsd:string ;
+    ns1:price "5,40 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/76-panaditas/menu/BEBIDAS> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/76-panaditas/menu/BEBIDAS/item/Fanta_Naranja_> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/76-panaditas/menu/BEBIDAS/item/Fanta_Naranja_> a ns1:MenuItem ;
+    ns1:description ""^^xsd:string ;
+    ns1:name "Fanta Naranja "^^xsd:string ;
+    ns1:price "2,40 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/76-panaditas/menu/CERVEZAS> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/76-panaditas/menu/CERVEZAS/item/Cerveza_Heineken_> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/76-panaditas/menu/CERVEZAS/item/Cerveza_Heineken_> a ns1:MenuItem ;
+    ns1:description ""^^xsd:string ;
+    ns1:name "Cerveza Heineken "^^xsd:string ;
+    ns1:price "2,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/76-panaditas/menu/PACKS> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/76-panaditas/menu/PACKS/item/Pack_de_6_Panaditas_Las_más_Vendidas_> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/76-panaditas/menu/PACKS/item/Pack_de_6_Panaditas_Las_más_Vendidas_> a ns1:MenuItem ;
+    ns1:description "Pollo al curry, veggie calabacín, chili con carne, york con queso, espinacas con mozzarella y atún. "^^xsd:string ;
+    ns1:name "Pack de 6 Panaditas \"Las más Vendidas\" "^^xsd:string ;
+    ns1:price "18,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/76-panaditas/menu/PANADITAS_GOLOSOS> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/76-panaditas/menu/PANADITAS_GOLOSOS/item/Cookie_Rellena_de_Nutella_> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/76-panaditas/menu/PANADITAS_GOLOSOS/item/Cookie_Rellena_de_Nutella_> a ns1:MenuItem ;
+    ns1:description ""^^xsd:string ;
+    ns1:name "Cookie Rellena de Nutella "^^xsd:string ;
+    ns1:price "2,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/76-panaditas/menu/PANADITAS_GOURMET> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/76-panaditas/menu/PANADITAS_GOURMET/item/Panadita_de_Pollo_al_Curry_> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/76-panaditas/menu/PANADITAS_GOURMET/item/Panadita_de_Pollo_al_Curry_> a ns1:MenuItem ;
+    ns1:description "Pollo cocinado a baja temperatura con pimiento verde, pimiento rojo, huevo cocido y curry amarillo. "^^xsd:string ;
+    ns1:name "Panadita de Pollo al Curry "^^xsd:string ;
+    ns1:price "3,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/76-panaditas/menu/PANADITAS_SUPREME> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/76-panaditas/menu/PANADITAS_SUPREME/item/Panadita_de_Pollo_Thai> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/76-panaditas/menu/PANADITAS_SUPREME/item/Panadita_de_Pollo_Thai> a ns1:MenuItem ;
+    ns1:description "Pollo cocinado a baja temperatura con pimiento verde, pimiento rojo, huevo cocido y sweet chili. Suave picante."^^xsd:string ;
+    ns1:name "Panadita de Pollo Thai"^^xsd:string ;
+    ns1:price "3,95 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/76-panaditas/menu/VINOS> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/76-panaditas/menu/VINOS/item/Botella_de_vino_cune_crianza_75cl> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/76-panaditas/menu/VINOS/item/Botella_de_vino_cune_crianza_75cl> a ns1:MenuItem ;
+    ns1:description "No description"^^xsd:string ;
+    ns1:name "Botella de vino cune crianza 75cl"^^xsd:string ;
+    ns1:price "16,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/79-el-mexicano-y-mucho-mas/menu/BEBIDAS_ALCOHOLICAS> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/79-el-mexicano-y-mucho-mas/menu/BEBIDAS_ALCOHOLICAS/item/Cerveza_XX_large_rubia> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/79-el-mexicano-y-mucho-mas/menu/BEBIDAS_ALCOHOLICAS/item/Cerveza_XX_large_rubia> a ns1:MenuItem ;
+    ns1:description "Botellín de 330 ml"^^xsd:string ;
+    ns1:name "Cerveza XX large rubia"^^xsd:string ;
+    ns1:price "3,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/79-el-mexicano-y-mucho-mas/menu/ENCHILADAS> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/79-el-mexicano-y-mucho-mas/menu/ENCHILADAS/item/Enchiladas_rojas,_verde_o_mole> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/79-el-mexicano-y-mucho-mas/menu/ENCHILADAS/item/Enchiladas_rojas,_verde_o_mole> a ns1:MenuItem ;
+    ns1:description "Especialidad de la casa! Tortillas de maiz rellenas de pollo, bañadas con las diferentes salsas, gratinadas y con frijoles"^^xsd:string ;
+    ns1:name "Enchiladas rojas, verde o mole"^^xsd:string ;
+    ns1:price "19,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/79-el-mexicano-y-mucho-mas/menu/ENTRANTES> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/79-el-mexicano-y-mucho-mas/menu/ENTRANTES/item/Nachos_autenticos> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/79-el-mexicano-y-mucho-mas/menu/ENTRANTES/item/Nachos_autenticos> a ns1:MenuItem ;
+    ns1:description "Gratinados con sus acompañantes"^^xsd:string ;
+    ns1:name "Nachos autenticos"^^xsd:string ;
+    ns1:price "12,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/79-el-mexicano-y-mucho-mas/menu/LAS_TORTAS> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/79-el-mexicano-y-mucho-mas/menu/LAS_TORTAS/item/Campeonato_Euskadi_pibil> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/79-el-mexicano-y-mucho-mas/menu/LAS_TORTAS/item/Campeonato_Euskadi_pibil> a ns1:MenuItem ;
+    ns1:description "No disponible"^^xsd:string ;
+    ns1:name "Campeonato Euskadi pibil"^^xsd:string ;
+    ns1:price "17,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/79-el-mexicano-y-mucho-mas/menu/POSTRES> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/79-el-mexicano-y-mucho-mas/menu/POSTRES/item/Nuestro_brownie_casero> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/79-el-mexicano-y-mucho-mas/menu/POSTRES/item/Nuestro_brownie_casero> a ns1:MenuItem ;
+    ns1:description "Con un toque picante!"^^xsd:string ;
+    ns1:name "Nuestro brownie casero"^^xsd:string ;
+    ns1:price "9,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/79-el-mexicano-y-mucho-mas/menu/REFRESCOS_MEXICANOS> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/79-el-mexicano-y-mucho-mas/menu/REFRESCOS_MEXICANOS/item/Jarrito_Mandarina> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/79-el-mexicano-y-mucho-mas/menu/REFRESCOS_MEXICANOS/item/Jarrito_Mandarina> a ns1:MenuItem ;
+    ns1:description "No description"^^xsd:string ;
+    ns1:name "Jarrito Mandarina"^^xsd:string ;
+    ns1:price "3,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/80-aporpan/menu/Bebidas> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/80-aporpan/menu/Bebidas/item/Lecha_Kaiku_desnatada> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/80-aporpan/menu/Bebidas/item/Lecha_Kaiku_desnatada> a ns1:MenuItem ;
+    ns1:description "1 litro"^^xsd:string ;
+    ns1:name "Lecha Kaiku desnatada"^^xsd:string ;
+    ns1:price "1,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/80-aporpan/menu/Bebidas_alcoholicas> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/80-aporpan/menu/Bebidas_alcoholicas/item/Cerveza_Keler_(330_Ml.)_> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/80-aporpan/menu/Bebidas_alcoholicas/item/Cerveza_Keler_(330_Ml.)_> a ns1:MenuItem ;
+    ns1:description "No disponible"^^xsd:string ;
+    ns1:name "Cerveza Keler (330 Ml.) "^^xsd:string ;
+    ns1:price "1,30 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/80-aporpan/menu/Bebidas_calientes> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/80-aporpan/menu/Bebidas_calientes/item/Café_con_leche> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/80-aporpan/menu/Bebidas_calientes/item/Café_con_leche> a ns1:MenuItem ;
+    ns1:description ""^^xsd:string ;
+    ns1:name "Café con leche"^^xsd:string ;
+    ns1:price "1,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/80-aporpan/menu/Carnes_y_marinos_de_picoteo> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/80-aporpan/menu/Carnes_y_marinos_de_picoteo/item/Pavo_cocido_loncheado_(sobre_100gr)> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/80-aporpan/menu/Carnes_y_marinos_de_picoteo/item/Pavo_cocido_loncheado_(sobre_100gr)> a ns1:MenuItem ;
+    ns1:description "No description"^^xsd:string ;
+    ns1:name "Pavo cocido loncheado (sobre 100gr)"^^xsd:string ;
+    ns1:price "2,25 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/80-aporpan/menu/Lo_dulce> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/80-aporpan/menu/Lo_dulce/item/Bizcocho_Casero> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/80-aporpan/menu/Lo_dulce/item/Bizcocho_Casero> a ns1:MenuItem ;
+    ns1:description "No disponible"^^xsd:string ;
+    ns1:name "Bizcocho Casero"^^xsd:string ;
+    ns1:price "25,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/80-aporpan/menu/Panadería> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/80-aporpan/menu/Panadería/item/Empanadilla_De_Pollo> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/80-aporpan/menu/Panadería/item/Empanadilla_De_Pollo> a ns1:MenuItem ;
+    ns1:description "No description"^^xsd:string ;
+    ns1:name "Empanadilla De Pollo"^^xsd:string ;
+    ns1:price "2,95 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/80-aporpan/menu/Tartas_enteras> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/80-aporpan/menu/Tartas_enteras/item/Tarta_De_Chocolate> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/80-aporpan/menu/Tartas_enteras/item/Tarta_De_Chocolate> a ns1:MenuItem ;
+    ns1:description "No disponible"^^xsd:string ;
+    ns1:name "Tarta De Chocolate"^^xsd:string ;
+    ns1:price "29,95 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/84-artepan/menu/Bizcochos> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/84-artepan/menu/Bizcochos/item/Bizcocho_yogur> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/84-artepan/menu/Bizcochos/item/Bizcocho_yogur> a ns1:MenuItem ;
+    ns1:description "1 unidad"^^xsd:string ;
+    ns1:name "Bizcocho yogur"^^xsd:string ;
+    ns1:price "5,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/84-artepan/menu/Bollería> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/84-artepan/menu/Bollería/item/Bandeja_surtida_de_croissant_mini,_napolitana_choco_mini,_lacitos,_mariposas,_mantecadas_y_rosquillitas> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/84-artepan/menu/Bollería/item/Bandeja_surtida_de_croissant_mini,_napolitana_choco_mini,_lacitos,_mariposas,_mantecadas_y_rosquillitas> a ns1:MenuItem ;
+    ns1:description "1 unidad"^^xsd:string ;
+    ns1:name "Bandeja surtida de croissant mini, napolitana choco mini, lacitos, mariposas, mantecadas y rosquillitas"^^xsd:string ;
+    ns1:price "7,29 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/84-artepan/menu/Chocolates> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/84-artepan/menu/Chocolates/item/Gotas_de_chocolate> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/84-artepan/menu/Chocolates/item/Gotas_de_chocolate> a ns1:MenuItem ;
+    ns1:description "No description"^^xsd:string ;
+    ns1:name "Gotas de chocolate"^^xsd:string ;
+    ns1:price "13,75 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/84-artepan/menu/Panes> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/84-artepan/menu/Panes/item/Berri> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/84-artepan/menu/Panes/item/Berri> a ns1:MenuItem ;
+    ns1:description "La palabra más escuchada en nuestras tiendas, ese pan todorreno de corteza fina y miga ligera"^^xsd:string ;
+    ns1:name "Berri"^^xsd:string ;
+    ns1:price "1,35 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/84-artepan/menu/Pastas> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/84-artepan/menu/Pastas/item/Galletas_de_espelta> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/84-artepan/menu/Pastas/item/Galletas_de_espelta> a ns1:MenuItem ;
+    ns1:description "1 paquete"^^xsd:string ;
+    ns1:name "Galletas de espelta"^^xsd:string ;
+    ns1:price "4,30 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/84-artepan/menu/Tartas> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/84-artepan/menu/Tartas/item/Pastel_vasco> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/84-artepan/menu/Tartas/item/Pastel_vasco> a ns1:MenuItem ;
+    ns1:description "1 unidad"^^xsd:string ;
+    ns1:name "Pastel vasco"^^xsd:string ;
+    ns1:price "1,85 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/86-eatyjet-some-like-it-hot/menu/BEBIDAS> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/86-eatyjet-some-like-it-hot/menu/BEBIDAS/item/ESTRELLA_GALICIA_33_cl> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/86-eatyjet-some-like-it-hot/menu/BEBIDAS/item/ESTRELLA_GALICIA_33_cl> a ns1:MenuItem ;
+    ns1:description "Botellín de 33 cl de cerveza Estrella galicia"^^xsd:string ;
+    ns1:name "ESTRELLA GALICIA 33 cl"^^xsd:string ;
+    ns1:price "2,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/86-eatyjet-some-like-it-hot/menu/BURGERS_#DesignedForDelivery> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/86-eatyjet-some-like-it-hot/menu/BURGERS_#DesignedForDelivery/item/CALIFORNIA_DREAMIN´> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/86-eatyjet-some-like-it-hot/menu/BURGERS_#DesignedForDelivery/item/CALIFORNIA_DREAMIN´> a ns1:MenuItem ;
+    ns1:description "Brioche de patata,  dos patties de 90 gr de vaca madurada, queso cheddar, Bacon crujiente, cebolleta, pepinillo sueco, ketchup ahumado y mayonesa de mostaza y chipotle + Patatas fritas"^^xsd:string ;
+    ns1:name "CALIFORNIA DREAMIN´"^^xsd:string ;
+    ns1:price "12,90 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/86-eatyjet-some-like-it-hot/menu/ENTRANTES> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/86-eatyjet-some-like-it-hot/menu/ENTRANTES/item/FRIED_CHICKEN_STICKS> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/86-eatyjet-some-like-it-hot/menu/ENTRANTES/item/FRIED_CHICKEN_STICKS> a ns1:MenuItem ;
+    ns1:description "No disponible"^^xsd:string ;
+    ns1:name "FRIED CHICKEN STICKS"^^xsd:string ;
+    ns1:price "9,20 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/86-eatyjet-some-like-it-hot/menu/ESPECIAL_DEL_MES> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/86-eatyjet-some-like-it-hot/menu/ESPECIAL_DEL_MES/item/NIKKEI_VEGGIE> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/86-eatyjet-some-like-it-hot/menu/ESPECIAL_DEL_MES/item/NIKKEI_VEGGIE> a ns1:MenuItem ;
+    ns1:description "Pan brioche, 2 patties de beyond, doble de queso gouda, cebolla morada acevichada con ponzu, choclo glaseado en soja, emulsión de ají amarillo y crema de aceituna negra"^^xsd:string ;
+    ns1:name "NIKKEI VEGGIE"^^xsd:string ;
+    ns1:price "13,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/86-eatyjet-some-like-it-hot/menu/EXTRAS> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/86-eatyjet-some-like-it-hot/menu/EXTRAS/item/KETCHUP_AHUMADO> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/86-eatyjet-some-like-it-hot/menu/EXTRAS/item/KETCHUP_AHUMADO> a ns1:MenuItem ;
+    ns1:description "Ketchup casero ahumado con un toque de chipotle."^^xsd:string ;
+    ns1:name "KETCHUP AHUMADO"^^xsd:string ;
+    ns1:price "1,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/86-eatyjet-some-like-it-hot/menu/POSTRES> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/86-eatyjet-some-like-it-hot/menu/POSTRES/item/TARTA_FLUIDA_DE_PRALINÉ> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/86-eatyjet-some-like-it-hot/menu/POSTRES/item/TARTA_FLUIDA_DE_PRALINÉ> a ns1:MenuItem ;
+    ns1:description "No disponible"^^xsd:string ;
+    ns1:name "TARTA FLUIDA DE PRALINÉ"^^xsd:string ;
+    ns1:price "9,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/86-eatyjet-some-like-it-hot/menu/SEGUNDA_MEJOR_HAMBURGUESA_DE_ESPAÑA> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/86-eatyjet-some-like-it-hot/menu/SEGUNDA_MEJOR_HAMBURGUESA_DE_ESPAÑA/item/JET_LAG_BURGER> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/86-eatyjet-some-like-it-hot/menu/SEGUNDA_MEJOR_HAMBURGUESA_DE_ESPAÑA/item/JET_LAG_BURGER> a ns1:MenuItem ;
+    ns1:description "Pan brioche, 2 piezas de 95 gr de vaca rubia gallega madurada old special, queso cheddar ahumado, nuestro guanciale curado y ahumado durante 24 horas, demi-glace de yema y bourbon, encurtidos nórdicos y salsa secreta Jet Lag + patatas fritas."^^xsd:string ;
+    ns1:name "JET LAG BURGER"^^xsd:string ;
+    ns1:price "14,95 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/86-eatyjet-some-like-it-hot/menu/SIN_GLUTEN> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/86-eatyjet-some-like-it-hot/menu/SIN_GLUTEN/item/CALIFORNIA_DREAMIN´_SIN_GLUTEN> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/86-eatyjet-some-like-it-hot/menu/SIN_GLUTEN/item/CALIFORNIA_DREAMIN´_SIN_GLUTEN> a ns1:MenuItem ;
+    ns1:description "No disponible"^^xsd:string ;
+    ns1:name "CALIFORNIA DREAMIN´ SIN GLUTEN"^^xsd:string ;
+    ns1:price "13,50 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/86-eatyjet-some-like-it-hot/menu/VEGGIE_BURGERS> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/86-eatyjet-some-like-it-hot/menu/VEGGIE_BURGERS/item/NEW_MEXICO> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/86-eatyjet-some-like-it-hot/menu/VEGGIE_BURGERS/item/NEW_MEXICO> a ns1:MenuItem ;
+    ns1:description "Pan de burger vegano, Burguer de Beyond (vegana), queso vegano, ketchup ahumado, crema de aguacate y jalapeños, tomate, lechuga y pepinillos + Patatas fritas (Opciones vegetariana disponible con pan brioche y queso cheddar)"^^xsd:string ;
+    ns1:name "NEW MEXICO"^^xsd:string ;
+    ns1:price "14,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/94-cafeteria-pub-smile/menu/Caprichos> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/94-cafeteria-pub-smile/menu/Caprichos/item/Delicias_de_iberico> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/94-cafeteria-pub-smile/menu/Caprichos/item/Delicias_de_iberico> a ns1:MenuItem ;
+    ns1:description "No disponible"^^xsd:string ;
+    ns1:name "Delicias de iberico"^^xsd:string ;
+    ns1:price "13,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/94-cafeteria-pub-smile/menu/Nuestras_auténticas_Hamburguesas:> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/94-cafeteria-pub-smile/menu/Nuestras_auténticas_Hamburguesas:/item/8._Smile> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/94-cafeteria-pub-smile/menu/Nuestras_auténticas_Hamburguesas:/item/8._Smile> a ns1:MenuItem ;
+    ns1:description "Crema de roquefort, cheddar, bacón y huevo"^^xsd:string ;
+    ns1:name "8. Smile"^^xsd:string ;
+    ns1:price "12,90 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/94-cafeteria-pub-smile/menu/Para_compartir:> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/94-cafeteria-pub-smile/menu/Para_compartir:/item/Patatas_bravioli> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/94-cafeteria-pub-smile/menu/Para_compartir:/item/Patatas_bravioli> a ns1:MenuItem ;
+    ns1:description "No description"^^xsd:string ;
+    ns1:name "Patatas bravioli"^^xsd:string ;
+    ns1:price "5,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/94-cafeteria-pub-smile/menu/Postre_de_la_casa> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/94-cafeteria-pub-smile/menu/Postre_de_la_casa/item/Tarta_de_queso> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/94-cafeteria-pub-smile/menu/Postre_de_la_casa/item/Tarta_de_queso> a ns1:MenuItem ;
+    ns1:description "No disponible"^^xsd:string ;
+    ns1:name "Tarta de queso"^^xsd:string ;
+    ns1:price "4,00 €"^^xsd:string .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/94-cafeteria-pub-smile/menu/Top_Ventas> ns1:hasMenuItem <https://eramangasteiz.coopcycle.org/es/restaurant/94-cafeteria-pub-smile/menu/Top_Ventas/item/Mexican> .
+
+<https://eramangasteiz.coopcycle.org/es/restaurant/94-cafeteria-pub-smile/menu/Top_Ventas/item/Mexican> a ns1:MenuItem ;
+    ns1:description "Guacamole, crema de quesos, jalapeños y cebolla frita"^^xsd:string ;
+    ns1:name "Mexican"^^xsd:string ;
+    ns1:price "12,90 €"^^xsd:string .
+

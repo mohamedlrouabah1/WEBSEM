@@ -1,0 +1,29 @@
+@prefix schema: <http://schema.org/> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+
+<#Alex>
+    a schema:Person ;
+    schema:name "Alex Dupont" ;
+    schema:address [
+        a schema:PostalAddress ;
+        schema:postalCode "75001" ;  
+        schema:addressLocality "Paris, France" 
+    ] ;
+    schema:seeks [
+        schema:seller <https://demo.coopcycle.org/fr/restaurant/27> ; 
+        schema:priceSpecification [
+            schema:maxPrice 25.0 ;  
+            schema:priceCurrency "EUR"
+        ] ;
+        schema:availableAtOrFrom [
+            schema:geoWithin [
+                a schema:GeoCircle ;
+                schema:geoMidpoint [
+                    schema:longitude 45.186096 ;  
+                    schema:latitude 5.718774
+                ] ;
+                schema:geoRadius 5000  
+            ]
+        ] ;
+        schema:itemOfferred wd:Q177
+    ] .
