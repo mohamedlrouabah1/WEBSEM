@@ -31,17 +31,27 @@ def query():
     now = datetime.now()
     data = request.get_json()
     print(data)
+    print("----------------")
+    max_distance = data.get('maxDistance')
+    price = data.get('deliveryPrice')
+    rank_by = data.get('rankby')
+    if not max_distance:
+        max_distance = 100
+    if not price:
+        price = 114.00
+    if not rank_by:
+        rank_by = 'distance'
 
-    max_distance = data.get('maxDistance', 30)
-    price = data.get('deliveryPrice', 114.00)
-    rank_by = data.get('rankby', 'distance')
-    lat = data.get('lat', None)
-    lon = data.get('lon', None)
-    current_time = data.get('openingHours', now.strftime("%H:%M"))
-    day_of_week = data.get('openingDays', now.strftime("%A"))
-
-    print(rank_by, current_time, day_of_week, sep="\n", file=sys.stderr)
-
+    lat = data.get('lat')
+    lon = data.get('lon')
+    current_time = data.get('openingHours')
+    day_of_week = data.get('openingDays')
+    if not current_time :
+        current_time = now.strftime("%H:%M")
+    if not day_of_week :
+        day_of_week = now.strftime("%A")
+    print(max_distance,price, rank_by, current_time, day_of_week, lat, lon)
+    print("----------------")
     # Check if lat and lon are provided
     if lat is not None and lon is not None:
         results = query_restaurants(
