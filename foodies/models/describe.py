@@ -2,7 +2,7 @@ from __future__ import annotations
 import requests
 from rdflib import Namespace, URIRef, Literal, Graph, BNode
 from rdflib.namespace import RDF, XSD
-from config import LDP_URL, TIMEOUT, LDP_HOST, LDP_PORT
+from config import TIMEOUT, LDP_HOST, LDP_PORT
 
 SCHEMA = Namespace('http://schema.org/')
 WD = Namespace('http://www.wikidata.org/entity/')
@@ -80,7 +80,7 @@ def send_data_to_fuseki(rdf_graph:Graph, user_name:str) -> None:
     """
     try:
         response = requests.post(
-            f"{LDP_URL}/data?graph=http://foodies.org/user/{user_name.replace(' ', '_')}",
+            f"http://localhost:3030/preferences/data?graph=http://foodies.org/user/{user_name.replace(' ', '_')}",
             data=rdf_graph.serialize(format="turtle"),
             headers={"Content-Type": "text/turtle"},
             timeout=TIMEOUT
@@ -94,46 +94,47 @@ def send_data_to_fuseki(rdf_graph:Graph, user_name:str) -> None:
     except requests.RequestException as e:
         print(f"Error occurred while sending data to Fuseki: {e}")
 
-
 def fetch_user_preferences(uri_name:str) -> dict:
     """
     Query the Jena LDP for a specific user preferences.
     """
-    response = requests.get(
-        f"http://{LDP_HOST}:{LDP_PORT}/preferences/data?graph=http://foodies.org/user/{uri_name}",
-        timeout=TIMEOUT)
-
+     # Load user uri from jena 
+    uri = f"http://localhost:3030/preferences/data?graph=http://foodies.org/user/{uri_name}"
+    response = requests.get(uri)
     if response.status_code != 200:
         print("Failed to load SHACL shapes from the URI")
         return False
 
     g = Graph()
     g.parse(data=response.text, format='ttl')
-
-    user_prefs = {}
+    
+    user_prefs = {
+        'lat': None,
+        'lon': None,
+        'max_price': None,
+        'max_distance': None
+    }
 
     for person in g.subjects(RDF.type, SCHEMA.Person):
         # Itérer à travers les préférences de l'utilisateur
         for seeks in g.objects(person, SCHEMA.seeks):
             # Récupérer les spécifications de prix
-            for price_spec in g.objects(seeks, SCHEMA.priceSpecification):
-                max_price = g.value(price_spec, SCHEMA.maxPrice)
-                user_prefs['max_price'] = float(max_price) if max_price else None
+            for priceSpec in g.objects(seeks, SCHEMA.priceSpecification):
+                maxPrice = g.value(priceSpec, SCHEMA.maxPrice)
+                user_prefs['max_price'] = float(maxPrice) if maxPrice else None
 
             # Récupérer les préférences géographiques
-            for available_at_or_from in g.objects(seeks, SCHEMA.availableAtOrFrom):
-                for geo_within in g.objects(available_at_or_from, SCHEMA.geoWithin):
-                    geo_midpoint = g.value(geo_within, SCHEMA.geoMidpoint)
-                    if geo_midpoint:
-                        lat = g.value(geo_midpoint, SCHEMA.latitude)
-                        lon = g.value(geo_midpoint, SCHEMA.longitude)
-
+            for availableAtOrFrom in g.objects(seeks, SCHEMA.availableAtOrFrom):
+                for geoWithin in g.objects(availableAtOrFrom, SCHEMA.geoWithin):
+                    geoMidpoint = g.value(geoWithin, SCHEMA.geoMidpoint)
+                    if geoMidpoint:
+                        lat = g.value(geoMidpoint, SCHEMA.latitude)
+                        lon = g.value(geoMidpoint, SCHEMA.longitude)
                         user_prefs['lat'] = float(lat) if lat else None
                         user_prefs['lon'] = float(lon) if lon else None
 
-
-                    geo_radius = g.value(geo_within, SCHEMA.geoRadius)
-                    user_prefs['max_distance'] = float(geo_radius) if geo_radius else None
+                    geoRadius = g.value(geoWithin, SCHEMA.geoRadius)
+                    user_prefs['max_distance'] = float(geoRadius) if geoRadius else None
 
     return user_prefs
 

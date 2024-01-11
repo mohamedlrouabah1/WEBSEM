@@ -1,14 +1,13 @@
 """
 Routes for the Foodies application.
 """
-import sys
 from argparse import Namespace
 from datetime import datetime
 from flask import Blueprint
 from flask import jsonify, redirect, render_template, request, url_for
+from models.describe import create_rdf_graph, send_data_to_fuseki
 from models.query import query_restaurants, query_menu_by_name
 from cache import cache
-from coopcycle_scrapper.ldp_fuseki import LdpFuseki
 from modes import collect, describe, server
 from modes import query as query_mode
 
@@ -80,19 +79,17 @@ def show_restaurants():
 @main_bp.route('/preferences', methods=['POST'])
 def preferences():
     """Upload user preferences on the LDP."""
+
     try:
         data = request.get_json()
-        print(data, file=sys.stderr)
-
-        if LdpFuseki().upload_ldjson(data['name']):
-            return jsonify({'message': 'Préférences enregistrées avec succès'})
-        else:
-            return jsonify({'message': 'Échec de la validation SHACL'})
-
-    except FileNotFoundError:
-        return jsonify({'message': 'Fichier SHACL introuvable'})
+        print(data)
+        rdf_graph = create_rdf_graph(data)  
+        send_data_to_fuseki(rdf_graph, data['name'])
+        return jsonify({'message': 'Préférences enregistrées avec succès'})
     except Exception as e:
-        return jsonify({'message': f'Erreur lors de la validation : {e}'})
+        print(f"Error uploading user preferences: {e}")
+        return jsonify({'message': 'Erreur lors de l\'enregistrement des préférences'}), 500
+      
 
 
 @main_bp.route('/menu', methods=['POST'])

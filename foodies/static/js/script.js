@@ -64,7 +64,7 @@ function collectAndSendPreferences() {
             seller_url: document.getElementById('seller_url').value,
             item_offered: document.getElementById('item_offered').value,
         };
-
+        console.log(userPreferences); // Display the user preferences in the console
         // Now send the data with the fetch call
         fetch('/preferences', {
             method: 'POST',

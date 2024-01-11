@@ -9,7 +9,6 @@ LDP_PORT=getenv('LDP_PORT', '3030')
 LDP_MAIN_DATASET=getenv('LDP_DATASET', 'foodies')
 
 LDP_URL = f"http://{LDP_HOST}:{LDP_PORT}/{LDP_MAIN_DATASET}"
-
 LDP_DATASETS = [
     LDP_MAIN_DATASET,
     'preferences',
