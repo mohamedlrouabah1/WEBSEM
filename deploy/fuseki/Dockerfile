@@ -1,18 +1,50 @@
-FROM stain/jena-fuseki
+# # FROM stain/jena-fuseki
+# FROM d1egoprog/jena-fuseki:4.9.0-web
 
 # # Set environment variables
+# ENV ADMIN_PASSWORD=ADM01u
+# ENV ENABLE_DATA_WRITE=true
+# ENV ENABLE_UPDATE=true
+# ENV ENABLE_UPLOAD=true
+# ENV QUERY_TIMEOUT=100
+# ENV FUSEKI_PORT=80
+
+# # Expose the default port
+#  EXPOSE 3030
+
+# # Set the volume for data persistence
+# VOLUME ["/fuseki-base/databases"]
+
+# CMD ["/jena-fuseki/fuseki-server"]
+
+FROM ubuntu:latest
+
 ENV ADMIN_PASSWORD=ADM01u
 ENV ENABLE_DATA_WRITE=true
 ENV ENABLE_UPDATE=true
 ENV ENABLE_UPLOAD=true
 ENV QUERY_TIMEOUT=100
 
+# Mise à jour des paquets et installation d'OpenJDK 8
+RUN apt-get update && \
+    apt-get install -y openjdk-11-jdk wget && \
+    rm -rf /var/lib/apt/lists/*
+
+# Téléchargement et extraction d'Apache Jena Fuseki
+WORKDIR /opt/fuseki
+
+RUN wget https://dlcdn.apache.org/jena/binaries/apache-jena-fuseki-4.10.0.tar.gz && \
+    tar -xvzf apache-jena-fuseki-4.10.0.tar.gz && \
+    rm apache-jena-fuseki-4.10.0.tar.gz && \
+    cd apache-jena-fuseki-4.10.0 && \
+    export FUSEKI_BASE=$(pwd)
+
 EXPOSE 3030
+COPY shiro.ini /opt/fuseki/apache-jena-fuseki-4.10.0/run/shiro.ini
 
-# Set the volume for data persistence
-VOLUME ["/fuseki-base/databases"]
-
-COPY shiro.ini /jena-fuseki/run/shiro.ini
+# Définition du répertoire de travail
+WORKDIR /opt/fuseki/apache-jena-fuseki-4.10.0
 
 # Exécution du serveur Fuseki lors du démarrage du conteneur
-CMD ["sh", "-c", "/jena-fuseki/fuseki-server --port=$PORT"]
+CMD ["sh", "-c", "./fuseki-server --port=$PORT"]
+#CMD ["sh", "-c", "while true; do echo 'This is an infinite loop'; sleep 1; done"]

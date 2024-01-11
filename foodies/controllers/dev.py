@@ -32,6 +32,7 @@ def init_fuseki():
         return render_template('dev.html' , result=jsonify({'message': 'Fuseki initialisé avec succès'}))
 
     except Exception as e:
+        print(f"Error during Fuseki initialization : {e}")
         return render_template(
             'dev.html' ,
             result=jsonify({'message': f'Erreur lors de l\'initialisation de Fuseki : {e}'}))
