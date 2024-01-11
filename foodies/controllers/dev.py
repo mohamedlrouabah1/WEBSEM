@@ -26,7 +26,7 @@ def collect_data_route():
 def send_to_fuseki():
     """Upload json files to the linked data platform."""
     try:
-        with open("collect.json", "r", encoding="utf-8") as f:
+        with open("foodies/data/collect.json", "r", encoding="utf-8") as f:
             data = json.load(f)
         LdpFuseki().upload_ldjson(data)
         return render_template('dev.html' , result=jsonify({'message': 'Données envoyées avec succès'}))

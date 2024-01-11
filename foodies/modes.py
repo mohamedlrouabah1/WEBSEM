@@ -17,6 +17,7 @@ def collect(upload_to_fuseki:bool, init_fuseki:bool, uri:str=None):
     if init_fuseki:
         print("Initializing Fuseki datasets and shacl validation graph.")
         LdpFuseki(update=True)
+        return 
 
     scrapper = CoopCycleScrapper(upload_to_fuseki)
 

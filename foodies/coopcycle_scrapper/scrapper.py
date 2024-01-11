@@ -23,7 +23,7 @@ class CoopCycleScrapper:
     MAIN_DOMAIN = 'https://coopcycle.org/fr/'
 
     SAVE_PATH = 'foodies/data/collect.json'
-
+    SAVE_PATH_MENU = 'foodies/data/menus.json'
     def __init__(self, upload=True):
         print("Create web scrapper.")
         self.session = requests.Session()
@@ -38,11 +38,13 @@ class CoopCycleScrapper:
         if self.upload:
             ldjson = json.loads(ldjson_str)
             self.ldp.upload_ldjson(ldjson)
+            self.ldp.upload_menu()
 
 
     def scrap_restaurants_jsonld(self) -> str:
-        """"Get all restaurants from all subdomains of the main domain"""
-        all_data = {}
+        """Get all restaurants from all subdomains of the main domain"""
+        restaurants = {}
+        menus = {}
 
         with ThreadPoolExecutor(max_workers=10) as executor:
             futures = [executor.submit(
@@ -51,14 +53,30 @@ class CoopCycleScrapper:
                             )
                         for domain in self.subdomains]
 
-            for future in tqdm(as_completed(futures),total=len(futures),desc='Scraping CoopCycle'):
-                all_data.update(future.result())
+            for future in tqdm(as_completed(futures), total=len(futures), desc='Scraping CoopCycle'):
+                result = future.result()
+                for key, value in result.get('restaurants', {}).items():
+                    if key not in restaurants:
+                        restaurants[key] = value
+                    else:
+                        # Handle duplicate keys if necessary
+                        # e.g., merge data, rename key, etc.
+                        pass
 
+                for key, value in result.get('menus', {}).items():
+                    if key not in menus:
+                        menus[key] = value
+                    else:
+                        # Handle duplicate keys if necessary
+                        pass
+
+        # Save and return data
         with open(CoopCycleScrapper.SAVE_PATH, 'w', encoding="utf-8") as f:
-            json.dump(all_data, f)
+            json.dump(restaurants, f)
+        with open(CoopCycleScrapper.SAVE_PATH_MENU, 'w', encoding="utf-8") as f:
+            json.dump(menus, f)
+        return json.dumps(restaurants)
 
-        result = json.dumps(all_data)
-        return result
 
     def _get_subdomains(self) -> list[str]:
         """
@@ -97,7 +115,7 @@ class CoopCycleScrapper:
             return None
 
 
-    def _scrap_restaurants_from_sitemap(self, domain_sitemap:str, session:requests.Session) -> dict[str, str]:
+    def _scrap_restaurants_from_sitemap(self, domain_sitemap:str, session:requests.Session) -> dict(str, dict):
         '''
         Fetches the sitemap for the given domain and processes each page in the sitemap
 
@@ -139,11 +157,14 @@ class CoopCycleScrapper:
                 # }
                 restaurants_menus[loc.text] = self.scrap_menu_from_url(loc.text, session)
 
-            # save json file for debug
-            with open('foodies/data/menus.json', 'w', encoding="utf-8") as f:
-                json.dump(restaurants_menus, f)
+            # # save json file for debug
+            # with open('foodies/data/menus.json', 'w', encoding="utf-8") as f:
+            #     json.dump(restaurants_menus, f)
 
-        return domain_data
+        return {
+            'restaurants' : domain_data, 
+            'menus' : restaurants_menus
+            }
 
 
     def scrap_restaurant_from_url(self, url:str, session:requests.Session) -> str:

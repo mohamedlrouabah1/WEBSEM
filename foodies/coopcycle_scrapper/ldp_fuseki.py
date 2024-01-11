@@ -8,6 +8,7 @@ from tqdm import tqdm
 
 from config import LDP_URL, LDP_HOST, LDP_PORT, TIMEOUT, LDP_DATASETS, SCRAPPED_DATA_FILE
 from config import COOPCYCLE_SHACL_FILE
+from models.menu import create_menu_graph
 class LdpFuseki:
     """
     Use to interact with the Linked Data Platform of the foodies project.
@@ -24,20 +25,15 @@ class LdpFuseki:
             return
 
         for dataset in LDP_DATASETS:
-            response = requests.get(
-                f'http://{LDP_HOST}:{LDP_PORT}/$/datasets/{dataset}',
+            response = requests.post(
+                f'http://{LDP_HOST}:{LDP_PORT}/$/datasets',
                 params={'dbType': 'tdb2', 'dbName': dataset},
                 timeout=TIMEOUT
             )
 
             if response.status_code == 404:
                 print(f"Error while creating dataset {dataset}.", file=sys.stderr)
-
-
-        with open(SCRAPPED_DATA_FILE, 'r', encoding="utf-8") as f:
-            data = json.load(f)
-            self.upload_ldjson(data)
-
+            
         # upload shacl graph inside preferences dataset :
         shacl = Graph()
         shacl.parse(COOPCYCLE_SHACL_FILE, format='ttl')
@@ -47,7 +43,35 @@ class LdpFuseki:
                     headers={"Content-Type": "text/turtle"},
                     timeout=TIMEOUT
                 )
+        
+        with open(SCRAPPED_DATA_FILE, 'r', encoding="utf-8") as f:
+            data = json.load(f)
+        self.upload_ldjson(data)
+        self.upload_menu()
 
+    def upload_menu(self):
+        with open('foodies/data/menus.json', 'r', encoding='utf-8') as file:
+            data = json.load(file)
+
+        for restaurant_uri, menu_data in data.items():
+            g = create_menu_graph(restaurant_uri, menu_data)
+            ttl_data = g.serialize(format='turtle')
+
+            # Upload to Fuseki
+            LDP_HOST = 'localhost'
+            LDP_PORT = '3030'
+            LDP_MAIN_DATASET = 'foodies'
+            LDP_URL = f"http://{LDP_HOST}:{LDP_PORT}/{LDP_MAIN_DATASET}"
+            headers = {"Content-Type": "text/turtle"}
+            response = requests.post(
+                        f"{LDP_URL}/data?graph={restaurant_uri}",
+                        data=ttl_data,
+                        headers=headers,
+                        timeout=60
+                    )
+            print(f"Uploading data for {restaurant_uri}")
+            print(response.status_code)
+            print(response.text)
 
     def upload_ldjson(self, data:dict[str,dict]) -> bool:
         """

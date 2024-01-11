@@ -18,5 +18,6 @@ LDP_DATASETS = [
 TIMEOUT=60
 
 SCRAPPED_DATA_FILE='foodies/data/collect.json'
+SCRAPPED_MENU_FILE='foodies/data/menu.json'
 
 COOPCYCLE_SHACL_FILE='foodies/data/SHACL.ttl'
