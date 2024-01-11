@@ -42,10 +42,13 @@ def init_fuseki():
 def send_to_fuseki():
     """Upload json files to the linked data platform."""
     try:
-        with open("foodies/data/collect.json", "r", encoding="utf-8") as f:
+        with dev_bp.open_resource("foodies/data/collect.json", "r", encoding="utf-8") as f:
             data = json.load(f)
         LdpFuseki().upload_ldjson(data)
-        LdpFuseki().upload_menu()
+
+        with dev_bp.open_resource('foodies/data/menus.json', 'r', encoding='utf-8') as file:
+                menu = json.load(file)
+        LdpFuseki().upload_menu(menu)
         return render_template('dev.html' , result=jsonify({'message': 'Données envoyées avec succès'}))
 
     except Exception as e:

@@ -33,7 +33,7 @@ class LdpFuseki:
 
             if response.status_code == 404:
                 print(f"Error while creating dataset {dataset}.", file=sys.stderr)
-            
+
         # upload shacl graph inside preferences dataset :
         shacl = Graph()
         shacl.parse(COOPCYCLE_SHACL_FILE, format='ttl')
@@ -43,15 +43,16 @@ class LdpFuseki:
                     headers={"Content-Type": "text/turtle"},
                     timeout=TIMEOUT
                 )
-        
+
         with open(SCRAPPED_DATA_FILE, 'r', encoding="utf-8") as f:
             data = json.load(f)
         self.upload_ldjson(data)
         self.upload_menu()
 
-    def upload_menu(self):
-        with open('foodies/data/menus.json', 'r', encoding='utf-8') as file:
-            data = json.load(file)
+    def upload_menu(self, data=None):
+        if data is None:
+            with open('foodies/data/menus.json', 'r', encoding='utf-8') as file:
+                data = json.load(file)
 
         for restaurant_uri, menu_data in data.items():
             g = create_menu_graph(restaurant_uri, menu_data)

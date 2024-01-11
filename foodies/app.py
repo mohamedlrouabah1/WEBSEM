@@ -2,7 +2,7 @@
 Foodies application.
 """
 import os
-from flask import Flask
+from flask import Flask, send_from_directory
 from flask_sitemap import Sitemap
 
 
@@ -31,6 +31,11 @@ sitemap = Sitemap(app=app)
 def favicon():
     """Serve the favicon.ico file."""
     return app.send_static_file('favicon.ico')
+
+@app.route('/data/<path:filename>')
+def additional_static(filename):
+    return send_from_directory(app.config['ADDITIONAL_STATIC_FOLDER'], filename)
+
 
 if __name__ == '__main__':
     app.run(debug=debug)
