@@ -162,7 +162,7 @@ def describe_user_preferences(uri:str=None) -> Graph:
 
     print("Verifying graph with shacl and then upload to fuseki.")
     send_data_to_fuseki(rdf_graph, user_prefs['name'])
-    print(fetch_user_preferences(user_prefs['name']))
+    #print(fetch_user_preferences(user_prefs['name']))
     return rdf_graph
 
 
