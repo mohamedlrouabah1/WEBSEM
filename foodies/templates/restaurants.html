@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Restaurants à Proximité</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/style.css"> 
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/MarkerCluster.Default.css" />
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+</head>
+<body>
+    <div class="container mt-4">
+        <div>
+            <h1 class="text-center">Restaurants à proximité</h1>
+            <a href="/" class="btn btn-info"><i class="fas fa-home"></i> Retour à l'accueil</a>
+        </div>
+        <!-- Mini carte pour afficher les marqueurs de restaurant -->
+        <div id="mini-map" style="height: 300px;"></div>
+        {% if restaurants %}
+        <div class="row">
+            {% for restaurant in restaurants %}
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img class="card-img-top" src="{{ restaurant.image }}" alt="{{ restaurant.name }}" onclick="window.location.href='{{ restaurant.url }}'">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ restaurant.name }}</h5>
+                        <p class="card-text">Distance : {{ restaurant.distance }} km </p>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#restaurantModal{{ loop.index }}">
+                            Détails
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="restaurantModal{{ loop.index }}" tabindex="-1" role="dialog" aria-labelledby="restaurantModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="restaurantModalLabel">{{ restaurant.name }}</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <img src="{{ restaurant.image }}" class="img-fluid" alt="{{ restaurant.name }}">
+                            <p>{{ restaurant.description }}</p>
+                            <p><strong>Adresse:</strong> {{ restaurant.address }}</p>
+                            <p><strong>Téléphone:</strong> {{ restaurant.telephone }}</p>
+                            <p><strong>Limite de livraison:</strong> {{ restaurant.price }}</p>
+                            <p><strong>Heures d'ouverture:</strong> {{ restaurant.openingHours }}</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                            {% if restaurant.url %}
+                            <a href="{{ restaurant.url }}" class="btn btn-primary">Visiter le site</a>
+                            {% else %}
+                            <a href="{{ restaurant.graph }}" class="btn btn-primary">Visiter le site</a>
+                            {% endif %}
+                            <button type="button" class="btn btn-info fetch-menu" data-restaurant-id="{{ restaurant.graph }}" data-toggle="modal" data-target="#menuModal">
+                                Afficher le Menu
+                            </button>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+            {% endfor %}
+        </div>
+        {% else %}
+            <p>Aucun restaurant trouvé.</p>
+        {% endif %}
+        <!-- Menu Modal -->
+        <div class="modal fade" id="menuModal" tabindex="-1" role="dialog" aria-labelledby="menuModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="menuModalLabel">Menu</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" id="menuContent">
+                        <!-- Menu content will be displayed here dynamically -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/leaflet.markercluster.js"></script>
+    <!-- Script pour afficher la mini carte avec des marqueurs de restaurant -->
+    <script>
+        {% if restaurants %}
+
+            // Créez une carte mini-map
+            var miniMap = L.map('mini-map').setView([{{ restaurants[0].latitude }}, {{ restaurants[0].longitude }}], 13);
+        
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 18,
+                attribution: '© OpenStreetMap contributors'
+            }).addTo(miniMap);
+
+            // Créez un groupe de marqueurs pour les restaurants
+            var restaurantMarkers = L.markerClusterGroup();
+
+            // Ajoutez des marqueurs de restaurant avec des popups personnalisées
+            {% for restaurant in restaurants %}
+                var marker = L.marker([{{ restaurant.latitude }}, {{ restaurant.longitude }}]);
+                marker.bindPopup('<strong>{{ restaurant.name }}</strong><br>Adresse: {{ restaurant.address }}<br>Heures d\'ouverture: {{ restaurant.openingHours }}');
+                restaurantMarkers.addLayer(marker);
+            {% endfor %}
+
+            miniMap.addLayer(restaurantMarkers);
+            {% else %}
+            document.getElementById('mini-map').innerHTML = '<p>Aucun restaurant trouvé.</p>';
+        {% endif %}
+    </script>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+        function fetchAndDisplayMenu(restaurantId) {
+            // Use fetch to retrieve the menu data (replace with your actual API endpoint)
+            fetch(`/menu`, {
+                method: 'POST', // Use POST method to send restaurant ID
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ restaurant_id: restaurantId }) // Send restaurant_id in JSON format
+            })
+                .then(response => response.json())
+                .then(data => {
+                    const menuContent = document.getElementById("menuContent");
+        
+                    // Clear any previous menu content
+                    menuContent.innerHTML = "";
+        
+                    // Check if menu data is available
+                    if (data && data.menu.length > 0) {
+                        const ul = document.createElement("ul");
+                        ul.classList.add("list-group");
+        
+                        // Create menu items
+                        data.menu.forEach(menuItem => {
+                            const li = document.createElement("li");
+                            li.classList.add("list-group-item");
+                            li.innerHTML = `
+                                <table>
+                                    <tr>
+                                        ${menuItem.image ? `<td><img src="${menuItem.image}" alt="${menuItem.name}" width="100" height="100"></td>` : ''}
+                                        <td>
+                                            <strong>Nom : ${menuItem.name}</strong><br>
+                                            Description : ${menuItem.description} <br>
+                                            Price : ${menuItem.price}
+                                        </td>
+                                    </tr>
+                                </table>
+                            `;
+                            ul.appendChild(li);
+                        });
+        
+                        menuContent.appendChild(ul);
+                    } else {
+                        // Display a message if no menu data is available
+                        menuContent.innerHTML = "<p>Menu not available.</p>";
+                    }
+                })
+                .catch(error => {
+                    console.error("Error fetching menu:", error);
+                    const menuContent = document.getElementById("menuContent");
+                    menuContent.innerHTML = "<p>Error fetching menu data.</p>";
+                });
+        }
+        
+        // Add click event listener to the "Afficher le Menu" buttons
+        const fetchMenuButtons = document.querySelectorAll(".fetch-menu");
+        fetchMenuButtons.forEach(button => {
+            button.addEventListener("click", function () {
+                const restaurantId = this.getAttribute("data-restaurant-id");
+                fetchAndDisplayMenu(restaurantId);
+            });
+        });
+        
+    </script>
+    
+</body>
+</html>

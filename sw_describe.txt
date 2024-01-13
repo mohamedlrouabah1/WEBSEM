@@ -1,0 +1,11 @@
+semweb example
+29 rue Ponchardier
+42000
+Saint-Etienne
+France
+None
+None
+1000
+45
+4.5
+40

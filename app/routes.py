@@ -6,7 +6,6 @@ from .models import FoodItem, Restaurant, Customer
 from .sparql import execute_sparql_query, update_customer_preferences
 
 # Import other necessary modules
-
 @app.route('/')
 
 def index():

@@ -1,0 +1,29 @@
+@prefix schema: <http://schema.org/> .
+@prefix wd: <http://www.wikidata.org/entity/> .
+
+<#Alex>
+    a schema:Person ;
+    schema:name "Mohammed Rouabah" ;
+    schema:address [
+        a schema:PostalAddress ;
+        schema:postalCode "42100" ;  
+        schema:addressLocality "12 boulevard de la République, France" ;
+    ] ;
+    schema:seeks [
+        schema:seller <https://demo.coopcycle.org/fr/restaurant/27> ; 
+        schema:priceSpecification [
+            schema:maxPrice 55.0 ;  
+            schema:priceCurrency "EUR"
+        ] ;
+        schema:availableAtOrFrom [
+            schema:geoWithin [
+                a schema:GeoCircle ;
+                schema:geoMidpoint [
+                    schema:longitude 45.4510527 ;  
+                    schema:latitude 4.3882768
+                ] ;
+                schema:geoRadius 100  
+            ]
+        ] ;
+        schema:itemOfferred wd:Q177
+    ] .

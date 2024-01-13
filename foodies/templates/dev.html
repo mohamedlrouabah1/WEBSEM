@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dev Page</title>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    </head>
+    <body>
+    <h1 class="text-center">Development Page</h1>
+    <div class="text-center">
+        <button class="btn btn-primary" onclick="initFuseki()">init Fuseki</button>
+        <button class="btn btn-primary" onclick="sendToFuseki()">Send to Fuseki</button>
+        <button class="btn btn-primary" onclick="collectData()">Collect Data</button>
+    </div>
+    <div class="alert alert-secondary" role="alert" style="margin-top: 0.5rem;">
+        {{result}}
+    </div>
+
+
+    <script>
+    function collectData() {
+        var urlToScrape = "https://coopcycle.org/fr/";
+        fetch('/dev/collect-data', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ url: urlToScrape })
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+        })
+        .catch(error => console.error('Error:', error));
+    }
+
+    function initFuseki() {
+        fetch('/dev/init-ldp', {
+            method: 'POST',
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+        })
+        .catch(error => console.error('Error:', error));
+    }
+
+    function sendToFuseki() {
+        fetch('/dev/send-to-fuseki', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ })
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+        })
+        .catch(error => console.error('Error:', error));
+    }
+
+    </script>
+</body>
+</html>

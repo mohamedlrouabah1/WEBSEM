@@ -1,0 +1,7 @@
+SELECT ?graph ?sub ?pred ?obj
+WHERE {
+   GRAPH http://foodies.org/user/semweb_example {
+
+      ?sub ?pred ?obj .
+   }
+}

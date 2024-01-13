@@ -1,5 +1,11 @@
+bs4
 Flask
-rdflib
+flask-caching
+flask-sitemap
+geopy
+gunicorn
 pyshacl
-
-#-m venv venv
+rdflib
+requests
+SPARQLWrapper
+tqdm
