@@ -22,6 +22,21 @@ def collect_data_route():
     return render_template('dev.html' , result=result)
 
 
+@dev_bp.route('/init-ldp', methods=['POST'])
+def init_fuseki():
+    """Init the linked data platform."""
+    try:
+        print("Init Fuseki")
+        LdpFuseki(update=True)
+        print("Fuseki initialized")
+        return render_template('dev.html' , result=jsonify({'message': 'Fuseki initialisé avec succès'}))
+
+    except Exception as e:
+        return render_template(
+            'dev.html' ,
+            result=jsonify({'message': f'Erreur lors de l\'initialisation de Fuseki : {e}'}))
+
+
 @dev_bp.route('/send-to-fuseki', methods=['POST'])
 def send_to_fuseki():
     """Upload json files to the linked data platform."""

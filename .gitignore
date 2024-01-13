@@ -1,10 +1,12 @@
 .vscode
-**/__pycache__/
-venv/
 
 # subject of the project
 *.pdf
 
-# personnal folder to store some examples / output
+**/__pycache__/
+scrapping/*
 examples/
-scrapping/
+
+deploy/
+.env
+venv/

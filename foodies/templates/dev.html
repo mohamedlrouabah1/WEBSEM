@@ -8,6 +8,7 @@
     <body>
     <h1 class="text-center">Development Page</h1>
     <div class="text-center">
+        <button class="btn btn-primary" onclick="initFuseki()">init Fuseki</button>
         <button class="btn btn-primary" onclick="sendToFuseki()">Send to Fuseki</button>
         <button class="btn btn-primary" onclick="collectData()">Collect Data</button>
     </div>
@@ -25,6 +26,17 @@
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({ url: urlToScrape })
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+        })
+        .catch(error => console.error('Error:', error));
+    }
+
+    function initFuseki() {
+        fetch('/dev/init-ldp', {
+            method: 'POST',
         })
         .then(response => response.json())
         .then(data => {
