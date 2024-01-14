@@ -82,6 +82,7 @@ def send_data_to_fuseki(rdf_graph:Graph, user_name:str) -> None:
     try:
         response = requests.post(
             f"http://{LDP_HOST}:{LDP_PORT}/preferences/data?graph=http://foodies.org/user/{user_name.replace(' ', '_')}",
+            f"http://{LDP_HOST}:{LDP_PORT}/preferences/data?graph=http://foodies.org/user/{user_name.replace(' ', '_')}",
             data=rdf_graph.serialize(format="turtle"),
             headers={
                 "Content-Type": "text/turtle",
@@ -110,10 +111,11 @@ def fetch_user_preferences(uri_name:str) -> dict:
 
     if response.status_code != 200:
         print("Failed to load SHACL shapes from the URI")
-        return False
+        return None
 
     g = Graph()
     g.parse(data=response.text, format='ttl')
+
 
     user_prefs = {
         'lat': None,

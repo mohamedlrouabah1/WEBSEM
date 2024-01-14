@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="static/css/style.css">    
+    <link rel="stylesheet" href="static/css/style.css">
 </head>
 <body style="background-image: url('https://www.foodiestruck.fr/img/static/image-home-foodies.png'); background-size: cover;">
     <!-- En-tête -->
@@ -15,7 +15,7 @@
             <a class="navbar-brand" href="#">
                 <img src="https://www.foodiestruck.fr/img/static/Foodies-logo.png" alt="Logo de votre application" width="70" height="30" class="mr-2">
                 <span class="align-middle">La references des restaurants !</span>
-            </a>            
+            </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -38,7 +38,7 @@
     <!-- Contenu principal -->
     <div class="container mt-4">
         <h1 class="text-center title">Rechercher une adresse</h1>
-        
+
         <!-- Barre de suggestion -->
         <div class="row">
             <div class="col-md-4">
@@ -74,7 +74,7 @@
                             <a class="dropdown-item" href="#" onclick="selectOption2('price')">Price</a>
                         </div>
                     </div>
-                    <button class="btn btn-primary" style="margin-left: 0.1rem;" type="button" onclick="performSearch()"><i class="fas fa-search"></i></button>                              
+                    <button class="btn btn-primary" style="margin-left: 0.1rem;" type="button" onclick="performSearch()"><i class="fas fa-search"></i></button>
                 </div>
             </div>
 
@@ -82,12 +82,12 @@
                 <input id="address-input" type="text" placeholder="Entrez une adresse..." class="form-control">
                 <div id="autocomplete-results"></div>
             </div>
-            
+
         </div>
-        
+
     </div>
-    
-    
+
+
 
     <!-- Modal pour les préférences utilisateur -->
     <div class="modal fade" id="preferencesModal" tabindex="-1" role="dialog" aria-labelledby="preferencesModalLabel" aria-hidden="true">
@@ -132,6 +132,7 @@
                 </div>
                 <div class="modal-body">
                     <input type="text" id="usernameInput" class="form-control mb-2" placeholder="Entrez votre nom d'utilisateur">
+                    <div id="loadPreferencesModalMessage"></div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
