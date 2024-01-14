@@ -22,7 +22,6 @@ def user_preferences():
     # Fetch user preferences based on username
     user_prefs = fetch_user_preferences(username)
     if not isinstance(user_prefs, dict):
-        # Handle error or invalid return type
         print(f"Invalid user preferences returned for username {username}")
         return jsonify({'success': False, 'message': 'Invalid user preferences'})
 

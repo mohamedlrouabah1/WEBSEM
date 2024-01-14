@@ -80,7 +80,7 @@ def send_data_to_fuseki(rdf_graph:Graph, user_name:str) -> None:
     """
     try:
         response = requests.post(
-            f"http://localhost:3030/preferences/data?graph=http://foodies.org/user/{user_name.replace(' ', '_')}",
+            f"http://{LDP_HOST}:{LDP_PORT}/preferences/data?graph=http://foodies.org/user/{user_name.replace(' ', '_')}",
             data=rdf_graph.serialize(format="turtle"),
             headers={"Content-Type": "text/turtle"},
             timeout=TIMEOUT
@@ -98,8 +98,8 @@ def fetch_user_preferences(uri_name:str) -> dict:
     """
     Query the Jena LDP for a specific user preferences.
     """
-     # Load user uri from jena 
-    uri = f"http://localhost:3030/preferences/data?graph=http://foodies.org/user/{uri_name}"
+     # Load user uri from jena
+    uri = f"http://{LDP_HOST}:{LDP_PORT}/preferences/data?graph=http://foodies.org/user/{uri_name}"
     response = requests.get(uri)
     if response.status_code != 200:
         print("Failed to load SHACL shapes from the URI")
@@ -107,7 +107,7 @@ def fetch_user_preferences(uri_name:str) -> dict:
 
     g = Graph()
     g.parse(data=response.text, format='ttl')
-    
+
     user_prefs = {
         'lat': None,
         'lon': None,
@@ -134,7 +134,7 @@ def fetch_user_preferences(uri_name:str) -> dict:
                         user_prefs['lon'] = float(lon) if lon else None
 
                     geoRadius = g.value(geoWithin, SCHEMA.geoRadius)
-                    user_prefs['max_distance'] = float(geoRadius) if geoRadius else None
+                    user_prefs['max_distance'] = float(geoRadius) if geoRadius else 100
 
     return user_prefs
 
@@ -152,17 +152,17 @@ def describe_user_preferences(uri:str=None) -> Graph:
             headers={'Accept': 'text/turtle'},
             timeout=60
         )
-        ref_graph = Graph()
-        ref_graph.parse(data=response.text, format='ttl')
-        print(ref_graph.serialize(format='turtle').decode('utf-8'))
+        rdf_graph = Graph()
+        rdf_graph.parse(data=response.text, format='ttl')
+        #print(ref_graph.serialize(format='turtle').decode('utf-8'))
 
     else:
         user_prefs = collect_user_preferences()
         rdf_graph = create_rdf_graph(user_prefs)
+        uri = user_prefs['name']
 
     print("Verifying graph with shacl and then upload to fuseki.")
-    send_data_to_fuseki(rdf_graph, user_prefs['name'])
-    print(fetch_user_preferences(user_prefs['name']))
+    send_data_to_fuseki(rdf_graph, uri)
     return rdf_graph
 
 

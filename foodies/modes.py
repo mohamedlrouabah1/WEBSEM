@@ -17,18 +17,18 @@ def collect(upload_to_fuseki:bool, init_fuseki:bool, uri:str=None):
     if init_fuseki:
         print("Initializing Fuseki datasets and shacl validation graph.")
         LdpFuseki(update=True)
-        return 
+        return
 
     scrapper = CoopCycleScrapper(upload_to_fuseki)
 
     if uri:
         print(f"Collecting data from {uri}")
         ldjson = scrapper.scrap_restaurant_from_url(uri, scrapper.session)
-        scrapper.ldp.upload_ldjson(ldjson) # auto validated agains shacl
+        scrapper.ldp.upload_ldjson({uri : ldjson}) # auto validated agains shacl
 
         menus = scrapper.scrap_menu_from_url(uri, scrapper.session)
         menus_graph = create_menu_graph(uri, menus)
-        upload_menu(uri, menus_graph)
+        upload_menu(uri, menus_graph.serialize(format='turtle'))
 
     else:
         print("Collecting data from CoopCycle.")

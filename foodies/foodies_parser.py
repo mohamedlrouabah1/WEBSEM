@@ -49,19 +49,20 @@ def parse_command_line_arguments() -> argparse.Namespace:
 
     parser.add_argument(
         '-lat', '--latitude',
-        default=None,
+        default=45.4510527,
         help='The latitude of the user.'
     )
 
+
     parser.add_argument(
         '-lon', '--longitude',
-        default=None,
+        default=4.3882768,
         help='The longitude of the user.'
     )
 
     parser.add_argument(
         '-dist', '--distance',
-        default=1000,
+        default=20,
         help='The maximum distance from the user.'
     )
 

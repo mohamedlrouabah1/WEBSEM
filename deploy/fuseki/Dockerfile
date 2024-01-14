@@ -13,22 +13,25 @@
 #  EXPOSE 3030
 
 # # Set the volume for data persistence
-# VOLUME ["/fuseki-base/databases"]
+
 
 # CMD ["/jena-fuseki/fuseki-server"]
 
-FROM ubuntu:latest
+#FROM ubuntu:latest
+FROM alpine:latest
+
 
 ENV ADMIN_PASSWORD=ADM01u
 ENV ENABLE_DATA_WRITE=true
 ENV ENABLE_UPDATE=true
 ENV ENABLE_UPLOAD=true
 ENV QUERY_TIMEOUT=100
+# ENV FUSEKI_BASE=/opt/fuseki/apache-jena-fuseki-4.10.0/fuseki-base
 
 # Mise à jour des paquets et installation d'OpenJDK 8
-RUN apt-get update && \
-    apt-get install -y openjdk-11-jdk wget && \
-    rm -rf /var/lib/apt/lists/*
+RUN apk update && \
+    apk add openjdk11 wget && \
+    rm -rf /var/lib/apk/lists/*
 
 # Téléchargement et extraction d'Apache Jena Fuseki
 WORKDIR /opt/fuseki
@@ -40,7 +43,14 @@ RUN wget https://dlcdn.apache.org/jena/binaries/apache-jena-fuseki-4.10.0.tar.gz
     export FUSEKI_BASE=$(pwd)
 
 EXPOSE 3030
-COPY shiro.ini /opt/fuseki/apache-jena-fuseki-4.10.0/run/shiro.ini
+
+WORKDIR /
+
+COPY ./shiro.ini /opt/fuseki/apache-jena-fuseki-4.10.0/run/shiro.ini
+ADD ./databases /opt/fuseki/apache-jena-fuseki-4.10.0/run/databases/
+ADD ./configuration /opt/fuseki/apache-jena-fuseki-4.10.0/run/configuration/
+
+# VOLUME ["${FUSEKI_BASE}/databases"]
 
 # Définition du répertoire de travail
 WORKDIR /opt/fuseki/apache-jena-fuseki-4.10.0

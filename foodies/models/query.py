@@ -68,7 +68,7 @@ def query_restaurants(user_lat, user_lon, georadius, current_time, day_of_week, 
         sparql.setQuery(query)
         sparql.setReturnFormat(JSON)
         results = sparql.query().convert()
-        georadius = float(georadius) if georadius is not None else None # Convert to float if not None
+        georadius = float(georadius) if georadius is not None else None
         restaurant_dict = {}
         for result in results["results"]["bindings"]:
             graph = result['graph']['value']

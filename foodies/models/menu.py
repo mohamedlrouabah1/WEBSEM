@@ -37,7 +37,7 @@ def upload_menu(restaurant_uri:str, ttl_data:str):
     """Uploads the given menu turtle graph to the LDP."""
     headers = {"Content-Type": "text/turtle"}
     response = requests.post(
-        f"{LDP_URL}/{encode_uri_component(restaurant_uri)}/data",
+        f"{LDP_URL}/data?graph={encode_uri_component(restaurant_uri)}",
         data=ttl_data,
         headers=headers,
         timeout=TIMEOUT,
@@ -47,7 +47,7 @@ def upload_menu(restaurant_uri:str, ttl_data:str):
         print(f"Error while uploading menu for {restaurant_uri}.", file=sys.stderr)
         print(response.text, file=sys.stderr)
 
-    
+
 
 if __name__ == '__main__':
    with open('foodies/data/menus.json', 'r', encoding='utf-8') as file:
