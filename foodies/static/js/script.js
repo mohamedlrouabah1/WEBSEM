@@ -89,6 +89,7 @@ function collectAndSendPreferences() {
 
 function loadUserPreferences(){
     var username = document.getElementById('usernameInput').value;
+    document.getElementById('loadPreferencesModalMessage').innerText = ""
 
     username = username.replace(/\s+/g, '_');
     fetch('/user/preferences', {
@@ -103,7 +104,11 @@ function loadUserPreferences(){
             window.location.href = response.url;
         } else {
             console.error('Expected a redirection response');
+            return response.json();
         }
+    })
+    .then(data => {
+        document.getElementById('loadPreferencesModalMessage').innerText = data.message
     })
     .catch(error => console.error('Error:', error));
 }

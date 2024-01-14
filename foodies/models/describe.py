@@ -80,7 +80,7 @@ def send_data_to_fuseki(rdf_graph:Graph, user_name:str) -> None:
     """
     try:
         response = requests.post(
-            f"http://localhost:3030/preferences/data?graph=http://foodies.org/user/{user_name.replace(' ', '_')}",
+            f"http://{LDP_HOST}:{LDP_PORT}/preferences/data?graph=http://foodies.org/user/{user_name.replace(' ', '_')}",
             data=rdf_graph.serialize(format="turtle"),
             headers={"Content-Type": "text/turtle"},
             timeout=TIMEOUT
@@ -98,16 +98,16 @@ def fetch_user_preferences(uri_name:str) -> dict:
     """
     Query the Jena LDP for a specific user preferences.
     """
-     # Load user uri from jena 
-    uri = f"http://localhost:3030/preferences/data?graph=http://foodies.org/user/{uri_name}"
+     # Load user uri from jena
+    uri = f"http://{LDP_HOST}:{LDP_PORT}/preferences/data?graph=http://foodies.org/user/{uri_name}"
     response = requests.get(uri)
     if response.status_code != 200:
         print("Failed to load SHACL shapes from the URI")
-        return False
+        return None
 
     g = Graph()
     g.parse(data=response.text, format='ttl')
-    
+
     user_prefs = {
         'lat': None,
         'lon': None,
