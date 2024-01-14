@@ -55,6 +55,8 @@ ADD ./configuration /opt/fuseki/apache-jena-fuseki-4.10.0/run/configuration/
 # Définition du répertoire de travail
 WORKDIR /opt/fuseki/apache-jena-fuseki-4.10.0
 
+ENV JAVA_OPTIONS="-Xmx1048m -Xms1048m"
+
 # Exécution du serveur Fuseki lors du démarrage du conteneur
 CMD ["sh", "-c", "./fuseki-server --port=$PORT"]
 #CMD ["sh", "-c", "while true; do echo 'This is an infinite loop'; sleep 1; done"]

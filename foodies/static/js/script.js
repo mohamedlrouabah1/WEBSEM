@@ -112,38 +112,7 @@ function loadUserPreferences(){
     })
     .catch(error => console.error('Error:', error));
 }
-// function getCurrentLocation() {
-//     if (navigator.geolocation) {
-//         navigator.geolocation.getCurrentPosition(function(position) {
-//             const lat = position.coords.latitude;
-//             const lon = position.coords.longitude;
-//             // Une fois que vous avez obtenu les coordonnées, vous pouvez les utiliser pour lancer la recherche
-//             searchNearbyRestaurants(lat, lon);
-//         }, function(error) {
-//             console.error('Erreur de géolocalisation:', error);
-//             alert("Impossible de récupérer votre emplacement actuel.");
-//         });
-//     } else {
-//         alert("La géolocalisation n'est pas prise en charge par votre navigateur.");
-//     }
-// }
-// function searchNearbyRestaurants(lat, lon) {
-//     fetch('/query', {
-//         method: 'POST',
-//         headers: {
-//             'Content-Type': 'application/json',
-//         },
-//         body: JSON.stringify({ lat, lon })
-//     })
-//     .then(response => {
-//         if (response.redirected) {
-//             window.location.href = response.url;
-//         } else {
-//             console.error('Expected a redirection response');
-//         }
-//     })
-//     .catch(error => console.error('Error:', error));
-// }
+
 function selectOption(option) {
     document.getElementById('dropdownMenuButton1').textContent = option;
 }
