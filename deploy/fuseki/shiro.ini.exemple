@@ -1,6 +1,8 @@
 # Licensed under the terms of http://www.apache.org/licenses/LICENSE-2.0
+# shiro ini doc : http://greycode.github.io/shiro/doc/web.html
 
 [main]
+# Development
 ssl.enabled = true
 
 plainMatcher=org.apache.shiro.authc.credential.SimpleCredentialsMatcher
@@ -9,11 +11,17 @@ iniRealm.credentialsMatcher = $plainMatcher
 
 localhostFilter=org.apache.jena.fuseki.authz.LocalhostFilter
 
+# -----------------------------------------------------------------------------
+# Users and their (optional) assigned roles
+# username = password, role1, role2, ..., roleN
+# -----------------------------------------------------------------------------
 [users]
-# Implicitly adds "iniRealm =  org.apache.shiro.realm.text.IniRealm"
-william=semwjHDG6528hjdj, admin
-mohammed=semwjH8hjdjDG652, admin
+admin = pw, admin
 
+# -----------------------------------------------------------------------------
+# Roles with assigned permissions
+# roleName = perm1, perm2, ..., permN
+# -----------------------------------------------------------------------------
 [roles]
 admin = *
 
@@ -21,7 +29,7 @@ admin = *
 ## Control functions open to anyone
 /$/status  = anon
 /$/server  = anon
-/$/ping    = anon
+/$/ping    = anon # for server status on the UI
 /$/metrics = anon
 
 ## and the rest are restricted to localhost.
@@ -31,10 +39,11 @@ admin = *
 ## on the operations,
 ##    1 - set a better password in [users] above.
 ##    2 - comment out the "/$/** = localhost" line and use:
-#"/$/** = authcBasic,user[admin]"
+/$/** = authcBasic,user[admin]
+/\#/** = authcBasic,user[admin]"
 
 ## or to allow any access.
-/$/** = anon
+#/$/** = anon
 
 # Everything else
 /**=anon

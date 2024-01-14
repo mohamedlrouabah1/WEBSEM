@@ -1,8 +1,9 @@
 from __future__ import annotations
+import sys
 import requests
 from rdflib import Namespace, URIRef, Literal, Graph, BNode
 from rdflib.namespace import RDF, XSD
-from config import TIMEOUT, LDP_HOST, LDP_PORT
+from config import LDP_URL, TIMEOUT, LDP_HOST, LDP_PORT, AUTHORIZATION_HEADER
 
 SCHEMA = Namespace('http://schema.org/')
 WD = Namespace('http://www.wikidata.org/entity/')
@@ -82,7 +83,10 @@ def send_data_to_fuseki(rdf_graph:Graph, user_name:str) -> None:
         response = requests.post(
             f"http://{LDP_HOST}:{LDP_PORT}/preferences/data?graph=http://foodies.org/user/{user_name.replace(' ', '_')}",
             data=rdf_graph.serialize(format="turtle"),
-            headers={"Content-Type": "text/turtle"},
+            headers={
+                "Content-Type": "text/turtle",
+                **AUTHORIZATION_HEADER
+                },
             timeout=TIMEOUT
             )
 
@@ -98,9 +102,12 @@ def fetch_user_preferences(uri_name:str) -> dict:
     """
     Query the Jena LDP for a specific user preferences.
     """
-     # Load user uri from jena
-    uri = f"http://{LDP_HOST}:{LDP_PORT}/preferences/data?graph=http://foodies.org/user/{uri_name}"
-    response = requests.get(uri)
+    response = requests.get(
+        f"http://{LDP_HOST}:{LDP_PORT}/preferences/data?graph=http://foodies.org/user/{uri_name}",
+        headers=AUTHORIZATION_HEADER,
+        timeout=TIMEOUT
+        )
+
     if response.status_code != 200:
         print("Failed to load SHACL shapes from the URI")
         return False
@@ -149,7 +156,10 @@ def describe_user_preferences(uri:str=None) -> Graph:
         print(f"Fetching user preferences from {uri}")
         response = requests.get(
             uri,
-            headers={'Accept': 'text/turtle'},
+            headers={
+                'Accept': 'text/turtle',
+                **AUTHORIZATION_HEADER
+                },
             timeout=60
         )
         rdf_graph = Graph()

@@ -10,3 +10,9 @@ examples/
 deploy/
 .env
 venv*/
+
+
+
+# config files
+**/shiro.ini
+.env

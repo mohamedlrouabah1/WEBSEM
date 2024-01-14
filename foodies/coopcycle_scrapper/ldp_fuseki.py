@@ -5,10 +5,12 @@ import requests
 from pyshacl import validate
 from rdflib import Graph
 from tqdm import tqdm
-
+sys.path.append('../foodies')
 from config import LDP_URL, LDP_HOST, LDP_PORT, TIMEOUT, LDP_DATASETS, SCRAPPED_DATA_FILE
-from config import COOPCYCLE_SHACL_FILE
+from config import COOPCYCLE_SHACL_FILE, AUTHORIZATION_HEADER
 from models.menu import create_menu_graph
+
+
 class LdpFuseki:
     """
     Use to interact with the Linked Data Platform of the foodies project.
@@ -28,6 +30,7 @@ class LdpFuseki:
             response = requests.post(
                 f'http://{LDP_HOST}:{LDP_PORT}/$/datasets',
                 params={'dbType': 'tdb2', 'dbName': dataset},
+                headers=AUTHORIZATION_HEADER,
                 timeout=TIMEOUT
             )
 
@@ -40,7 +43,10 @@ class LdpFuseki:
         response = requests.post(
                     f"{LdpFuseki.ENDPOINT_SHACL}",
                     data=shacl.serialize(format='turtle'),
-                    headers={"Content-Type": "text/turtle"},
+                    headers={
+                        "Content-Type": "text/turtle",
+                        **AUTHORIZATION_HEADER
+                        },
                     timeout=TIMEOUT
                 )
 
@@ -78,7 +84,10 @@ class LdpFuseki:
         """
         Send JSON-LD data to a Jena Fuseki dataset.
         """
-        headers = {"Content-Type": "application/ld+json"}
+        headers = {
+            "Content-Type": "application/ld+json",
+            **AUTHORIZATION_HEADER
+            }
         errors = 0
 
         for restaurant_url,restaurant_ldjson in tqdm(data.items(),desc='Sending data to Fuseki'):
@@ -112,7 +121,7 @@ class LdpFuseki:
         """
         Validate JSON-LD data against a SHACL shape.
 
-        :param jsonld_data: JSON-LD data to be validated
+        :param data: JSON-LD data to be validated
         :return: Boolean indicating if data is valid
         """
         # Convert JSON-LD to RDF graph
@@ -120,7 +129,10 @@ class LdpFuseki:
         rdf_graph.parse(data=data, format='json-ld')
 
         # Load SHACL shapes
-        response = requests.get(LdpFuseki.ENDPOINT_SHACL, timeout=TIMEOUT)
+        response = requests.get(
+            LdpFuseki.ENDPOINT_SHACL,
+            headers=AUTHORIZATION_HEADER,
+            timeout=TIMEOUT)
         if response.status_code != 200:
             print("Failed to load SHACL shapes from the URI", file=sys.stderr)
             return False
