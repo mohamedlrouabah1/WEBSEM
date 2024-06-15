@@ -4,7 +4,12 @@ Define the cache configuration for foodies app.
 from flask_caching import Cache
 
 
-cache = Cache()
+cache = Cache(config={
+    'CACHE_TYPE': 'simple',
+    'CACHE_DEFAULT_TIMEOUT': 300,
+    'CACHE_THRESHOLD': 500,
+    'CACHE_MAXSIZE': 32 * 1024 * 1024
+    })
 
 CACHE_DEFAULT_TIMEOUT = 30
 
